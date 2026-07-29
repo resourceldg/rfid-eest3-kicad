@@ -1,0 +1,273 @@
+(kicad_sch (version 20260306) (generator "kcaa") (generator_version "0.2.0") (uuid "5ca5dd26-abbe-4116-86d2-585e1668269e") (paper "A4") (title_block (title "Bloque 2 - Controlador ESP32 DevKit genérico")) (lib_symbols 
+
+(symbol "Connector_Generic:Conn_01x08" (pin_names (offset 1.016) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
+
+(property "Reference" "J" (at 0 10.16 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "Conn_01x08" (at 0 -12.7 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_keywords" "connector" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(symbol "Conn_01x08_1_1" 
+
+(rectangle (start -1.27 8.89) (end 1.27 -11.43) (stroke (width 0.254) (type default)) (fill (type background))) 
+
+(rectangle (start -1.27 7.747) (end 0 7.493) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 5.207) (end 0 4.953) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 2.667) (end 0 2.413) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 0.127) (end 0 -0.127) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 -2.413) (end 0 -2.667) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 -4.953) (end 0 -5.207) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 -7.493) (end 0 -7.747) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 -10.033) (end 0 -10.287) (stroke (width 0.1524) (type default)) (fill (type none))) (pin passive line (at -5.08 7.62 0) (length 3.81) (name "Pin_1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 5.08 0) (length 3.81) (name "Pin_2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 2.54 0) (length 3.81) (name "Pin_3" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 0 0) (length 3.81) (name "Pin_4" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 -2.54 0) (length 3.81) (name "Pin_5" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 -5.08 0) (length 3.81) (name "Pin_6" (effects (font (size 1.27 1.27)))) (number "6" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 -7.62 0) (length 3.81) (name "Pin_7" (effects (font (size 1.27 1.27)))) (number "7" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 -10.16 0) (length 3.81) (name "Pin_8" (effects (font (size 1.27 1.27)))) (number "8" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "Device:C" (pin_numbers (hide yes)) (pin_names (offset 0.254)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
+
+(property "Reference" "C" (at 0.635 2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 0.635 -2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 0.9652 -3.81 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_keywords" "cap capacitor" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_fp_filters" "C_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(symbol "C_0_1" 
+
+(polyline (pts 
+
+(xy -2.032 0.762) 
+
+(xy 2.032 0.762)) (stroke (width 0.508) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy -2.032 -0.762) 
+
+(xy 2.032 -0.762)) (stroke (width 0.508) (type default)) (fill (type none)))) 
+
+(symbol "C_1_1" (pin passive line (at 0 3.81 270) (length 2.794) (name "" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 0 -3.81 90) (length 2.794) (name "" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no))) (sheet_instances (path "/5ca5dd26-abbe-4116-86d2-585e1668269e" (page "1"))) (embedded_fonts no) 
+
+(symbol (lib_id "Connector_Generic:Conn_01x08") (at 74.93 64.77 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "46717921-926f-4485-a7f6-8e7879756849") 
+
+(property "Reference" "J3" (at 77.47000000000001 63.49999999999999 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "ESP32_FUNC_A_PENDING" (at 77.47000000000001 66.03999999999999 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 74.93 64.77 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 74.93 64.77 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 74.93 64.77 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "6def84cf-65fe-47e7-b9eb-9ef850518403")) (pin "2" (uuid "97d6614e-420f-47f2-8d54-91474c6a4273")) (pin "3" (uuid "ba07b46c-6c8e-4c01-a39d-7601ed91b548")) (pin "4" (uuid "e5d1844a-4cb7-4450-b643-980e7b8faba6")) (pin "5" (uuid "f2428052-313d-45fb-adf8-64b877ff1b9f")) (pin "6" (uuid "78779873-4d18-42a4-8a63-214d7839d426")) (pin "7" (uuid "773d5fbe-4bb9-4c47-8b7a-3617d26e857c")) (pin "8" (uuid "91f06558-aff3-4c55-ba6e-84e783c9c4e3")) (instances (project "rfid-control-acceso-eest3" (path "/5ca5dd26-abbe-4116-86d2-585e1668269e" (reference "J3") (unit 1))))) 
+
+(symbol (lib_id "Connector_Generic:Conn_01x08") (at 149.86 64.77 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "92279afc-148a-4b72-83af-05afb92a2a1c") 
+
+(property "Reference" "J4" (at 152.4 63.49999999999999 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "ESP32_FUNC_B_PENDING" (at 152.4 66.03999999999999 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 149.86 64.77 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 149.86 64.77 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 149.86 64.77 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "9c76c891-8d8c-4933-81f2-758dbc8fa1c7")) (pin "2" (uuid "ed790f13-3c72-4b23-9673-8c3a8a852f0c")) (pin "3" (uuid "9511cf56-92fe-4ab4-b385-2827ad495b6f")) (pin "4" (uuid "8c476e0a-1a3f-4cda-92e6-ede8ed875738")) (pin "5" (uuid "a5ce9614-0e0d-4f88-b9b3-46d0c6a73b52")) (pin "6" (uuid "6439de9d-652a-4fc7-9308-57de9fa7b683")) (pin "7" (uuid "d67fb8a4-15be-473e-b2ef-0e8d3574664f")) (pin "8" (uuid "378717ae-76c7-4be7-b5a1-5c9cba74c02c")) (instances (project "rfid-control-acceso-eest3" (path "/5ca5dd26-abbe-4116-86d2-585e1668269e" (reference "J4") (unit 1))))) 
+
+(symbol (lib_id "Device:C") (at 105.41 110.49 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "ef8a1841-237d-4bef-9685-6f160dc495df") 
+
+(property "Reference" "C5" (at 107.95 109.22 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "100nF_PRELIMINAR" (at 107.95 111.75999999999999 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 106.37519999999999 106.67999999999999 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 105.41 110.49 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Unpolarized capacitor" (at 105.41 110.49 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "325576a2-8d10-4665-92c1-b30e41a0c1c3")) (pin "2" (uuid "b56eaa8c-e5f7-400b-8235-a8fa3a270a06")) (instances (project "rfid-control-acceso-eest3" (path "/5ca5dd26-abbe-4116-86d2-585e1668269e" (reference "C5") (unit 1))))) 
+
+(global_label "+3V3" (shape input) (at 105.41 106.68 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 54da825b-8e7a-421c-94c1-0074f2d67a7a) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(global_label "GND" (shape input) (at 105.41 114.3 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 29188b88-6611-494d-bac9-ac3d76ecf126) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 69.85 57.15) 
+
+(xy 50.8 57.15)) (stroke (width 0) (type default)) (uuid 2451dffb-647d-4f0c-8e07-d7f81fd59cea)) 
+
+(global_label "+5V" (shape input) (at 50.8 57.15 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 1747b3e2-dedd-4a52-aee3-69cb02c6fdcd) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 69.85 59.69) 
+
+(xy 50.8 59.69)) (stroke (width 0) (type default)) (uuid 17e6627b-cbe7-4d9b-8730-b6dd6cf94b3f)) 
+
+(global_label "GND" (shape input) (at 50.8 59.69 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid c99933a9-262a-4bd4-a919-c17df695e69c) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 69.85 62.23) 
+
+(xy 50.8 62.23)) (stroke (width 0) (type default)) (uuid 22fe0411-aaf3-41a2-83b1-2c5f5dbd4aa3)) 
+
+(global_label "+3V3" (shape input) (at 50.8 62.23 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 55edba99-81f7-4897-a540-f315974e05e1) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 69.85 64.77) 
+
+(xy 50.8 64.77)) (stroke (width 0) (type default)) (uuid 52d54a1c-eb57-4919-b693-30dd8de1e3e6)) 
+
+(global_label "RFID_SCK" (shape input) (at 50.8 64.77 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 23453ce1-d0c9-4183-8ef6-752da2780f06) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 69.85 67.31) 
+
+(xy 50.8 67.31)) (stroke (width 0) (type default)) (uuid 379ab182-18b4-4d91-88da-cf7b01246537)) 
+
+(global_label "RFID_MISO" (shape input) (at 50.8 67.31 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 228ae81e-f899-48ba-af92-a17d346a4201) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 69.85 69.85) 
+
+(xy 50.8 69.85)) (stroke (width 0) (type default)) (uuid 062494b4-086d-4627-b99f-af7538674478)) 
+
+(global_label "RFID_MOSI" (shape input) (at 50.8 69.85 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 59b88add-70e6-4a35-9edd-0f7d0bbc6939) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 69.85 72.39) 
+
+(xy 50.8 72.39)) (stroke (width 0) (type default)) (uuid 2dfaabbd-5769-4235-b42f-c833796021d5)) 
+
+(global_label "RFID_SS" (shape input) (at 50.8 72.39 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 4091b512-3182-4953-904f-866398d0a740) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 69.85 74.93) 
+
+(xy 50.8 74.93)) (stroke (width 0) (type default)) (uuid 49dc80b0-664a-4bf2-930b-2bb8b1e9d7c8)) 
+
+(global_label "RFID_RST" (shape input) (at 50.8 74.93 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid db1ebf30-6c97-466a-ad50-ca20757596fa) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 144.78 57.15) 
+
+(xy 125.73 57.15)) (stroke (width 0) (type default)) (uuid c6bd3860-28c9-4aed-80af-7f0ad0ed2ccc)) 
+
+(global_label "DOOR_REED" (shape input) (at 125.73 57.15 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 07466db6-0c9d-4fc7-8ec1-9e91616f0a68) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 144.78 59.69) 
+
+(xy 125.73 59.69)) (stroke (width 0) (type default)) (uuid 8a664fab-4d84-4826-a106-f9c224cc4c88)) 
+
+(global_label "PIR_IN" (shape input) (at 125.73 59.69 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 6f3d8337-3aeb-40d2-87ff-a27db8e831f4) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 144.78 62.23) 
+
+(xy 125.73 62.23)) (stroke (width 0) (type default)) (uuid 8bfdc3ba-acb6-4887-b91d-b371c000dc16)) 
+
+(global_label "CABINET_SENSOR" (shape input) (at 125.73 62.23 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 350f662a-e85b-45a9-9264-b7497c46dc7e) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 144.78 64.77) 
+
+(xy 125.73 64.77)) (stroke (width 0) (type default)) (uuid 694f2c71-a41c-40d1-b258-3abca5756cb9)) 
+
+(global_label "LED_OK" (shape input) (at 125.73 64.77 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid b09ab2a9-f313-453d-ad22-1820ea6d044b) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 144.78 67.31) 
+
+(xy 125.73 67.31)) (stroke (width 0) (type default)) (uuid 5c5c3499-10a3-4ed9-8ecd-e6c3ed101986)) 
+
+(global_label "LED_ERROR" (shape input) (at 125.73 67.31 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 4375f403-8f3a-4b6c-8716-81b69f8b1bb3) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 144.78 69.85) 
+
+(xy 125.73 69.85)) (stroke (width 0) (type default)) (uuid 007115c2-7e2a-4db9-8921-a9ec5ae46591)) 
+
+(global_label "BUZZER" (shape input) (at 125.73 69.85 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 3ee3b29a-1584-4afb-a5a0-bfa1d03cd8f1) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 144.78 72.39) 
+
+(xy 125.73 72.39)) (stroke (width 0) (type default)) (uuid 33cddfa4-f494-4cb6-8ae8-beddda32e6da)) 
+
+(global_label "LOCK_GATE" (shape input) (at 125.73 72.39 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 03336076-c2d2-49e6-a8e4-016d233bb4f5) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 144.78 74.93) 
+
+(xy 125.73 74.93)) (stroke (width 0) (type default)) (uuid 57ad07b3-f812-42f4-b3bb-e36e50a79bb4)) 
+
+(global_label "GND" (shape input) (at 125.73 74.93 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 361e6e5d-c9ae-4a95-9527-a29e44796b6e) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))))

@@ -1,0 +1,299 @@
+(kicad_sch (version 20260306) (generator "kcaa") (generator_version "0.2.0") (uuid "27b4eaac-4040-46b2-85d8-05a73443d055") (paper "A4") (title_block (title "Bloque 6 - Accionamiento cerradura/solenoide 12V")) (lib_symbols 
+
+(symbol "Connector_Generic:Conn_01x02" (pin_names (offset 1.016) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
+
+(property "Reference" "J" (at 0 2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "Conn_01x02" (at 0 -5.08 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_keywords" "connector" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(symbol "Conn_01x02_1_1" 
+
+(rectangle (start -1.27 1.27) (end 1.27 -3.81) (stroke (width 0.254) (type default)) (fill (type background))) 
+
+(rectangle (start -1.27 0.127) (end 0 -0.127) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 -2.413) (end 0 -2.667) (stroke (width 0.1524) (type default)) (fill (type none))) (pin passive line (at -5.08 0 0) (length 3.81) (name "Pin_1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 -2.54 0) (length 3.81) (name "Pin_2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "Device:D" (pin_numbers (hide yes)) (pin_names (offset 1.016) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
+
+(property "Reference" "D" (at 0 2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "D" (at 0 -2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Diode" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_keywords" "diode" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(symbol "D_0_1" 
+
+(polyline (pts 
+
+(xy -1.27 1.27) 
+
+(xy -1.27 -1.27)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 1.27 1.27) 
+
+(xy 1.27 -1.27) 
+
+(xy -1.27 0) 
+
+(xy 1.27 1.27)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 1.27 0) 
+
+(xy -1.27 0)) (stroke (width 0) (type default)) (fill (type none)))) 
+
+(symbol "D_1_1" (pin passive line (at -3.81 0 0) (length 2.54) (name "K" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 3.81 0 180) (length 2.54) (name "A" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "Transistor_FET:Q_NMOS_GSD" (pin_names (offset 0) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
+
+(property "Reference" "Q" (at 5.08 1.905 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "Q_NMOS_GSD" (at 5.08 0 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 5.08 2.54 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "N-MOSFET transistor, gate/source/drain" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_keywords" "transistor NMOS N-MOS N-MOSFET" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(symbol "Q_NMOS_GSD_0_1" 
+
+(polyline (pts 
+
+(xy 0.254 1.905) 
+
+(xy 0.254 -1.905)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 0.254 0) 
+
+(xy -2.54 0)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 0.762 2.286) 
+
+(xy 0.762 1.27)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 0.762 0.508) 
+
+(xy 0.762 -0.508)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 0.762 -1.27) 
+
+(xy 0.762 -2.286)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 0.762 -1.778) 
+
+(xy 3.302 -1.778) 
+
+(xy 3.302 1.778) 
+
+(xy 0.762 1.778)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 1.016 0) 
+
+(xy 2.032 0.381) 
+
+(xy 2.032 -0.381) 
+
+(xy 1.016 0)) (stroke (width 0) (type default)) (fill (type outline))) (circle (center 1.651 0) (radius 2.794) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 2.54 2.54) 
+
+(xy 2.54 1.778)) (stroke (width 0) (type default)) (fill (type none))) (circle (center 2.54 1.778) (radius 0.254) (stroke (width 0) (type default)) (fill (type outline))) (circle (center 2.54 -1.778) (radius 0.254) (stroke (width 0) (type default)) (fill (type outline))) 
+
+(polyline (pts 
+
+(xy 2.54 -2.54) 
+
+(xy 2.54 0) 
+
+(xy 0.762 0)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 2.921 0.381) 
+
+(xy 3.683 0.381)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 3.302 0.381) 
+
+(xy 2.921 -0.254) 
+
+(xy 3.683 -0.254) 
+
+(xy 3.302 0.381)) (stroke (width 0) (type default)) (fill (type none)))) 
+
+(symbol "Q_NMOS_GSD_1_1" (pin input line (at -5.08 0 0) (length 2.54) (name "G" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 2.54 -5.08 90) (length 2.54) (name "S" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27))))) (pin passive line (at 2.54 5.08 270) (length 2.54) (name "D" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "Device:R" (pin_numbers (hide yes)) (pin_names (offset 0)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
+
+(property "Reference" "R" (at 2.032 0 90) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "R" (at 0 0 90) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at -1.778 0 90) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Resistor" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_keywords" "R res resistor" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_fp_filters" "R_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(symbol "R_0_1" 
+
+(rectangle (start -1.016 -2.54) (end 1.016 2.54) (stroke (width 0.254) (type default)) (fill (type none)))) 
+
+(symbol "R_1_1" (pin passive line (at 0 3.81 270) (length 1.27) (name "" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 0 -3.81 90) (length 1.27) (name "" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no))) (sheet_instances (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (page "1"))) (embedded_fonts no) 
+
+(symbol (lib_id "Connector_Generic:Conn_01x02") (at 180.34 54.61 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "1808f2c9-7c00-4fef-aaee-cc374cf886f6") 
+
+(property "Reference" "J9" (at 182.88 53.339999999999996 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "CERRADURA_12V_PENDIENTE_CORRIENTE_SOLENOIDE" (at 182.88 55.88 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 180.34 54.61 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 180.34 54.61 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 180.34 54.61 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "e5d0f4c3-8121-457f-850b-05271cec2164")) (pin "2" (uuid "0f693835-2650-4e43-bf71-f4aa45be4bfc")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "J9") (unit 1))))) 
+
+(symbol (lib_id "Device:D") (at 149.86 54.61 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "d4a110e0-2b2f-4a75-aaef-d754c174db9d") 
+
+(property "Reference" "D4" (at 152.4 53.339999999999996 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "FLYBACK K=+12V_LOCK A=LOCK_OUT; PENDIENTE_SELECCION_DIODO_FLYBACK" (at 152.4 55.88 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 149.86 54.61 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 149.86 54.61 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Diode" (at 149.86 54.61 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Device" "D" (at 149.86 54.61 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 149.86 54.61 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "2347bebb-13a7-4c45-96fd-98742999a747")) (pin "2" (uuid "0341f705-ebb9-4a55-8c02-6f3ddea108af")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "D4") (unit 1))))) 
+
+(symbol (lib_id "Transistor_FET:Q_NMOS_GSD") (at 129.54 85.09 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "0eaec7ee-9ee0-4a24-901c-a6de7eaa3552") 
+
+(property "Reference" "Q2" (at 132.07999999999998 83.82000000000001 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "MOSFET_LOGICO_3V3_PENDIENTE_SELECCION" (at 132.07999999999998 86.36 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 134.62 87.63000000000001 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 129.54 85.09 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "N-MOSFET transistor, gate/source/drain" (at 129.54 85.09 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "6b96e40a-41ef-4817-98d1-d2b48859b0fa")) (pin "2" (uuid "58614325-0972-4ef9-b16e-a35770d5a569")) (pin "3" (uuid "9f0f372c-729c-49ff-9607-eb6e1a8956cf")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "Q2") (unit 1))))) 
+
+(symbol (lib_id "Device:R") (at 85.09 85.09 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "76fb854b-de8d-40a4-9e85-f472a2175f19") 
+
+(property "Reference" "R7" (at 86.36 87.63000000000001 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "100R_GATE_PRELIMINAR" (at 83.82000000000001 87.63000000000001 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 85.09 83.312 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 85.09 85.09 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Resistor" (at 85.09 85.09 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "08741a2e-7599-4427-874b-196ea95d71f3")) (pin "2" (uuid "b10e7030-acaf-4f77-9980-1f4235e6e956")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "R7") (unit 1))))) 
+
+(symbol (lib_id "Device:R") (at 110.49 110.49 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "8e5432dc-070c-49aa-be94-97e1ae21ca6e") 
+
+(property "Reference" "R8" (at 113.03 109.22 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "10k_PULLDOWN_GATE_PRELIMINAR" (at 113.03 111.75999999999999 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 108.71199999999999 110.49 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 110.49 110.49 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Resistor" (at 110.49 110.49 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "3eae508d-2878-4ccc-bc79-7da00d2bf012")) (pin "2" (uuid "32f4dc16-6990-4624-ac47-7f186c87283e")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "R8") (unit 1))))) 
+
+(global_label "+12V_LOCK" (shape input) (at 175.26 54.61 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 971d8a3b-50e7-495f-9465-b9be525152a9) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(global_label "LOCK_OUT" (shape input) (at 175.26 57.15 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid ed04cf65-292c-4d37-9694-273fc4180e79) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(global_label "+12V_LOCK" (shape input) (at 146.05 54.61 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 14861351-92a4-46d6-bad0-f94388abd2c3) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(global_label "LOCK_OUT" (shape input) (at 153.67 54.61 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid dcad278f-2a7b-492a-833a-54f8db048355) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(global_label "LOCK_OUT" (shape input) (at 132.08 80.01 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid dcd611ed-2b76-4dde-a58e-cc90c97c3876) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(global_label "GND" (shape input) (at 132.08 90.17 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 6f1932fe-75b6-4cf4-968a-3eb53fba1b62) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(global_label "LOCK_GATE_DRIVE" (shape input) (at 124.46 85.09 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid f77c0de0-986c-4076-8e56-6eb2320c6db3) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(global_label "LOCK_GATE" (shape input) (at 81.28 85.09 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 0b6218e0-a683-4864-8b00-b5876afe7f2e) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(global_label "LOCK_GATE_DRIVE" (shape input) (at 88.9 85.09 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 1bad838a-a973-4b31-9c16-b9ea481e110e) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(global_label "LOCK_GATE_DRIVE" (shape input) (at 110.49 106.68 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 5c8e9ec4-b372-48c3-ac8b-6e94e16833f8) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(global_label "GND" (shape input) (at 110.49 114.3 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid d075aa40-5419-4f4b-bc24-c6a10244c836) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))))

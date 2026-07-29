@@ -1,0 +1,787 @@
+(kicad_sch (version 20260306) (generator "kcaa") (generator_version "0.2.0") (uuid "27b4eaac-4040-46b2-85d8-05a73443d055") (paper "A4") (title_block (title "Bloque 6 - Accionamiento cerradura/solenoide 12V")) (lib_symbols 
+
+(symbol "Connector_Generic:Conn_01x02" (pin_names (offset 1.016) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
+
+(property "Reference" "J" (at 0 2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "Conn_01x02" (at 0 -5.08 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_keywords" "connector" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(symbol "Conn_01x02_1_1" 
+
+(rectangle (start -1.27 1.27) (end 1.27 -3.81) (stroke (width 0.254) (type default)) (fill (type background))) 
+
+(rectangle (start -1.27 0.127) (end 0 -0.127) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 -2.413) (end 0 -2.667) (stroke (width 0.1524) (type default)) (fill (type none))) (pin passive line (at -5.08 0 0) (length 3.81) (name "Pin_1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 -2.54 0) (length 3.81) (name "Pin_2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "Device:D" (pin_numbers (hide yes)) (pin_names (offset 1.016) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
+
+(property "Reference" "D" (at 0 2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "D" (at 0 -2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Diode" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_keywords" "diode" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(symbol "D_0_1" 
+
+(polyline (pts 
+
+(xy -1.27 1.27) 
+
+(xy -1.27 -1.27)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 1.27 1.27) 
+
+(xy 1.27 -1.27) 
+
+(xy -1.27 0) 
+
+(xy 1.27 1.27)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 1.27 0) 
+
+(xy -1.27 0)) (stroke (width 0) (type default)) (fill (type none)))) 
+
+(symbol "D_1_1" (pin passive line (at -3.81 0 0) (length 2.54) (name "K" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 3.81 0 180) (length 2.54) (name "A" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "Transistor_FET:Q_NMOS_GSD" (pin_names (offset 0) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
+
+(property "Reference" "Q" (at 5.08 1.905 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "Q_NMOS_GSD" (at 5.08 0 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 5.08 2.54 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "N-MOSFET transistor, gate/source/drain" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_keywords" "transistor NMOS N-MOS N-MOSFET" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(symbol "Q_NMOS_GSD_0_1" 
+
+(polyline (pts 
+
+(xy 0.254 1.905) 
+
+(xy 0.254 -1.905)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 0.254 0) 
+
+(xy -2.54 0)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 0.762 2.286) 
+
+(xy 0.762 1.27)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 0.762 0.508) 
+
+(xy 0.762 -0.508)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 0.762 -1.27) 
+
+(xy 0.762 -2.286)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 0.762 -1.778) 
+
+(xy 3.302 -1.778) 
+
+(xy 3.302 1.778) 
+
+(xy 0.762 1.778)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 1.016 0) 
+
+(xy 2.032 0.381) 
+
+(xy 2.032 -0.381) 
+
+(xy 1.016 0)) (stroke (width 0) (type default)) (fill (type outline))) (circle (center 1.651 0) (radius 2.794) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 2.54 2.54) 
+
+(xy 2.54 1.778)) (stroke (width 0) (type default)) (fill (type none))) (circle (center 2.54 1.778) (radius 0.254) (stroke (width 0) (type default)) (fill (type outline))) (circle (center 2.54 -1.778) (radius 0.254) (stroke (width 0) (type default)) (fill (type outline))) 
+
+(polyline (pts 
+
+(xy 2.54 -2.54) 
+
+(xy 2.54 0) 
+
+(xy 0.762 0)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 2.921 0.381) 
+
+(xy 3.683 0.381)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 3.302 0.381) 
+
+(xy 2.921 -0.254) 
+
+(xy 3.683 -0.254) 
+
+(xy 3.302 0.381)) (stroke (width 0) (type default)) (fill (type none)))) 
+
+(symbol "Q_NMOS_GSD_1_1" (pin input line (at -5.08 0 0) (length 2.54) (name "G" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 2.54 -5.08 90) (length 2.54) (name "S" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27))))) (pin passive line (at 2.54 5.08 270) (length 2.54) (name "D" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "Device:R" (pin_numbers (hide yes)) (pin_names (offset 0)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
+
+(property "Reference" "R" (at 2.032 0 90) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "R" (at 0 0 90) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at -1.778 0 90) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Resistor" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_keywords" "R res resistor" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_fp_filters" "R_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(symbol "R_0_1" 
+
+(rectangle (start -1.016 -2.54) (end 1.016 2.54) (stroke (width 0.254) (type default)) (fill (type none)))) 
+
+(symbol "R_1_1" (pin passive line (at 0 3.81 270) (length 1.27) (name "" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 0 -3.81 90) (length 1.27) (name "" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "Relay:Relay_SPDT" (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
+
+(property "Reference" "K" (at 11.43 3.81 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "Relay_SPDT" (at 11.43 1.27 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 11.43 -1.27 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Relay SPDT, monostable, EN50005" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_keywords" "1P2T 1-Form-C single pole throw" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_fp_filters" "Relay?SPDT*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(symbol "Relay_SPDT_0_0" 
+
+(polyline (pts 
+
+(xy 7.62 5.08) 
+
+(xy 7.62 2.54) 
+
+(xy 6.985 3.175) 
+
+(xy 7.62 3.81)) (stroke (width 0) (type default)) (fill (type none)))) 
+
+(symbol "Relay_SPDT_0_1" 
+
+(rectangle (start -10.16 5.08) (end 10.16 -5.08) (stroke (width 0.254) (type default)) (fill (type background))) 
+
+(rectangle (start -8.255 1.905) (end -1.905 -1.905) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy -7.62 -1.905) 
+
+(xy -2.54 1.905)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy -5.08 5.08) 
+
+(xy -5.08 1.905)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy -5.08 -5.08) 
+
+(xy -5.08 -1.905)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy -1.905 0) 
+
+(xy -1.27 0)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy -0.635 0) 
+
+(xy 0 0)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 0.635 0) 
+
+(xy 1.27 0)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 1.905 0) 
+
+(xy 2.54 0)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 2.54 5.08) 
+
+(xy 2.54 2.54) 
+
+(xy 3.175 3.175) 
+
+(xy 2.54 3.81)) (stroke (width 0) (type default)) (fill (type outline))) 
+
+(polyline (pts 
+
+(xy 3.175 0) 
+
+(xy 3.81 0)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 5.08 -2.54) 
+
+(xy 3.175 3.81)) (stroke (width 0.508) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 5.08 -2.54) 
+
+(xy 5.08 -5.08)) (stroke (width 0) (type default)) (fill (type none)))) 
+
+(symbol "Relay_SPDT_1_1" (pin passive line (at 5.08 -7.62 90) (length 2.54) (name "" (effects (font (size 1.27 1.27)))) (number "11" (effects (font (size 1.27 1.27))))) (pin passive line (at 2.54 7.62 270) (length 2.54) (name "" (effects (font (size 1.27 1.27)))) (number "12" (effects (font (size 1.27 1.27))))) (pin passive line (at 7.62 7.62 270) (length 2.54) (name "" (effects (font (size 1.27 1.27)))) (number "14" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 7.62 270) (length 2.54) (name "" (effects (font (size 1.27 1.27)))) (number "A1" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 -7.62 90) (length 2.54) (name "" (effects (font (size 1.27 1.27)))) (number "A2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "Connector_Generic:Conn_01x03" (pin_names (offset 1.016) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
+
+(property "Reference" "J" (at 0 5.08 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "Conn_01x03" (at 0 -5.08 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_keywords" "connector" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(symbol "Conn_01x03_1_1" 
+
+(rectangle (start -1.27 3.81) (end 1.27 -3.81) (stroke (width 0.254) (type default)) (fill (type background))) 
+
+(rectangle (start -1.27 2.667) (end 0 2.413) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 0.127) (end 0 -0.127) (stroke (width 0.1524) (type default)) (fill (type none))) 
+
+(rectangle (start -1.27 -2.413) (end 0 -2.667) (stroke (width 0.1524) (type default)) (fill (type none))) (pin passive line (at -5.08 2.54 0) (length 3.81) (name "Pin_1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 0 0) (length 3.81) (name "Pin_2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 -2.54 0) (length 3.81) (name "Pin_3" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))) (embedded_fonts no))) (sheet_instances (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (page "1"))) (embedded_fonts no) 
+
+(symbol (lib_id "Connector_Generic:Conn_01x02") (at 180.34 54.61 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "1808f2c9-7c00-4fef-aaee-cc374cf886f6") 
+
+(property "Reference" "J9" (at 182.88 53.339999999999996 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "ALT_LOCK_12VDC" (at 182.88 55.88 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 180.34 54.61 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 180.34 54.61 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 180.34 54.61 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "e5d0f4c3-8121-457f-850b-05271cec2164")) (pin "2" (uuid "0f693835-2650-4e43-bf71-f4aa45be4bfc")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "J9") (unit 1))))) 
+
+(symbol (lib_id "Device:D") (at 149.86 54.61 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "d4a110e0-2b2f-4a75-aaef-d754c174db9d") 
+
+(property "Reference" "D4" (at 152.4 53.339999999999996 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "ALT_FLYBACK_DC" (at 152.4 55.88 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 149.86 54.61 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "https://www.vishay.com/docs/98652/ss3a4.pdf" (at 149.86 54.61 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Diode" (at 149.86 54.61 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Device" "D" (at 149.86 54.61 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 149.86 54.61 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "2347bebb-13a7-4c45-96fd-98742999a747")) (pin "2" (uuid "0341f705-ebb9-4a55-8c02-6f3ddea108af")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "D4") (unit 1))))) 
+
+(symbol (lib_id "Transistor_FET:Q_NMOS_GSD") (at 129.54 85.09 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "0eaec7ee-9ee0-4a24-901c-a6de7eaa3552") 
+
+(property "Reference" "Q2" (at 132.07999999999998 83.82000000000001 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "ALT_NMOS_DC" (at 132.07999999999998 86.36 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 134.62 87.63000000000001 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "https://www.aosmd.com/res/data_sheets/AO3400A.pdf" (at 129.54 85.09 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "N-MOSFET transistor, gate/source/drain" (at 129.54 85.09 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "6b96e40a-41ef-4817-98d1-d2b48859b0fa")) (pin "2" (uuid "58614325-0972-4ef9-b16e-a35770d5a569")) (pin "3" (uuid "9f0f372c-729c-49ff-9607-eb6e1a8956cf")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "Q2") (unit 1))))) 
+
+(symbol (lib_id "Device:R") (at 85.09 85.09 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "76fb854b-de8d-40a4-9e85-f472a2175f19") 
+
+(property "Reference" "R7" (at 86.36 87.63000000000001 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "100R" (at 83.82000000000001 87.63000000000001 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 85.09 83.312 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 85.09 85.09 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Resistor" (at 85.09 85.09 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "08741a2e-7599-4427-874b-196ea95d71f3")) (pin "2" (uuid "b10e7030-acaf-4f77-9980-1f4235e6e956")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "R7") (unit 1))))) 
+
+(symbol (lib_id "Device:R") (at 110.49 110.49 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "8e5432dc-070c-49aa-be94-97e1ae21ca6e") 
+
+(property "Reference" "R8" (at 113.03 109.22 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "10k" (at 113.03 111.75999999999999 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 108.71199999999999 110.49 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 110.49 110.49 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Resistor" (at 110.49 110.49 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "3eae508d-2878-4ccc-bc79-7da00d2bf012")) (pin "2" (uuid "32f4dc16-6990-4624-ac47-7f186c87283e")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "R8") (unit 1))))) 
+
+(global_label "+12V_LOCK" (shape input) (at 175.26 54.61 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 971d8a3b-50e7-495f-9465-b9be525152a9) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(global_label "+12V_LOCK" (shape input) (at 146.05 54.61 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 14861351-92a4-46d6-bad0-f94388abd2c3) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 175.26 57.15) 
+
+(xy 156.21 57.15)) (stroke (width 0) (type default)) (uuid 40743b7c-83cc-4fbe-9778-32072b3e5631)) 
+
+(wire (pts 
+
+(xy 156.21 57.15) 
+
+(xy 156.21 54.61)) (stroke (width 0) (type default)) (uuid 845f8beb-b504-4ebf-a9ef-2be05a56f17d)) 
+
+(wire (pts 
+
+(xy 156.21 54.61) 
+
+(xy 153.67 54.61)) (stroke (width 0) (type default)) (uuid 42c16e8e-dd32-45d9-ac4e-76e471826c6a)) 
+
+(junction (at 153.67 54.61) (diameter 0) (color 0 0 0 0) (uuid ac692387-0870-42cd-846a-11360be9a60b)) 
+
+(wire (pts 
+
+(xy 153.67 54.61) 
+
+(xy 153.67 57.15)) (stroke (width 0) (type default)) (uuid 5373f44f-0e62-4f62-bfaf-a9ae7e803593)) 
+
+(wire (pts 
+
+(xy 153.67 57.15) 
+
+(xy 132.08 57.15)) (stroke (width 0) (type default)) (uuid 271b735f-1031-4a75-a9f1-85b338cc6eb4)) 
+
+(wire (pts 
+
+(xy 132.08 57.15) 
+
+(xy 132.08 80.01)) (stroke (width 0) (type default)) (uuid bafdd2d2-57a0-4da5-a629-fbd05b5b949c)) 
+
+(wire (pts 
+
+(xy 88.9 85.09) 
+
+(xy 86.36 85.09)) (stroke (width 0) (type default)) (uuid 9d6c876c-2b6d-45ce-b145-28ea920c2b1e)) 
+
+(wire (pts 
+
+(xy 86.36 85.09) 
+
+(xy 86.36 87.63)) (stroke (width 0) (type default)) (uuid f2d1f6a5-83d9-4604-8931-dd930d6cc732)) 
+
+(wire (pts 
+
+(xy 86.36 87.63) 
+
+(xy 121.92 87.63)) (stroke (width 0) (type default)) (uuid 1b8f9874-5529-403a-8705-280d89ac0282)) 
+
+(wire (pts 
+
+(xy 121.92 87.63) 
+
+(xy 121.92 85.09)) (stroke (width 0) (type default)) (uuid d115279f-760f-418d-9a7c-0811e4193993)) 
+
+(wire (pts 
+
+(xy 121.92 85.09) 
+
+(xy 124.46 85.09)) (stroke (width 0) (type default)) (uuid f2e10ff0-2c41-46f8-a21d-a5382345a480)) 
+
+(junction (at 124.46 85.09) (diameter 0) (color 0 0 0 0) (uuid d73fbda0-78e7-4606-a0f9-dd48af21c8aa)) 
+
+(wire (pts 
+
+(xy 110.49 106.68) 
+
+(xy 110.49 85.09)) (stroke (width 0) (type default)) (uuid abeee179-66aa-4c54-b7f9-17a05690d1a3)) 
+
+(wire (pts 
+
+(xy 110.49 85.09) 
+
+(xy 121.92 85.09)) (stroke (width 0) (type default)) (uuid aceff82e-93a8-411c-8386-75c55f135dc9)) 
+
+(junction (at 121.92 85.09) (diameter 0) (color 0 0 0 0) (uuid 970079a3-a293-45d2-ae14-006345327b07)) 
+
+(global_label "GND_POWER" (shape input) (at 132.08 90.17 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 983487e5-b8c0-4346-9c4a-af83e3e57d1f) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(global_label "GND_POWER" (shape input) (at 110.49 114.3 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid fa3f2ca5-f2d3-4ef7-a9c1-ef3d836e3c10) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(symbol (lib_id "Relay:Relay_SPDT") (at 185.42000000000002 124.46000000000001 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "d685974a-b3ff-4382-bf95-95f793511ee9") 
+
+(property "Reference" "K1" (at 187.96 123.19000000000001 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "RELAY_SPDT_10A?" (at 187.96 125.73 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 196.85000000000002 123.19000000000001 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 185.42000000000002 124.46000000000001 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Relay SPDT, monostable, EN50005" (at 185.42000000000002 124.46000000000001 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "11" (uuid "85ed896c-1b39-4817-be78-90752496423a")) (pin "12" (uuid "3c29b770-d82d-45bc-a041-2e35af3b2f42")) (pin "14" (uuid "0b67081f-d87f-4cbe-9f6b-bc325323d82e")) (pin "A1" (uuid "e044f12a-06b2-4047-97a8-c73d26de150c")) (pin "A2" (uuid "366abdd9-88c2-40ab-96b2-d6b68a2eca12")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "K1") (unit 1))))) 
+
+(symbol (lib_id "Connector_Generic:Conn_01x02") (at 44.45 124.46000000000001 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "4a41e6d9-761d-4419-8db0-78b11c7e66d1") 
+
+(property "Reference" "J10" (at 46.99 123.19000000000001 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "LOCK_EXT_SUPPLY" (at 46.99 125.73 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 44.45 124.46000000000001 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 44.45 124.46000000000001 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 44.45 124.46000000000001 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "87030398-e86a-4a3a-9c4a-2eab1cbe31ee")) (pin "2" (uuid "f326a258-186f-42d4-adf0-d908db91772c")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "J10") (unit 1)))) 
+
+(property "Status" "PENDIENTE_CONFIRMAR_AC_O_DC" (at 46.99 125.73 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))) 
+
+(symbol (lib_id "Connector_Generic:Conn_01x03") (at 240.03 124.46000000000001 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "61061d6d-2078-4fe7-a7fb-12ff0a1276eb") 
+
+(property "Reference" "J11" (at 242.57 123.19000000000001 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "DRY_CONTACTS_OUT" (at 242.57 125.73 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 240.03 124.46000000000001 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 240.03 124.46000000000001 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 240.03 124.46000000000001 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "71b4d365-0be8-4c2c-a04f-f7b97dc24f6c")) (pin "2" (uuid "ce1f9dc5-d9aa-4425-bc2e-f91324fc5408")) (pin "3" (uuid "1859a56d-170f-43fc-aaba-43beca4de5cf")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "J11") (unit 1)))) 
+
+(property "Status" "PENDIENTE_CONFIRMAR_CONSUMO_CERRADURA" (at 242.57 125.73 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))) 
+
+(symbol (lib_id "Transistor_FET:Q_NMOS_GSD") (at 154.94 154.94 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "9a0aa8a7-16f3-424b-9cd7-a28dd6bbec24") 
+
+(property "Reference" "Q3" (at 157.48 153.67 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "NMOS_RELAY?" (at 157.48 156.21 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 160.02 157.48 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 154.94 154.94 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "N-MOSFET transistor, gate/source/drain" (at 154.94 154.94 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "088bc31e-8b60-41eb-882f-988450e1520b")) (pin "2" (uuid "8894db17-870a-498d-93b5-6dbfa2e76a03")) (pin "3" (uuid "cd611841-2bb6-4640-b40b-923021066440")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "Q3") (unit 1))))) 
+
+(symbol (lib_id "Device:R") (at 105.41 154.94 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "0dca6487-8834-41e3-86dc-4c643b465d3b") 
+
+(property "Reference" "R9" (at 106.67999999999999 157.48 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "100R" (at 104.14 157.48 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 105.41 153.162 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 105.41 154.94 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Resistor" (at 105.41 154.94 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "83a682a7-a373-4b84-8a7d-b4bc6539b1d9")) (pin "2" (uuid "b8e8bcaa-9b17-4dcc-a51f-76f21330dbea")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "R9") (unit 1))))) 
+
+(symbol (lib_id "Device:R") (at 129.54 170.18 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "79d63414-2c98-46b9-b454-60e2120063fd") 
+
+(property "Reference" "R10" (at 132.07999999999998 168.91 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "10k" (at 132.07999999999998 171.45000000000002 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 127.76199999999999 170.18 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 129.54 170.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Resistor" (at 129.54 170.18 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "961f7fd3-a74a-4aff-acfc-53463f58b4bb")) (pin "2" (uuid "49e5e863-6cef-4a41-b3df-a4469664af4d")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "R10") (unit 1))))) 
+
+(symbol (lib_id "Device:D") (at 185.42000000000002 154.94 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "36631d4b-29d5-458c-b356-ce2149c8fbf6") 
+
+(property "Reference" "D9" (at 187.96 153.67 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "FLYBACK_COIL" (at 187.96 156.21 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 185.42000000000002 154.94 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 185.42000000000002 154.94 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Diode" (at 185.42000000000002 154.94 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Device" "D" (at 185.42000000000002 154.94 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 185.42000000000002 154.94 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "60df0858-f551-4d12-871f-61f3b87f0900")) (pin "2" (uuid "1afbeffb-87de-48fb-8242-a0e6b2e26d5e")) (instances (project "rfid-control-acceso-eest3" (path "/27b4eaac-4040-46b2-85d8-05a73443d055" (reference "D9") (unit 1))))) 
+
+(global_label "+12V_LOCK" (shape input) (at 180.34 116.84 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid ddd1efeb-d8a3-4777-a2ba-d364fa408e97) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(label "LOCK_SUPPLY_A" (at 39.37 124.46 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 188bdcd0-dd12-40bc-9431-af87168166bb)) 
+
+(label "LOCK_SUPPLY_B" (at 39.37 127.0 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 72f1180f-970d-422c-83d2-f74dda553148)) 
+
+(label "LOCK_COM" (at 234.95 121.92 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 69adf913-f648-47cf-a86b-4cb2dbd5c046)) 
+
+(label "LOCK_NO" (at 234.95 124.46 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 1a6de001-e7c8-4d1a-b22c-dacbfd7862aa)) 
+
+(label "LOCK_NC" (at 234.95 127.0 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid a5cb4315-997a-44a3-a224-905c1fd2cb56)) 
+
+(global_label "GND_POWER" (shape input) (at 157.48 160.02 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 40a819c7-78bd-4c53-a28a-c3388ae55ad2) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(global_label "LOCK_GATE" (shape input) (at 101.6 154.94 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 1782773b-834e-44e4-865e-ea626715c8bf) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(global_label "GND_POWER" (shape input) (at 129.54 173.99 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 723a9650-af86-4f03-aefb-6f1af7fc97e9) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(label "LOCK_GATE_DC_ALT" (at 81.28 85.09 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid c9ae1a91-9c11-46dd-ad97-962dc2ecc62b)) 
+
+(wire (pts 
+
+(xy 109.22 154.94) 
+
+(xy 106.68 154.94)) (stroke (width 0) (type default)) (uuid 5a0e3b5b-0ea4-4c79-8765-4c7c2d38946c)) 
+
+(wire (pts 
+
+(xy 106.68 154.94) 
+
+(xy 106.68 157.48)) (stroke (width 0) (type default)) (uuid 5883acdc-a1f4-4c90-b88d-f5833339f34b)) 
+
+(wire (pts 
+
+(xy 106.68 157.48) 
+
+(xy 147.32 157.48)) (stroke (width 0) (type default)) (uuid fe41b8e5-67ac-4e35-8612-a121188c0670)) 
+
+(wire (pts 
+
+(xy 147.32 157.48) 
+
+(xy 147.32 154.94)) (stroke (width 0) (type default)) (uuid 192dc46e-c99f-4688-9d31-9fa98f60ae58)) 
+
+(wire (pts 
+
+(xy 147.32 154.94) 
+
+(xy 149.86 154.94)) (stroke (width 0) (type default)) (uuid 23c27817-d41f-45e2-b605-30a2d3b5243f)) 
+
+(junction (at 149.86 154.94) (diameter 0) (color 0 0 0 0) (uuid 0f6a919c-2291-4793-8fdb-4c3908f96c3a)) 
+
+(wire (pts 
+
+(xy 129.54 166.37) 
+
+(xy 129.54 154.94)) (stroke (width 0) (type default)) (uuid 8867fc28-e453-40f1-8569-bae45342299c)) 
+
+(wire (pts 
+
+(xy 129.54 154.94) 
+
+(xy 147.32 154.94)) (stroke (width 0) (type default)) (uuid c9aaa287-79e4-407c-9c4f-fa1e17128595)) 
+
+(junction (at 147.32 154.94) (diameter 0) (color 0 0 0 0) (uuid e585a693-8ec8-4376-a3a3-acefc933dc17)) 
+
+(wire (pts 
+
+(xy 180.34 132.08) 
+
+(xy 180.34 134.62)) (stroke (width 0) (type default)) (uuid cfec19c4-da6d-4914-8cad-b3ede9e666c6)) 
+
+(wire (pts 
+
+(xy 180.34 134.62) 
+
+(xy 157.48 134.62)) (stroke (width 0) (type default)) (uuid 60911b6e-0faa-4f43-9570-51f7cec95db1)) 
+
+(wire (pts 
+
+(xy 157.48 134.62) 
+
+(xy 157.48 149.86)) (stroke (width 0) (type default)) (uuid 47907e6a-ee81-464f-bdbd-74d50762ddcc)) 
+
+(junction (at 157.48 149.86) (diameter 0) (color 0 0 0 0) (uuid 3963e4e5-3984-4238-a685-87706589606f)) 
+
+(wire (pts 
+
+(xy 189.23 154.94) 
+
+(xy 191.77 154.94)) (stroke (width 0) (type default)) (uuid 0bead118-2891-4fab-aedb-c169a31b6ee1)) 
+
+(wire (pts 
+
+(xy 191.77 154.94) 
+
+(xy 191.77 149.86)) (stroke (width 0) (type default)) (uuid a0bb61be-6973-4b26-b31c-b2314d377c3a)) 
+
+(wire (pts 
+
+(xy 191.77 149.86) 
+
+(xy 157.48 149.86)) (stroke (width 0) (type default)) (uuid b3afde20-e2f0-405d-aa29-3e25a0e30b5d)) 
+
+(wire (pts 
+
+(xy 181.61 154.94) 
+
+(xy 179.07 154.94)) (stroke (width 0) (type default)) (uuid 7318515b-87a6-4995-b4e3-1243c58f311d)) 
+
+(wire (pts 
+
+(xy 179.07 154.94) 
+
+(xy 179.07 114.3)) (stroke (width 0) (type default)) (uuid 2d24e246-b999-42c6-a34a-3974a581d7d2)) 
+
+(wire (pts 
+
+(xy 179.07 114.3) 
+
+(xy 180.34 114.3)) (stroke (width 0) (type default)) (uuid db37d994-e258-462b-9cb9-1d980538e3c9)) 
+
+(wire (pts 
+
+(xy 180.34 114.3) 
+
+(xy 180.34 116.84)) (stroke (width 0) (type default)) (uuid 1f23175c-c3b8-4988-8a64-975dbae81523)) 
+
+(wire (pts 
+
+(xy 190.5 132.08) 
+
+(xy 190.5 134.62)) (stroke (width 0) (type default)) (uuid f6168222-a3b8-470b-8d91-843c2c8b9c87)) 
+
+(wire (pts 
+
+(xy 190.5 134.62) 
+
+(xy 232.41 134.62)) (stroke (width 0) (type default)) (uuid ed894ff5-15dc-4335-810c-075f23fe9c4a)) 
+
+(wire (pts 
+
+(xy 232.41 134.62) 
+
+(xy 232.41 121.92)) (stroke (width 0) (type default)) (uuid c7d7f43b-1a72-40b3-b5dd-4d52988760a3)) 
+
+(wire (pts 
+
+(xy 232.41 121.92) 
+
+(xy 234.95 121.92)) (stroke (width 0) (type default)) (uuid 269a3f09-a2c8-4402-827b-adfa93ff69b3)) 
+
+(wire (pts 
+
+(xy 187.96 116.84) 
+
+(xy 187.96 114.3)) (stroke (width 0) (type default)) (uuid 0f794c25-b60c-4dc4-8de0-f569cd9dc727)) 
+
+(wire (pts 
+
+(xy 193.04 116.84) 
+
+(xy 195.58 116.84)) (stroke (width 0) (type default)) (uuid 7d5ad690-7808-4596-90c8-cf1cc19ff41b)) 
+
+(wire (pts 
+
+(xy 195.58 116.84) 
+
+(xy 195.58 124.46)) (stroke (width 0) (type default)) (uuid 7ce5ecc1-7bac-418a-af38-66251fc7a05d)) 
+
+(wire (pts 
+
+(xy 195.58 124.46) 
+
+(xy 234.95 124.46)) (stroke (width 0) (type default)) (uuid 36c7519e-af0b-4532-8c1d-872592248ef3)) 
+
+(junction (at 187.96 114.3) (diameter 0) (color 0 0 0 0) (uuid 29fe7726-1619-4392-83fa-2ab4b3547f54)) 
+
+(wire (pts 
+
+(xy 187.96 114.3) 
+
+(xy 200.66 114.3)) (stroke (width 0) (type default)) (uuid f2389da1-4f40-48f7-8459-ab74495eab16)) 
+
+(junction (at 200.66 114.3) (diameter 0) (color 0 0 0 0) (uuid 31d87b57-6d91-4b27-9611-fa9dd8cb1c7d)) 
+
+(wire (pts 
+
+(xy 200.66 114.3) 
+
+(xy 200.66 127.0)) (stroke (width 0) (type default)) (uuid 0bc846be-6b5f-48cb-a347-d00508b71711)) 
+
+(junction (at 200.66 127.0) (diameter 0) (color 0 0 0 0) (uuid 363bae76-45ae-42cf-b8a4-383defc1501a)) 
+
+(wire (pts 
+
+(xy 200.66 127.0) 
+
+(xy 234.95 127.0)) (stroke (width 0) (type default)) (uuid f49ab14f-ba14-49ec-bb89-550d3fc3a75f)))

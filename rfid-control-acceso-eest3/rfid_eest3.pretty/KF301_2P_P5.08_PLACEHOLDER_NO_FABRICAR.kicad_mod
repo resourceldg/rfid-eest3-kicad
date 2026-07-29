@@ -1,0 +1,13 @@
+(footprint "KF301_2P_P5.08_PLACEHOLDER_NO_FABRICAR"
+  (version 20240108) (generator "pcbnew") (layer "F.Cu")
+  (descr "PLACEHOLDER NO FABRICAR bornera azul 2P paso 5.08")
+  (attr through_hole)
+  (fp_text reference "REF**" (at 2.54 -3) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
+  (fp_text value "VERIFICAR BORNERA FÍSICA" (at 2.54 6.5) (layer "F.Fab") (effects (font (size 1 1) (thickness 0.18))))
+  (fp_rect (start -2.6 -2.3) (end 7.68 5.3) (stroke (width 0.3) (type default)) (fill none) (layer "F.Fab"))
+  (fp_text user "ACCESO TORNILLO" (at 2.54 -1.2) (layer "F.Fab") (effects (font (size 0.8 0.8) (thickness 0.15))))
+  (fp_circle (center 0 0) (end 1 0) (stroke (width 0.3) (type default)) (fill none) (layer "F.SilkS"))
+  (fp_rect (start -3.1 -2.8) (end 8.18 5.8) (stroke (width 0.05) (type default)) (fill none) (layer "F.CrtYd"))
+  (pad "1" thru_hole rect (at 0 2.54) (size 3.2 3.2) (drill 1.6) (layers "*.Cu" "*.Mask"))
+  (pad "2" thru_hole circle (at 5.08 2.54) (size 3.2 3.2) (drill 1.6) (layers "*.Cu" "*.Mask"))
+)

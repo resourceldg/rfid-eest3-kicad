@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "rfid_eest3")(type "KiCad")(uri "${KIPRJMOD}/rfid_eest3.pretty")(options "")(descr "Placeholders locales RFID EEST3 Rev. A; no fabricar sin mediciones"))
+)

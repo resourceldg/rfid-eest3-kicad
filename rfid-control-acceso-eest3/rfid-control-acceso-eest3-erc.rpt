@@ -1,16 +1,7 @@
-ERC report (2026-07-29T05:30:43, Encoding UTF8)
+ERC report (2026-07-29T18:19:17, Encoding UTF8)
 Report includes: Errors, Warnings
 
 ***** Sheet /
-[isolated_pin_label]: Label connected to only one pin
-    ; warning
-    @(39.37 mm, 92.71 mm): Etiqueta global «PIR_SIGNAL_PENDIENTE_NIVEL»
-[isolated_pin_label]: Label connected to only one pin
-    ; warning
-    @(144.78 mm, 59.69 mm): Etiqueta global «PIR_IN»
-[isolated_pin_label]: Label connected to only one pin
-    ; warning
-    @(100.33 mm, 72.39 mm): Etiqueta global «RFID_IRQ_OPTIONAL»
 
 ***** Sheet /1_ALIMENTACION/
 
@@ -24,7 +15,7 @@ Report includes: Errors, Warnings
 
 ***** Sheet /6_CERRADURA_12V/
 
- ** ERC messages: 3  Errors 0  Warnings 3
+ ** ERC messages: 0  Errors 0  Warnings 0
 
  ** Ignored checks:
     - Global label only appears once in the schematic

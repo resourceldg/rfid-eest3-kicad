@@ -1,623 +1,3985 @@
-(kicad_sch (version 20260306) (generator "kcaa") (generator_version "0.2.0") (uuid "c3aa6b49-f005-4f03-a689-a601e6e84d4c") (paper "A4") (title_block (title "Bloque 4 - Sensores de puerta, PIR y gabinete")) (lib_symbols 
-
-(symbol "Connector_Generic:Conn_01x02" (pin_names (offset 1.016) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
-
-(property "Reference" "J" (at 0 2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
-
-(property "Value" "Conn_01x02" (at 0 -5.08 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
-
-(property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "ki_keywords" "connector" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(symbol "Conn_01x02_1_1" 
-
-(rectangle (start -1.27 1.27) (end 1.27 -3.81) (stroke (width 0.254) (type default)) (fill (type background))) 
-
-(rectangle (start -1.27 0.127) (end 0 -0.127) (stroke (width 0.1524) (type default)) (fill (type none))) 
-
-(rectangle (start -1.27 -2.413) (end 0 -2.667) (stroke (width 0.1524) (type default)) (fill (type none))) (pin passive line (at -5.08 0 0) (length 3.81) (name "Pin_1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 -2.54 0) (length 3.81) (name "Pin_2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
-
-(symbol "Device:R" (pin_numbers (hide yes)) (pin_names (offset 0)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
-
-(property "Reference" "R" (at 2.032 0 90) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
-
-(property "Value" "R" (at 0 0 90) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
-
-(property "Footprint" "" (at -1.778 0 90) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "Description" "Resistor" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "ki_keywords" "R res resistor" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "ki_fp_filters" "R_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(symbol "R_0_1" 
-
-(rectangle (start -1.016 -2.54) (end 1.016 2.54) (stroke (width 0.254) (type default)) (fill (type none)))) 
-
-(symbol "R_1_1" (pin passive line (at 0 3.81 270) (length 1.27) (name "" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 0 -3.81 90) (length 1.27) (name "" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
-
-(symbol "Device:C" (pin_numbers (hide yes)) (pin_names (offset 0.254)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
-
-(property "Reference" "C" (at 0.635 2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "C" (at 0.635 -2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 0.9652 -3.81 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "Description" "Unpolarized capacitor" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "ki_keywords" "cap capacitor" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "ki_fp_filters" "C_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(symbol "C_0_1" 
-
-(polyline (pts 
-
-(xy -2.032 0.762) 
-
-(xy 2.032 0.762)) (stroke (width 0.508) (type default)) (fill (type none))) 
-
-(polyline (pts 
-
-(xy -2.032 -0.762) 
-
-(xy 2.032 -0.762)) (stroke (width 0.508) (type default)) (fill (type none)))) 
-
-(symbol "C_1_1" (pin passive line (at 0 3.81 270) (length 2.794) (name "" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 0 -3.81 90) (length 2.794) (name "" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
-
-(symbol "Connector_Generic:Conn_01x03" (pin_names (offset 1.016) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
-
-(property "Reference" "J" (at 0 5.08 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
-
-(property "Value" "Conn_01x03" (at 0 -5.08 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
-
-(property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "ki_keywords" "connector" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(symbol "Conn_01x03_1_1" 
-
-(rectangle (start -1.27 3.81) (end 1.27 -3.81) (stroke (width 0.254) (type default)) (fill (type background))) 
-
-(rectangle (start -1.27 2.667) (end 0 2.413) (stroke (width 0.1524) (type default)) (fill (type none))) 
-
-(rectangle (start -1.27 0.127) (end 0 -0.127) (stroke (width 0.1524) (type default)) (fill (type none))) 
-
-(rectangle (start -1.27 -2.413) (end 0 -2.667) (stroke (width 0.1524) (type default)) (fill (type none))) (pin passive line (at -5.08 2.54 0) (length 3.81) (name "Pin_1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 0 0) (length 3.81) (name "Pin_2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 -2.54 0) (length 3.81) (name "Pin_3" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
-
-(symbol "Device:D_TVS" (pin_numbers (hide yes)) (pin_names (offset 1.016) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
-
-(property "Reference" "D" (at 0 2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
-
-(property "Value" "D_TVS" (at 0 -2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
-
-(property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "Description" "Bidirectional transient-voltage-suppression diode" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "ki_keywords" "diode TVS thyrector" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(symbol "D_TVS_0_1" 
-
-(polyline (pts 
-
-(xy -2.54 1.27) 
-
-(xy -2.54 -1.27) 
-
-(xy 2.54 1.27) 
-
-(xy 2.54 -1.27) 
-
-(xy -2.54 1.27)) (stroke (width 0.254) (type default)) (fill (type none))) 
-
-(polyline (pts 
-
-(xy 0.508 1.27) 
-
-(xy 0 1.27) 
-
-(xy 0 -1.27) 
-
-(xy -0.508 -1.27)) (stroke (width 0.254) (type default)) (fill (type none))) 
-
-(polyline (pts 
-
-(xy 1.27 0) 
-
-(xy -1.27 0)) (stroke (width 0) (type default)) (fill (type none)))) 
-
-(symbol "D_TVS_1_1" (pin passive line (at -3.81 0 0) (length 2.54) (name "A1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 3.81 0 180) (length 2.54) (name "A2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
-
-(symbol "Connector_Generic:Conn_01x01" (pin_names (offset 1.016) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
-
-(property "Reference" "J" (at 0 2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
-
-(property "Value" "Conn_01x01" (at 0 -2.54 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
-
-(property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "ki_keywords" "connector" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(symbol "Conn_01x01_1_1" 
-
-(rectangle (start -1.27 1.27) (end 1.27 -1.27) (stroke (width 0.254) (type default)) (fill (type background))) 
-
-(rectangle (start -1.27 0.127) (end 0 -0.127) (stroke (width 0.1524) (type default)) (fill (type none))) (pin passive line (at -5.08 0 0) (length 3.81) (name "Pin_1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
-
-(symbol "Connector_Generic:Conn_01x04" (pin_names (offset 1.016) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no) 
-
-(property "Reference" "J" (at 0 5.08 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
-
-(property "Value" "Conn_01x04" (at 0 -7.62 0) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
-
-(property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "ki_keywords" "connector" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (size 1.27 1.27)))) 
-
-(symbol "Conn_01x04_1_1" 
-
-(rectangle (start -1.27 3.81) (end 1.27 -6.35) (stroke (width 0.254) (type default)) (fill (type background))) 
-
-(rectangle (start -1.27 2.667) (end 0 2.413) (stroke (width 0.1524) (type default)) (fill (type none))) 
-
-(rectangle (start -1.27 0.127) (end 0 -0.127) (stroke (width 0.1524) (type default)) (fill (type none))) 
-
-(rectangle (start -1.27 -2.413) (end 0 -2.667) (stroke (width 0.1524) (type default)) (fill (type none))) 
-
-(rectangle (start -1.27 -4.953) (end 0 -5.207) (stroke (width 0.1524) (type default)) (fill (type none))) (pin passive line (at -5.08 2.54 0) (length 3.81) (name "Pin_1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 0 0) (length 3.81) (name "Pin_2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 -2.54 0) (length 3.81) (name "Pin_3" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27))))) (pin passive line (at -5.08 -5.08 0) (length 3.81) (name "Pin_4" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))) (embedded_fonts no))) (sheet_instances (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (page "1"))) (embedded_fonts no) 
-
-(symbol (lib_id "Connector_Generic:Conn_01x02") (at 44.45 49.53 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "fe52dd9c-eb3e-408e-9c29-c9859d77f9f4") 
-
-(property "Reference" "J6" (at 46.99 48.26 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "REED_NC" (at 46.99 50.800000000000004 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 44.45 49.53 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 44.45 49.53 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 44.45 49.53 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "b25de4cd-e6c5-4887-927f-5149f18a7fad")) (pin "2" (uuid "27d3f0a0-7672-416d-add0-07e66d1acd2d")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "J6") (unit 1))))) 
-
-(symbol (lib_id "Device:R") (at 85.09 49.53 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "24e11811-ebe7-4c62-b8e9-8fe9dcddc91a") 
-
-(property "Reference" "R1" (at 87.63000000000001 48.26 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "10k" (at 87.63000000000001 50.800000000000004 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 83.312 49.53 90) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 85.09 49.53 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Resistor" (at 85.09 49.53 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "67bb5463-f886-40ef-9795-8c2b65f0f298")) (pin "2" (uuid "397e6a9f-97d4-4304-bad1-f21f1a8bdaf3")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "R1") (unit 1))))) 
-
-(symbol (lib_id "Device:C") (at 110.49 49.53 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "586d3597-0cf3-4d0d-b5d6-e2f60f2b7899") 
-
-(property "Reference" "C7" (at 113.03 48.26 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "100nF" (at 113.03 50.800000000000004 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 111.45519999999999 45.72 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 110.49 49.53 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Unpolarized capacitor" (at 110.49 49.53 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "7539b148-f98b-46ab-a8a2-c36bd500c1a0")) (pin "2" (uuid "f2e35375-73bc-4b98-9819-906540cbda53")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "C7") (unit 1))))) 
-
-(symbol (lib_id "Connector_Generic:Conn_01x03") (at 44.45 129.54 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "6572629c-67e6-4ed0-9cf8-0fca0cd8131a") 
-
-(property "Reference" "J8" (at 46.99 128.26999999999998 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "CABINET_SENSOR" (at 46.99 130.81 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 44.45 129.54 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 44.45 129.54 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 44.45 129.54 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "69a82774-bc4d-462b-8f0d-321ad02b19d8")) (pin "2" (uuid "33050627-2dfd-4b96-b57e-c037ff5c5bf0")) (pin "3" (uuid "6fc0ec67-27c5-4c98-8c11-bb5598fd3953")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "J8") (unit 1))))) 
-
-(symbol (lib_id "Device:R") (at 95.25 129.54 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "84ab7596-255b-40de-a8d5-5805eb88477d") 
-
-(property "Reference" "R2" (at 97.79 128.26999999999998 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "10k" (at 97.79 130.81 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 93.472 129.54 90) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 95.25 129.54 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Resistor" (at 95.25 129.54 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "c40242e7-ac01-4b5e-8e00-440a13712621")) (pin "2" (uuid "60affcbb-885f-4e29-a90f-dc63135af107")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "R2") (unit 1))))) 
-
-(global_label "+3V3" (shape input) (at 85.09 45.72 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid f56c981c-63fd-4003-80c7-295f6157b106) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(global_label "DOOR_REED" (shape input) (at 85.09 53.34 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid ac8d056b-db2b-4c71-aea3-becdb5cdfb64) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(global_label "DOOR_REED" (shape input) (at 110.49 45.72 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 29b45e90-ee2e-411e-bac9-dc353b1ee4e0) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(global_label "GND" (shape input) (at 110.49 53.34 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid fb3adac2-0037-407c-9826-6538c19aecb4) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(global_label "+3V3" (shape input) (at 95.25 125.73 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid ad2d80f4-78ed-474d-a3be-9a53724e8197) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(global_label "CABINET_SENSOR" (shape input) (at 95.25 133.35 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid ac4624c5-3938-4daf-916d-25a0b8f2870c) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(wire (pts 
-
-(xy 39.37 49.53) 
-
-(xy 20.32 49.53)) (stroke (width 0) (type default)) (uuid dfd0d5b3-318e-4a66-a307-66fadb0e6d1d)) 
-
-(global_label "DOOR_REED" (shape input) (at 20.32 49.53 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid e093b449-dad4-4a0a-8bcb-06f413313729) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(wire (pts 
-
-(xy 39.37 52.07) 
-
-(xy 20.32 52.07)) (stroke (width 0) (type default)) (uuid bb22430e-57f1-4858-a482-7df9fbc7cc11)) 
-
-(global_label "GND" (shape input) (at 20.32 52.07 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid a652604e-0b13-46fe-ab51-78612da6ee2a) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(wire (pts 
-
-(xy 39.37 127.0) 
-
-(xy 20.32 127.0)) (stroke (width 0) (type default)) (uuid 9901490e-82d9-4f78-ad86-96c5f2132088)) 
-
-(global_label "+3V3" (shape input) (at 20.32 127.0 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 0d9ec1c0-12d3-449c-bd40-be59ca61b97a) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(wire (pts 
-
-(xy 39.37 129.54) 
-
-(xy 20.32 129.54)) (stroke (width 0) (type default)) (uuid 0db7ee01-bdc3-413e-b683-3120fcc6fed1)) 
-
-(global_label "GND" (shape input) (at 20.32 129.54 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 278191c4-d32a-4710-8fe8-79fb6dc2b053) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(wire (pts 
-
-(xy 39.37 132.08) 
-
-(xy 20.32 132.08)) (stroke (width 0) (type default)) (uuid b85bbf0e-d413-48b3-9c4f-2b683c9b884f)) 
-
-(global_label "CABINET_SENSOR" (shape input) (at 20.32 132.08 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 22c62790-8439-48b5-b9ea-1fa4ee374d19) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(symbol (lib_id "Device:D_TVS") (at 139.7 49.53 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "f8431802-f7f4-4985-8d45-2eefcf9d8dc7") 
-
-(property "Reference" "D6" (at 142.23999999999998 48.26 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "TVS_3V3?" (at 142.23999999999998 50.800000000000004 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 139.7 49.53 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 139.7 49.53 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Bidirectional transient-voltage-suppression diode" (at 139.7 49.53 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "c7de5adf-a7b1-46c9-8900-4b530f1a3f39")) (pin "2" (uuid "bcc166fc-c007-4bb7-83d4-b68da4a5821c")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "D6") (unit 1))))) 
-
-(symbol (lib_id "Device:D_TVS") (at 139.7 90.17 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "de45f228-7629-4fa1-a42c-1c43fa5d622a") 
-
-(property "Reference" "D7" (at 142.23999999999998 88.9 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "TVS_CONTACT_PENDING" (at 142.23999999999998 91.44 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 139.7 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 139.7 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Bidirectional transient-voltage-suppression diode" (at 139.7 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "ae52b64b-8093-41e3-b2a2-498eee25e113")) (pin "2" (uuid "0cb8103b-4869-41dd-b55f-ff7fc9258e87")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "D7") (unit 1))))) 
-
-(symbol (lib_id "Device:D_TVS") (at 139.7 129.54 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "34fb1b45-e997-4364-8657-6626231c53b6") 
-
-(property "Reference" "D8" (at 142.23999999999998 128.26999999999998 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "TVS_3V3?" (at 142.23999999999998 130.81 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 139.7 129.54 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 139.7 129.54 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Bidirectional transient-voltage-suppression diode" (at 139.7 129.54 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "a8a3c042-28b1-403a-9a6a-cf27ff45f004")) (pin "2" (uuid "c1f84692-ad45-4865-849b-4d47810b8f93")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "D8") (unit 1))))) 
-
-(symbol (lib_id "Device:C") (at 170.18 129.54 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "0909a83c-1b7d-442c-98b5-2e14be8a0425") 
-
-(property "Reference" "C8" (at 172.72 128.26999999999998 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "100nF" (at 172.72 130.81 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 171.14520000000002 125.72999999999999 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 170.18 129.54 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Unpolarized capacitor" (at 170.18 129.54 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "be8de3a7-0ad5-4801-a85e-011e9867beda")) (pin "2" (uuid "d6a419e9-53b2-4452-81ab-efc638417d86")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "C8") (unit 1))))) 
-
-(global_label "GND" (shape input) (at 143.51 49.53 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid c67fe008-4378-493b-b5d0-ba0015e7e38a) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(global_label "GND" (shape input) (at 143.51 90.17 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 37284568-3e73-47b4-a786-e623f8168c80) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(global_label "GND" (shape input) (at 143.51 129.54 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 5be66aa0-20b7-487b-9b33-961e7f4ad1d8) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(global_label "CABINET_SENSOR" (shape input) (at 170.18 125.73 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 971f106d-5a85-402a-b9ed-12f53ed942d3) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(global_label "GND" (shape input) (at 170.18 133.35 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid ed231d31-4741-4577-83a2-4d0f3a1e3357) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(wire (pts 
-
-(xy 135.89 49.53) 
-
-(xy 133.35 49.53)) (stroke (width 0) (type default)) (uuid 3a8c5ea5-e49a-4458-9db5-27e16d811e5c)) 
-
-(wire (pts 
-
-(xy 133.35 49.53) 
-
-(xy 133.35 43.18)) (stroke (width 0) (type default)) (uuid d225d2e7-04ab-4c07-93f7-52e72116d885)) 
-
-(wire (pts 
-
-(xy 133.35 43.18) 
-
-(xy 110.49 43.18)) (stroke (width 0) (type default)) (uuid 0d0a6bf7-bada-42bf-9c67-6fa6a88db6b8)) 
-
-(wire (pts 
-
-(xy 110.49 43.18) 
-
-(xy 110.49 45.72)) (stroke (width 0) (type default)) (uuid 1ff79633-8ce1-4135-9e10-05588743d324)) 
-
-(junction (at 39.37 92.71) (diameter 0) (color 0 0 0 0) (uuid 7f2ad422-dffe-482d-86a5-285f12a867e9)) 
-
-(junction (at 20.32 92.71) (diameter 0) (color 0 0 0 0) (uuid 95764207-ab2e-4b89-8e77-37e82a41f149)) 
-
-(wire (pts 
-
-(xy 135.89 129.54) 
-
-(xy 133.35 129.54)) (stroke (width 0) (type default)) (uuid 9a5241ea-40ea-4ee3-a15d-c227f1222a75)) 
-
-(wire (pts 
-
-(xy 133.35 129.54) 
-
-(xy 133.35 123.19)) (stroke (width 0) (type default)) (uuid a3103b71-57a6-404c-ad69-32c815e4c59a)) 
-
-(wire (pts 
-
-(xy 133.35 123.19) 
-
-(xy 170.18 123.19)) (stroke (width 0) (type default)) (uuid 898e3ce5-d514-485b-b446-8fbcf931919a)) 
-
-(wire (pts 
-
-(xy 170.18 123.19) 
-
-(xy 170.18 125.73)) (stroke (width 0) (type default)) (uuid 8ba11dcd-f306-4e8c-8d97-eb0f98971cfa)) 
-
-(junction (at 130.81 90.17) (diameter 0) (color 0 0 0 0) (uuid fa0865ab-7e42-4757-a266-250927f4c616)) 
-
-(junction (at 130.81 92.71) (diameter 0) (color 0 0 0 0) (uuid 247af531-713b-4a17-ae5b-0820ba822a5f)) 
-
-(symbol (lib_id "Connector_Generic:Conn_01x02") (at 44.45 107.95 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "02713ee5-5ad6-40b1-86e6-36f61e3d0ce2") 
-
-(property "Reference" "J10" (at 46.99 106.68 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "DSC_LC100_TAMPER_NC" (at 46.99 109.22 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 44.45 107.95 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 44.45 107.95 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 44.45 107.95 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "41941475-3836-4461-b13d-bf231261b3c5")) (pin "2" (uuid "59f6129c-4d1f-48e4-bd61-43968b1058c4")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "J10") (unit 1)))) 
-
-(property "PhysicalTerminals" "PENDIENTE_NUMERACION_BORNERA_LC100" (at 46.99 109.22 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))) 
-
-(global_label "GND" (shape input) (at 39.37 110.49 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 0f5a049b-84d4-4ea2-bf91-a43cdbc65234) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(symbol (lib_id "Connector_Generic:Conn_01x04") (at 44.45 90.17 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "b40d2e17-b68b-4a33-8651-09bd322a02e9") 
-
-(property "Reference" "J7" (at 46.99 88.9 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "DSC_LC100_PWR_ALARM_NC" (at 46.99 91.44 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 44.45 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 44.45 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 44.45 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "83ab0dd9-12c7-4b6b-899f-7e7c52aef852")) (pin "2" (uuid "4b586fc3-824b-4110-a757-3cbfa8b6c3ad")) (pin "3" (uuid "72ca1f88-b235-4b8f-af96-586fad6128f3")) (pin "4" (uuid "1d742d51-a508-4c51-a926-12130c76aea1")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "J7") (unit 1)))) 
-
-(property "PhysicalTerminals" "PENDIENTE_NUMERACION_BORNERA_LC100" (at 46.99 91.44 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))) 
-
-(global_label "+12V_AUX" (shape input) (at 39.37 87.63 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 98c14555-957f-41c8-8eb0-97712c5909e7) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(global_label "GND" (shape input) (at 39.37 90.17 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 08078b27-618b-4780-b3e7-a831c901d05b) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(global_label "GND" (shape input) (at 39.37 92.71 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 37f62dfa-ccde-463c-87c0-b383f2d3372b) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(label "PIR_CONTACT" (at 39.37 95.25 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid e7c4e649-54ea-41d2-81c5-423845557cc6)) 
-
-(label "PIR_CONTACT" (at 135.89 90.17 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 49ff41cd-38d1-4dcd-b54e-2b5d23ed236f)) 
-
-(label "PIR_TAMPER_CONTACT" (at 39.37 107.95 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid ebbae464-6ec6-416f-b745-c2852915fd1a)) 
-
-(symbol (lib_id "Device:R") (at 80.01 88.9 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "a48af4dc-1352-4c09-aedb-ddb28abe8299") 
-
-(property "Reference" "R13" (at 82.55000000000001 87.63000000000001 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "10k" (at 82.55000000000001 90.17 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 78.232 88.9 90) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 80.01 88.9 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Resistor" (at 80.01 88.9 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "bb9ce695-d004-4b96-8a6f-55de12eb42a4")) (pin "2" (uuid "0f3f11cf-deaf-4073-978f-18c0e38d2fa8")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "R13") (unit 1))))) 
-
-(symbol (lib_id "Device:R") (at 105.41 95.25 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "a21800bd-cae5-4fce-8820-5228238520ba") 
-
-(property "Reference" "R14" (at 106.67999999999999 97.79 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "1k" (at 104.14 97.79 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 105.41 93.472 90) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 105.41 95.25 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Resistor" (at 105.41 95.25 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "ebc99b35-e353-4ce6-a2d7-3ebf3fbf95f5")) (pin "2" (uuid "d8dccaa5-97e1-415a-bd76-63077ab041da")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "R14") (unit 1))))) 
-
-(symbol (lib_id "Device:C") (at 125.73 105.41 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "bf3c6e59-bcce-47d6-b39d-7404d41febcd") 
-
-(property "Reference" "C10" (at 128.27 104.14 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "100nF" (at 128.27 106.67999999999999 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 126.6952 101.6 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 125.73 105.41 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Unpolarized capacitor" (at 125.73 105.41 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "e3f519ed-36ae-4eba-aaf7-d6bea739b5ca")) (pin "2" (uuid "ee3e8a60-c3d3-42ac-be87-ba5dac967893")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "C10") (unit 1))))) 
-
-(symbol (lib_id "Device:R") (at 190.5 105.41 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "1684fca2-1a9f-463b-8282-e41126f31209") 
-
-(property "Reference" "R15" (at 193.04 104.14 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "10k" (at 193.04 106.67999999999999 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 188.722 105.41 90) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 190.5 105.41 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Resistor" (at 190.5 105.41 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "a27ff0b5-4a7b-4a96-96b9-09f573f112a5")) (pin "2" (uuid "0ab44d7f-f9c0-4a09-ae2b-683444e0090f")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "R15") (unit 1))))) 
-
-(symbol (lib_id "Device:R") (at 215.9 110.49 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "e7828dba-ce50-45c6-a022-b703355147e3") 
-
-(property "Reference" "R16" (at 217.17000000000002 113.03 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "1k" (at 214.63 113.03 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 215.9 108.71199999999999 90) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 215.9 110.49 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Resistor" (at 215.9 110.49 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "95bee1dc-caef-4c0e-b3e8-9cd143331df2")) (pin "2" (uuid "80188540-851b-4413-93c0-fb5392bdebe3")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "R16") (unit 1))))) 
-
-(symbol (lib_id "Device:C") (at 240.03 120.65 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced yes) (uuid "fc87f252-9719-4d5a-991f-17d1cb06394e") 
-
-(property "Reference" "C11" (at 242.57 119.38000000000001 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Value" "100nF" (at 242.57 121.92 0) (effects (font (size 1.27 1.27)) (justify left))) 
-
-(property "Footprint" "" (at 240.9952 116.84 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Datasheet" "" (at 240.03 120.65 0) (effects (font (size 1.27 1.27)) (hide yes))) 
-
-(property "Description" "Unpolarized capacitor" (at 240.03 120.65 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "6d865e1d-9d9f-4b8d-bfd2-a5daa287bec3")) (pin "2" (uuid "1a692631-be17-4c88-be3f-0d6ed73d205d")) (instances (project "rfid-control-acceso-eest3" (path "/c3aa6b49-f005-4f03-a689-a601e6e84d4c" (reference "C11") (unit 1))))) 
-
-(global_label "+3V3" (shape input) (at 80.01 85.09 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid abe6a7b2-dca4-4680-9e42-1803b417be30) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(label "PIR_CONTACT" (at 80.01 92.71 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid da185b10-153d-45bf-8eb6-eae486ede369)) 
-
-(label "PIR_CONTACT" (at 101.6 95.25 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid f17d37bc-d5ac-42ee-b08d-1e208bbe6df6)) 
-
-(global_label "PIR_IN" (shape input) (at 109.22 95.25 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 02d09863-385e-4b83-b4c9-5fd74d49d621) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(global_label "PIR_IN" (shape input) (at 125.73 101.6 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 8ce95bc0-c13b-4fea-a0d9-3b6a703fb723) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(global_label "GND" (shape input) (at 125.73 109.22 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 103bdc54-0109-4f6a-9a33-975218c7e71a) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(global_label "+3V3" (shape input) (at 190.5 101.6 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid c923934e-74d3-4ecd-8519-93d2de91a821) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(label "PIR_TAMPER_CONTACT" (at 190.5 109.22 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid f3f6edf6-9b7f-4640-9597-c0fe7fcfe48d)) 
-
-(label "PIR_TAMPER_CONTACT" (at 212.09 110.49 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid 59966c71-ea17-473f-80da-dba766f97dd7)) 
-
-(global_label "PIR_TAMPER" (shape input) (at 219.71 110.49 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 0227d11b-14ea-4c3e-adf9-349f348ec896) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(global_label "PIR_TAMPER" (shape input) (at 240.03 116.84 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 07e8eb02-190c-44fe-9470-2315494779b7) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
-
-(global_label "GND" (shape input) (at 240.03 124.46 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 20cd1c37-ff9f-4def-8ad4-f50f843b28d6) 
-
-(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 21.6891 33.02 0) (effects (font (size 1.27 1.27)) (justify right) hide))))
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "2e5fc384-86cf-476a-81c3-86d6f49d48d8")
+	(paper "A4")
+	(title_block
+		(title "Bloque 4 - Sensores de puerta, PIR y gabinete")
+	)
+	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector_Generic:Conn_01x01"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x01"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x01_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector_Generic:Conn_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector_Generic:Conn_01x03"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x03"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x03_1_1"
+				(rectangle
+					(start -1.27 3.81)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector_Generic:Conn_01x04"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x04"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x04_1_1"
+				(rectangle
+					(start -1.27 3.81)
+					(end 1.27 -6.35)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:D_TVS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_TVS"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Bidirectional transient-voltage-suppression diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode TVS thyrector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "D_TVS_0_1"
+				(polyline
+					(pts
+						(xy -2.54 1.27) (xy -2.54 -1.27) (xy 2.54 1.27) (xy 2.54 -1.27) (xy -2.54 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 1.27) (xy 0 1.27) (xy 0 -1.27) (xy -0.508 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_TVS_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(wire
+		(pts
+			(xy 133.35 43.18) (xy 110.49 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d0a6bf7-bada-42bf-9c67-6fa6a88db6b8")
+	)
+	(wire
+		(pts
+			(xy 39.37 129.54) (xy 20.32 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0db7ee01-bdc3-413e-b683-3120fcc6fed1")
+	)
+	(wire
+		(pts
+			(xy 110.49 43.18) (xy 110.49 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ff79633-8ce1-4135-9e10-05588743d324")
+	)
+	(wire
+		(pts
+			(xy 135.89 49.53) (xy 133.35 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a8c5ea5-e49a-4458-9db5-27e16d811e5c")
+	)
+	(wire
+		(pts
+			(xy 133.35 123.19) (xy 170.18 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "898e3ce5-d514-485b-b446-8fbcf931919a")
+	)
+	(wire
+		(pts
+			(xy 170.18 123.19) (xy 170.18 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8ba11dcd-f306-4e8c-8d97-eb0f98971cfa")
+	)
+	(wire
+		(pts
+			(xy 39.37 127) (xy 20.32 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9901490e-82d9-4f78-ad86-96c5f2132088")
+	)
+	(wire
+		(pts
+			(xy 135.89 129.54) (xy 133.35 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a5241ea-40ea-4ee3-a15d-c227f1222a75")
+	)
+	(wire
+		(pts
+			(xy 133.35 129.54) (xy 133.35 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3103b71-57a6-404c-ad69-32c815e4c59a")
+	)
+	(wire
+		(pts
+			(xy 39.37 132.08) (xy 20.32 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b85bbf0e-d413-48b3-9c4f-2b683c9b884f")
+	)
+	(wire
+		(pts
+			(xy 39.37 52.07) (xy 20.32 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb22430e-57f1-4858-a482-7df9fbc7cc11")
+	)
+	(wire
+		(pts
+			(xy 133.35 49.53) (xy 133.35 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d225d2e7-04ab-4c07-93f7-52e72116d885")
+	)
+	(wire
+		(pts
+			(xy 39.37 49.53) (xy 20.32 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfd0d5b3-318e-4a66-a307-66fadb0e6d1d")
+	)
+	(label "PIR_CONTACT"
+		(at 135.89 90.17 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "49ff41cd-38d1-4dcd-b54e-2b5d23ed236f")
+	)
+	(label "PIR_TAMPER_CONTACT"
+		(at 212.09 110.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "59966c71-ea17-473f-80da-dba766f97dd7")
+	)
+	(label "PIR_CONTACT"
+		(at 80.01 92.71 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "da185b10-153d-45bf-8eb6-eae486ede369")
+	)
+	(label "PIR_CONTACT"
+		(at 39.37 95.25 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e7c4e649-54ea-41d2-81c5-423845557cc6")
+	)
+	(label "PIR_TAMPER_CONTACT"
+		(at 39.37 107.95 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ebbae464-6ec6-416f-b745-c2852915fd1a")
+	)
+	(label "PIR_CONTACT"
+		(at 101.6 95.25 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f17d37bc-d5ac-42ee-b08d-1e208bbe6df6")
+	)
+	(label "PIR_TAMPER_CONTACT"
+		(at 190.5 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f3f6edf6-9b7f-4640-9597-c0fe7fcfe48d")
+	)
+	(global_label "PIR_TAMPER"
+		(shape input)
+		(at 219.71 110.49 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0227d11b-14ea-4c3e-adf9-349f348ec896")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "PIR_IN"
+		(shape input)
+		(at 109.22 95.25 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "02d09863-385e-4b83-b4c9-5fd74d49d621")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "PIR_TAMPER"
+		(shape input)
+		(at 240.03 116.84 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "07e8eb02-190c-44fe-9470-2315494779b7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 39.37 90.17 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "08078b27-618b-4780-b3e7-a831c901d05b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "+3V3"
+		(shape input)
+		(at 20.32 127 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0d9ec1c0-12d3-449c-bd40-be59ca61b97a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 39.37 110.49 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0f5a049b-84d4-4ea2-bf91-a43cdbc65234")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 125.73 109.22 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "103bdc54-0109-4f6a-9a33-975218c7e71a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "PIR_TAMPER"
+		(shape bidirectional)
+		(at 234.95 121.92 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "13f35e9e-e6f6-4078-943d-78037466ce84")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 240.03 124.46 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "20cd1c37-ff9f-4def-8ad4-f50f843b28d6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "CABINET_SENSOR"
+		(shape input)
+		(at 20.32 132.08 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "22c62790-8439-48b5-b9ea-1fa4ee374d19")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 20.32 129.54 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "278191c4-d32a-4710-8fe8-79fb6dc2b053")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "DOOR_REED"
+		(shape input)
+		(at 110.49 45.72 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "29b45e90-ee2e-411e-bac9-dc353b1ee4e0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 143.51 90.17 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "37284568-3e73-47b4-a786-e623f8168c80")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 39.37 92.71 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "37f62dfa-ccde-463c-87c0-b383f2d3372b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "PIR_IN"
+		(shape bidirectional)
+		(at 120.65 106.68 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4c0c49ca-fb2d-4d58-8562-1b52bba8e5d0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 143.51 129.54 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5be66aa0-20b7-487b-9b33-961e7f4ad1d8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "PIR_IN"
+		(shape input)
+		(at 125.73 101.6 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8ce95bc0-c13b-4fea-a0d9-3b6a703fb723")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "CABINET_SENSOR"
+		(shape input)
+		(at 170.18 125.73 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "971f106d-5a85-402a-b9ed-12f53ed942d3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "+12V_AUX"
+		(shape input)
+		(at 39.37 87.63 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "98c14555-957f-41c8-8eb0-97712c5909e7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 20.32 52.07 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a652604e-0b13-46fe-ab51-78612da6ee2a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "+3V3"
+		(shape input)
+		(at 80.01 85.09 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "abe6a7b2-dca4-4680-9e42-1803b417be30")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "CABINET_SENSOR"
+		(shape input)
+		(at 95.25 133.35 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ac4624c5-3938-4daf-916d-25a0b8f2870c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "DOOR_REED"
+		(shape input)
+		(at 85.09 53.34 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ac8d056b-db2b-4c71-aea3-becdb5cdfb64")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "+3V3"
+		(shape input)
+		(at 95.25 125.73 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ad2d80f4-78ed-474d-a3be-9a53724e8197")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 143.51 49.53 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c67fe008-4378-493b-b5d0-ba0015e7e38a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "+3V3"
+		(shape input)
+		(at 190.5 101.6 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c923934e-74d3-4ecd-8519-93d2de91a821")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "DOOR_REED"
+		(shape input)
+		(at 20.32 49.53 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e093b449-dad4-4a0a-8bcb-06f413313729")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 170.18 133.35 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ed231d31-4741-4577-83a2-4d0f3a1e3357")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "+3V3"
+		(shape input)
+		(at 85.09 45.72 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f56c981c-63fd-4003-80c7-295f6157b106")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 110.49 53.34 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fb3adac2-0037-407c-9826-6538c19aecb4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 21.6891 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 44.45 107.95 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "02713ee5-5ad6-40b1-86e6-36f61e3d0ce2")
+		(property "Reference" "J10"
+			(at 46.99 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PIR_TAMPER"
+			(at 46.99 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "rfid_eest3:KF301_2P_P5.08_PLACEHOLDER_NO_FABRICAR"
+			(at 44.45 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 44.45 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PhysicalTerminals" "PENDIENTE_NUMERACION_BORNERA_LC100"
+			(at 46.99 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Terminal_Names" "1=T1; 2=T2"
+			(at 46.99 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "41941475-3836-4461-b13d-bf231261b3c5")
+		)
+		(pin "2"
+			(uuid "59f6129c-4d1f-48e4-bd61-43968b1058c4")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 170.18 129.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0909a83c-1b7d-442c-98b5-2e14be8a0425")
+		(property "Reference" "C8"
+			(at 172.72 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 172.72 130.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm"
+			(at 171.1452 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 170.18 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "be8de3a7-0ad5-4801-a85e-011e9867beda")
+		)
+		(pin "2"
+			(uuid "d6a419e9-53b2-4452-81ab-efc638417d86")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 190.5 105.41 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1684fca2-1a9f-463b-8282-e41126f31209")
+		(property "Reference" "R15"
+			(at 193.04 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 193.04 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 188.722 105.41 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 190.5 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 190.5 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a27ff0b5-4a7b-4a96-96b9-09f573f112a5")
+		)
+		(pin "2"
+			(uuid "0ab44d7f-f9c0-4a09-ae2b-683444e0090f")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 44.45 87.63 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1e947c19-06d4-4432-8807-09d6b5f09d6d")
+		(property "Reference" "J11"
+			(at 46.99 86.36 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PIR_PWR"
+			(at 46.99 88.9 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "rfid_eest3:KF301_2P_P5.08_PLACEHOLDER_NO_FABRICAR"
+			(at 44.45 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 44.45 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Terminal_Names" "1=+12V_AUX; 2=GND"
+			(at 46.99 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "PhysicalTerminals" "PENDIENTE_NUMERACION_BORNERA_LC100"
+			(at 46.99 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "8524d023-a6fa-4297-b2e9-1e44e78d3f13")
+		)
+		(pin "2"
+			(uuid "e5bc5bce-100a-48f2-b718-ede74421559c")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 85.09 49.53 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "24e11811-ebe7-4c62-b8e9-8fe9dcddc91a")
+		(property "Reference" "R1"
+			(at 87.63 48.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 87.63 50.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 83.312 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 85.09 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 85.09 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "67bb5463-f886-40ef-9795-8c2b65f0f298")
+		)
+		(pin "2"
+			(uuid "397e6a9f-97d4-4304-bad1-f21f1a8bdaf3")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_TVS")
+		(at 139.7 129.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "34fb1b45-e997-4364-8657-6626231c53b6")
+		(property "Reference" "D8"
+			(at 142.24 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD3V3L1BA_ESD_BIDIR_3V3"
+			(at 142.24 130.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-323"
+			(at 139.7 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESD3V3L1BA.pdf"
+			(at 139.7 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Bidirectional transient-voltage-suppression diode"
+			(at 139.7 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nexperia"
+			(at 142.24 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MPN" "PESD3V3L1BA,115"
+			(at 142.24 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "a8a3c042-28b1-403a-9a6a-cf27ff45f004")
+		)
+		(pin "2"
+			(uuid "c1f84692-ad45-4865-849b-4d47810b8f93")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "D8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 110.49 49.53 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "586d3597-0cf3-4d0d-b5d6-e2f60f2b7899")
+		(property "Reference" "C7"
+			(at 113.03 48.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 113.03 50.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm"
+			(at 111.4552 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 110.49 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 110.49 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7539b148-f98b-46ab-a8a2-c36bd500c1a0")
+		)
+		(pin "2"
+			(uuid "f2e35375-73bc-4b98-9819-906540cbda53")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x03")
+		(at 44.45 129.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6572629c-67e6-4ed0-9cf8-0fca0cd8131a")
+		(property "Reference" "J8"
+			(at 46.99 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CABINET_SENSOR"
+			(at 46.99 130.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "rfid_eest3:KF301_3P_P5.08_PLACEHOLDER_NO_FABRICAR"
+			(at 44.45 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 44.45 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "69a82774-bc4d-462b-8f0d-321ad02b19d8")
+		)
+		(pin "2"
+			(uuid "33050627-2dfd-4b96-b57e-c037ff5c5bf0")
+		)
+		(pin "3"
+			(uuid "6fc0ec67-27c5-4c98-8c11-bb5598fd3953")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 95.25 129.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "84ab7596-255b-40de-a8d5-5805eb88477d")
+		(property "Reference" "R2"
+			(at 97.79 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 97.79 130.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 93.472 129.54 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 95.25 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 95.25 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c40242e7-ac01-4b5e-8e00-440a13712621")
+		)
+		(pin "2"
+			(uuid "60affcbb-885f-4e29-a90f-dc63135af107")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 105.41 95.25 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a21800bd-cae5-4fce-8820-5228238520ba")
+		(property "Reference" "R14"
+			(at 106.68 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 104.14 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 105.41 93.472 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 105.41 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 105.41 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ebc99b35-e353-4ce6-a2d7-3ebf3fbf95f5")
+		)
+		(pin "2"
+			(uuid "d8dccaa5-97e1-415a-bd76-63077ab041da")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 80.01 88.9 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a48af4dc-1352-4c09-aedb-ddb28abe8299")
+		(property "Reference" "R13"
+			(at 82.55 87.63 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 82.55 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 78.232 88.9 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 80.01 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 80.01 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bb9ce695-d004-4b96-8a6f-55de12eb42a4")
+		)
+		(pin "2"
+			(uuid "0f3f11cf-deaf-4073-978f-18c0e38d2fa8")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 120.65 106.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a641f55b-261a-4395-ae60-52364e87c197")
+		(property "Reference" "TP13"
+			(at 123.19 105.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TP_PIR_IN"
+			(at 123.19 107.95 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
+			(at 125.73 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 125.73 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 120.65 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6d7de271-f50e-401f-95df-c27c0f127105")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "TP13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 125.73 105.41 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bf3c6e59-bcce-47d6-b39d-7404d41febcd")
+		(property "Reference" "C10"
+			(at 128.27 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 128.27 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm"
+			(at 126.6952 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 125.73 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 125.73 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e3f519ed-36ae-4eba-aaf7-d6bea739b5ca")
+		)
+		(pin "2"
+			(uuid "ee3e8a60-c3d3-42ac-be87-ba5dac967893")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "C10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 234.95 121.92 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c65b905b-caae-4643-be14-96f9ab80426b")
+		(property "Reference" "TP14"
+			(at 237.49 120.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TP_PIR_TAMPER"
+			(at 237.49 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
+			(at 240.03 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 240.03 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 234.95 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ed19667f-52e6-4826-91f1-690912f20ac2")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "TP14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 44.45 92.71 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "dc34c3cf-43dc-47ca-8a5a-7a2d3b0a6867")
+		(property "Reference" "J12"
+			(at 46.99 91.44 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PIR_ALARM"
+			(at 46.99 93.98 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "rfid_eest3:KF301_2P_P5.08_PLACEHOLDER_NO_FABRICAR"
+			(at 44.45 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 44.45 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Terminal_Names" "1=COM; 2=NC"
+			(at 46.99 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "PhysicalTerminals" "PENDIENTE_NUMERACION_BORNERA_LC100"
+			(at 46.99 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "d6dc82b5-1e4c-4fc2-9d29-0a532dd70e51")
+		)
+		(pin "2"
+			(uuid "9f0f827b-1cd8-4dfd-907c-7c3e6e01fea1")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "J12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_TVS")
+		(at 139.7 90.17 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "de45f228-7629-4fa1-a42c-1c43fa5d622a")
+		(property "Reference" "D7"
+			(at 142.24 88.9 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD3V3L1BA_ESD_BIDIR_3V3"
+			(at 142.24 91.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-323"
+			(at 139.7 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESD3V3L1BA.pdf"
+			(at 139.7 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Bidirectional transient-voltage-suppression diode"
+			(at 139.7 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nexperia"
+			(at 142.24 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MPN" "PESD3V3L1BA,115"
+			(at 142.24 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "ae52b64b-8093-41e3-b2a2-498eee25e113")
+		)
+		(pin "2"
+			(uuid "0cb8103b-4869-41dd-b55f-ff7fc9258e87")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "D7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 215.9 110.49 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e7828dba-ce50-45c6-a022-b703355147e3")
+		(property "Reference" "R16"
+			(at 217.17 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 214.63 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 215.9 108.712 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 215.9 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 215.9 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "95bee1dc-caef-4c0e-b3e8-9cd143331df2")
+		)
+		(pin "2"
+			(uuid "80188540-851b-4413-93c0-fb5392bdebe3")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_TVS")
+		(at 139.7 49.53 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f8431802-f7f4-4985-8d45-2eefcf9d8dc7")
+		(property "Reference" "D6"
+			(at 142.24 48.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PESD3V3L1BA_ESD_BIDIR_3V3"
+			(at 142.24 50.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-323"
+			(at 139.7 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESD3V3L1BA.pdf"
+			(at 139.7 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Bidirectional transient-voltage-suppression diode"
+			(at 139.7 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Nexperia"
+			(at 142.24 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MPN" "PESD3V3L1BA,115"
+			(at 142.24 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "c7de5adf-a7b1-46c9-8900-4b530f1a3f39")
+		)
+		(pin "2"
+			(uuid "bcc166fc-c007-4bb7-83d4-b68da4a5821c")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 240.03 120.65 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fc87f252-9719-4d5a-991f-17d1cb06394e")
+		(property "Reference" "C11"
+			(at 242.57 119.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 242.57 121.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm"
+			(at 240.9952 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 240.03 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 240.03 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6d865e1d-9d9f-4b8d-bfd2-a5daa287bec3")
+		)
+		(pin "2"
+			(uuid "1a692631-be17-4c88-be3f-0d6ed73d205d")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "C11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 44.45 49.53 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe52dd9c-eb3e-408e-9c29-c9859d77f9f4")
+		(property "Reference" "J6"
+			(at 46.99 48.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "REED_NC"
+			(at 46.99 50.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "rfid_eest3:KF301_2P_P5.08_PLACEHOLDER_NO_FABRICAR"
+			(at 44.45 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 44.45 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b25de4cd-e6c5-4887-927f-5149f18a7fad")
+		)
+		(pin "2"
+			(uuid "27d3f0a0-7672-416d-add0-07e66d1acd2d")
+		)
+		(instances
+			(project "rfid-control-acceso-eest3"
+				(path "/147ad2be-4757-4ce6-88dc-f796e8219a5e/2e5fc384-86cf-476a-81c3-86d6f49d48d8"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+)

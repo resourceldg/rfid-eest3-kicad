@@ -1,0 +1,22 @@
+# Backups automáticos de KiCad
+*.bak
+*-backups/
+
+# Archivos de bloqueo (proyecto abierto en la GUI)
+~*.lck
+*.kicad_prl
+
+# Snapshots propios: git ya cumple esta función
+.versions/
+.history/
+recovery_*/
+
+# Salidas regenerables
+report.txt
+*-drc-prelayout.rpt
+
+# Fabricación (no versionar hasta que haya una revisión congelada)
+gerbers/
+*.gbr
+*.drl
+*.zip

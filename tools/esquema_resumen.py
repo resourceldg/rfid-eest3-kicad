@@ -41,7 +41,7 @@ HOJA_UUID = "5eb7f9a0-0000-4000-8000-000000000001"
 # Encabezado y pie del recuadro. Cambiar aca si la hoja se entrega como
 # practica numerada o con otro titulo.
 TITULO = "CONTROL DE ACCESO RFID - E.E.S.T. N 3"
-EPIGRAFE = "ESQUEMA ELECTRICO UNIFICADO - 67 componentes, 34 redes"
+EPIGRAFE = "ESQUEMA ELECTRICO INTEGRADO - 67 componentes, 34 redes, todo cableado"
 
 REJILLA = 1.27
 
@@ -92,13 +92,58 @@ def cargar_simbolos():
     y otros que no (`default`, `left`, `none`, `yes`), y no hay forma de saber
     cual es cual desde el arbol parseado. Reserializar rompe el archivo.
     """
-    defs, crudo = {}, {}
+    defs, crudo = simbolos_alimentacion()
     for f in sorted(glob.glob(os.path.join(PROY, "0*.kicad_sch"))):
         txt = open(f).read()
         for s in find(get(parse(txt), 'lib_symbols'), 'symbol'):
             defs.setdefault(s[1], s)
         for lib_id, bloque in bloques_simbolo(txt):
             crudo.setdefault(lib_id, bloque)
+    return defs, crudo
+
+
+LIB_POTENCIA = "/usr/share/kicad/symbols/power.kicad_sym"
+
+# red -> forma de la que se deriva el simbolo. KiCad saca el nombre de la red
+# del campo Value del simbolo de alimentacion, asi que alcanza con clonar la
+# forma (triangulo de masa o flecha de riel) y renombrarla.
+ALIMENTACIONES = {
+    "GND": "GND", "GND_POWER": "GND",
+    "+3V3": "+12V", "+5V": "+12V", "+12V_IN": "+12V",
+    "+12V_LOCK": "+12V", "+12V_AUX": "+12V",
+}
+
+
+def simbolos_alimentacion():
+    """Deriva un simbolo de alimentacion por cada riel del proyecto."""
+    txt = open(LIB_POTENCIA).read()
+    formas = {}
+    for m in re.finditer(r'\n\t\(symbol "([^"]+)"\n', txt):
+        if m.group(1) not in ("GND", "+12V"):
+            continue
+        ini, prof, k = m.start() + 1, 0, m.start() + 1
+        while True:
+            if txt[k] == '(':
+                prof += 1
+            elif txt[k] == ')':
+                prof -= 1
+                if prof == 0:
+                    break
+            k += 1
+        formas[m.group(1)] = txt[ini:k + 1]
+    defs, crudo = {}, {}
+    for red, forma in ALIMENTACIONES.items():
+        base = formas[forma]
+        nuevo = base
+        for viejo in ('(symbol "%s"' % forma, '(symbol "%s_0_1"' % forma,
+                      '(symbol "%s_1_1"' % forma, '(property "Value" "%s"' % forma):
+            nuevo = nuevo.replace(viejo, viejo.replace(forma, red, 1))
+        # De aca saca KiCad el nombre de la red. La biblioteca de sistema lo
+        # deja vacio, y con el pin sin nombre los rieles se funden todos en uno.
+        nuevo = nuevo.replace('(name ""', '(name "%s"' % red, 1)
+        lib_id = "power:" + red
+        crudo[lib_id] = nuevo.replace('(symbol "%s"' % red, '(symbol "%s"' % lib_id, 1)
+        defs[lib_id] = parse(crudo[lib_id])
     return defs, crudo
 
 
@@ -170,6 +215,8 @@ class Hoja:
         self.etiquetas = []   # (nombre, x, y, rot, forma)
         self.textos = []      # (texto, x, y, tam, negrita)
         self.cajas = []       # (x1, y1, x2, y2)
+        self.potencia = []    # (ref, lib_id, x, y, red)
+        self.nombres = []     # (texto, x, y)
 
     def poner(self, ref, x, y, rot=0, mirror=''):
         lib = self.comps[ref]["lib_id"]
@@ -212,6 +259,53 @@ class Hoja:
         self.etiquetas.append((nombre, fin[0], fin[1], rot, forma))
         return fin
 
+    def alim(self, punto, red, largo=6.35, jog=0.0):
+        """Simbolo de alimentacion al final de un tramo corto.
+
+        La masa cuelga hacia abajo y los rieles hacia arriba, que es como se
+        leen. `jog` corre el simbolo en horizontal antes de bajar o subir: hace
+        falta cuando el pin sale de una hilera, porque un tramo vertical que
+        arranca en el medio de un conector le pasa por encima a los pines
+        vecinos y los pone en cortocircuito.
+        """
+        x, y = punto
+        abajo = red.startswith("GND")
+        codo = (round(x + jog, 4), y)
+        fin = (codo[0], round(y + largo, 4) if abajo else round(y - largo, 4))
+        self.cable(punto, codo)
+        self.cable(codo, fin)
+        ref = "#PWR%03d" % (len(self.potencia) + 1)
+        self.potencia.append((ref, "power:" + red, fin[0], fin[1], red))
+        return fin
+
+    def hilera(self, ref, asignacion, sentido=-1, base=5.08, paso=3.81, largo=1.27):
+        """Reparte simbolos de alimentacion sobre los pines de un conector.
+
+        La clave es que el tramo vertical sea mas corto que el paso entre
+        pines. Con 2,54 mm de paso, cualquier bajada de 8 mm sale del pin y
+        entra en la fila del vecino: son dos redes distintas tocandose. Con
+        1,27 mm el tramo muere antes de llegar y no hay forma de que se crucen,
+        aunque uno suba y el otro baje.
+
+        El tramo horizontal escalonado es solo para que los simbolos no se
+        amontonen unos encima de otros.
+        """
+        pines = sorted(asignacion, key=lambda p: self.p(ref, p)[1])
+        for i, pin in enumerate(pines):
+            self.alim(self.p(ref, pin), asignacion[pin], largo,
+                      jog=sentido * (base + paso * i))
+
+    def nombre(self, punto, red):
+        """Nombra una red que ya esta cableada.
+
+        No conecta nada: el cobre entre los dos pines ya existe. Es una
+        etiqueta local puesta encima del cable para que la red tenga el mismo
+        nombre que en el esquema de origen y se pueda seguir de un lado al
+        otro de la hoja. Sin esto KiCad la bautiza Net-(J13-Pin_9) y deja de
+        significar nada.
+        """
+        self.nombres.append((red, punto[0], punto[1]))
+
     def texto(self, s, x, y, tam=2.0, negrita=True):
         self.textos.append((s, x, y, tam, negrita))
 
@@ -228,11 +322,14 @@ class Hoja:
         puntos = [p for c in self.cables for p in c]
         puntos += [(e[1], e[2]) for e in self.etiquetas]
         puntos += [(t[1], t[2]) for t in self.textos]
+        puntos += [(l[1], l[2]) for l in self.nombres]
         puntos += list(self.pines.values())
         # el cuerpo de un simbolo sobresale de sus pines: si solo se miran los
         # pines, el marco termina cortando al conector del borde
         for x, y, _, _, _ in self.colocados.values():
             puntos += [(x - 5, y - 5), (x + 5, y + 5)]
+        for _, _, x, y, red in self.potencia:
+            puntos += [(x, y + 4.5)] if red.startswith("GND") else [(x, y - 4.5)]
         xs = [p[0] for p in puntos]; ys = [p[1] for p in puntos]
         x1, y1 = min(xs) - margen, min(ys) - margen
         x2, y2 = max(xs) + margen, max(ys) + margen
@@ -332,6 +429,13 @@ class Hoja:
             A('\t\t(uuid "%s")' % uid("t%s%s%s" % (s, x, y)))
             A('\t)')
 
+        for (red, x, y) in self.nombres:
+            A('\t(label "%s"' % esc(red))
+            A('\t\t(at %s %s 0)' % (n(x), n(y)))
+            A('\t\t(effects (font (size 1.27 1.27)) (justify left bottom))')
+            A('\t\t(uuid "%s")' % uid("lbl%s%s%s" % (red, x, y)))
+            A('\t)')
+
         for (nom, x, y, rot, forma) in self.etiquetas:
             just = 'left' if rot == 0 else ('right' if rot == 180 else 'left')
             A('\t(global_label "%s"' % esc(nom))
@@ -366,6 +470,28 @@ class Hoja:
             A(propiedad("Description", "", x, y, oculto=True))
             for num in sorted(pines_def(self.defs[lib])):
                 A('\t\t(pin "%s" (uuid "%s"))' % (num, uid("p%s%s" % (ref, num))))
+            A('\t\t(instances')
+            A('\t\t\t(project "RESUMEN_ELECTRICO"')
+            A('\t\t\t\t(path "/%s" (reference "%s") (unit 1))' % (HOJA_UUID, ref))
+            A('\t\t\t)')
+            A('\t\t)')
+            A('\t)')
+
+        for ref, lib, x, y, red in self.potencia:
+            A('\t(symbol')
+            A('\t\t(lib_id "%s")' % esc(lib))
+            A('\t\t(at %s %s 0)' % (n(x), n(y)))
+            A('\t\t(unit 1)')
+            A('\t\t(exclude_from_sim no)')
+            A('\t\t(in_bom yes)')
+            A('\t\t(on_board yes)')
+            A('\t\t(dnp no)')
+            A('\t\t(uuid "%s")' % uid("pwr" + ref))
+            A(propiedad("Reference", ref, x, y + 2.54, oculto=True))
+            A(propiedad("Value", red, x + 2.0, y + (3.2 if red.startswith("GND") else -1.2),
+                        tam=1.27))
+            A(propiedad("Footprint", "", x, y, oculto=True))
+            A('\t\t(pin "1" (uuid "%s"))' % uid("pwrpin" + ref))
             A('\t\t(instances')
             A('\t\t\t(project "RESUMEN_ELECTRICO"')
             A('\t\t\t\t(path "/%s" (reference "%s") (unit 1))' % (HOJA_UUID, ref))
@@ -445,240 +571,251 @@ def sexp_a_texto(nodo, nivel):
 
 # ---------------------------------------------------------------- el dibujo
 
+# Senales que salen del ESP32, en el orden en que aparecen sus pines. Cada una
+# se lleva un canal vertical propio: es un mazo, no un manojo de etiquetas.
+SENALES = [
+    (5, "ESP_EN"), (7, "DOOR_REED"), (9, "PIR_IN"), (11, "CABINET_SENSOR"),
+    (13, "PIR_TAMPER"), (15, "LED_OK"), (17, "LED_ERROR"), (19, "BUZZER"),
+    (21, "LOCK_GATE"), (29, "RFID_RST"), (31, "RFID_SS"), (33, "RFID_MOSI"),
+    (35, "RFID_SCK"), (37, "RFID_MISO"),
+]
+
+
 def armar(h):
-    """Tres columnas: los bloques de potencia a la izquierda, el ESP32 en el
-    medio como nodo central, y los perifericos a la derecha. Todo lo que cruza
-    de una columna a otra va por etiqueta global, igual que en el diseño real."""
+    """Una sola hoja con todo cableado punta a punta.
 
-    # ===================================== BLOQUE 2 - CONTROLADOR (columna central)
-    h.rotulo("2 - CONTROLADOR ESP32-S3", 241, 31.5)
-    h.poner("J13", 285, 200)
-    izq = {5: "ESP_EN", 7: "DOOR_REED", 9: "PIR_IN", 11: "CABINET_SENSOR",
-           13: "PIR_TAMPER", 15: "LED_OK", 17: "LED_ERROR", 19: "BUZZER",
-           21: "LOCK_GATE", 29: "RFID_RST", 31: "RFID_SS", 33: "RFID_MOSI",
-           35: "RFID_SCK", 37: "RFID_MISO"}
-    for pin, red in izq.items():
-        h.etiqueta(h.p("J13", pin), red, 'izq', 11.43)
-    for pin in (1, 3):
-        h.etiqueta(h.p("J13", pin), "+3V3", 'izq', 11.43)
-    h.etiqueta(h.p("J13", 41), "+5V", 'izq', 11.43)
-    h.etiqueta(h.p("J13", 43), "GND", 'izq', 11.43)
-    for pin in (2, 42, 44):
-        h.etiqueta(h.p("J13", pin), "GND", 'der', 11.43)
+    El ESP32 va a la izquierda, girado para que su hilera impar mire hacia
+    afuera, y de ahi sale un mazo de catorce canales verticales que reparte
+    cada señal a su bloque. No hay una sola etiqueta de señal: si dos pines
+    estan conectados, hay cobre dibujado entre ellos. Lo unico que se resuelve
+    con simbolo son los rieles de alimentacion, porque una masa de treinta
+    nodos cableada a mano no se lee.
+    """
+    h.poner("J13", 52, 174, 0, 'y')
+    canal = {}
+    for i, (pin, red) in enumerate(SENALES):
+        canal[red] = 66 + 2.54 * i
 
-    h.poner("C5", 258, 300); h.poner("R17", 288, 300); h.poner("TP4", 316, 296, 180)
-    for ref in ("C5", "R17"):
-        h.etiqueta(h.p(ref, 1), "+3V3", 'arr', 8.89)
-    h.etiqueta(h.p("C5", 2), "GND", 'aba', 8.89)
-    h.etiqueta(h.p("R17", 2), "ESP_EN", 'aba', 8.89)
-    h.etiqueta(h.p("TP4", 1), "+3V3", 'aba', 8.89)
-    h.texto("El modulo genera +3V3 y lo entrega por los pines 1 y 3.", 243, 330, 1.7, False)
-    h.texto("Se alimenta con +5V por el pin 41.", 243, 335, 1.7, False)
-    h.texto("C5 desacopla, R17 mantiene EN arriba.", 243, 340, 1.7, False)
+    def sale(red, destino, pin=None):
+        """Lleva una señal desde su pin de J13 hasta donde haga falta."""
+        pin = pin or dict((r, p) for p, r in SENALES)[red]
+        origen = h.p("J13", pin)
+        cx = canal[red]
+        h.cable(origen, (cx, origen[1]), (cx, destino[1]), destino)
+        h.nombre((origen[0] + 1.5, origen[1]), red)
 
-    # ===================================== BLOQUE 1 - ALIMENTACION
-    h.rotulo("1 - ALIMENTACION Y PROTECCION", 17, 31.5)
-    h.poner("J1", 32, 52, 0, 'y')
-    h.poner("D1", 60, 52, 180)
-    h.poner("F1", 86, 52, 90)
-    h.poner("TP1", 44, 38, 180)
-    h.poner("TP2", 102, 40, 180)
+    # ---------------------------------------------------- rieles del ESP32
+    h.hilera("J13", {1: "+3V3", 3: "+3V3", 43: "GND"}, sentido=+1)
+    h.hilera("J13", {2: "GND", 42: "GND", 44: "GND"}, sentido=-1)
+    # el +5V no puede subir: se llevaria por delante las señales de arriba
+    p41 = h.p("J13", 41)
+    h.cable(p41, (72, p41[1]), (72, 214), (116, 214))
+    h.alim((116, 214), "+5V", 8.89)
+    h.rotulo("2 - CONTROLADOR ESP32-S3", 30, 140)
+
+    # ---------------------------------------------------- soporte del ESP32
+    h.poner("R17", 140, 118, 270)
+    h.poner("C5", 165, 118)
+    h.poner("TP4", 190, 110, 180)
+    sale("ESP_EN", h.p("R17", 2))
+    h.alim(h.p("R17", 1), "+3V3", 8.89)
+    h.alim(h.p("C5", 1), "+3V3", 8.89)
+    h.alim(h.p("C5", 2), "GND", 8.89)
+    h.cable(h.p("TP4", 1), (190, 118))
+    h.alim((190, 118), "+3V3", 8.89)
+    h.cable((165, 114.19), (190, 114.19))
+    h.texto("El modulo genera +3V3 y lo entrega por los pines 1 y 3.", 116, 132, 1.6, False)
+    h.texto("Se alimenta con +5V por el pin 41. R17 sostiene EN.", 116, 136, 1.6, False)
+
+    # ---------------------------------------------------- 1 ALIMENTACION
+    h.rotulo("1 - ALIMENTACION Y PROTECCION", 24, 38)
+    h.poner("J1", 34, 52, 0, 'y')
+    h.poner("D1", 62, 52, 180)
+    h.poner("F1", 90, 52, 90)
+    h.poner("TP1", 48, 44, 180)
+    h.poner("TP2", 108, 44, 180)
     h.cable(h.p("J1", 1), h.p("D1", 2))
     h.cable(h.p("D1", 1), h.p("F1", 1))
-    h.cable(h.p("TP1", 1), (44, 52))
-    h.etiqueta((52, 52), "+12V_IN", 'arr', 8.89)
-    h.cable(h.p("TP2", 1), (102, 52))
-    h.cable(h.p("F1", 2), (200, 52))
-    h.etiqueta((200, 52), "+12V_LOCK", 'der', 10.16)
+    h.cable(h.p("TP1", 1), (48, 52))
+    h.cable(h.p("TP2", 1), (108, 52))
+    h.alim((44, 52), "+12V_IN", 8.89)
+    h.cable(h.p("F1", 2), (300, 52))
+    h.poner("NT1", 250, 96)
+    h.cable(h.p("J1", 2), (39.08, 96), h.p("NT1", 1))
+    h.alim((300, 52), "+12V_LOCK", 8.89)
+    h.alim((120, 96), "GND_POWER", 8.89)
 
-    for ref, x in (("C1", 122), ("C2", 144), ("D5", 166)):
-        h.poner(ref, x, 82, 270 if ref == "D5" else 0)
+    for ref, x in (("C1", 140), ("C2", 165), ("D5", 190)):
+        h.poner(ref, x, 74, 270 if ref == "D5" else 0)
         h.cable(h.p(ref, 1), (x, 52))
-        h.cable(h.p(ref, 2), (x, 112))
+        h.cable(h.p(ref, 2), (x, 96))
 
-    h.poner("F2", 176, 70, 90)
-    h.cable((156, 52), (156, 70), h.p("F2", 1))
-    h.etiqueta(h.p("F2", 2), "+12V_AUX", 'der', 8.89)
+    h.poner("F2", 230, 70, 90)
+    h.cable((215, 52), (215, 70), h.p("F2", 1))
+    h.alim(h.p("F2", 2), "+12V_AUX", 8.89)
 
-    # El riel de masa de potencia MUERE en el pin 1 de NT1. Si lo atravesara,
-    # las dos masas quedarian unidas por cobre en todo su recorrido y el net-tie
-    # no significaria nada: es justo lo que este diseño evita.
-    h.poner("NT1", 176, 112)
-    h.cable(h.p("J1", 2), (37.08, 112), h.p("NT1", 1))
-    h.etiqueta((104, 112), "GND_POWER", 'aba', 10.16)
-    h.cable(h.p("NT1", 2), (196, 112))
-    h.etiqueta((196, 112), "GND", 'der', 10.16)
-    h.poner("TP6", 158, 124, 180)
-    h.cable(h.p("TP6", 1), (158, 112))
-    h.texto("NT1 es el unico puente entre la masa de potencia y la de la logica.", 62, 64, 1.6, False)
-    h.texto("En la placa esta pegado a J1, a proposito.", 62, 69, 1.6, False)
+    h.poner("TP6", 220, 106, 180)
+    h.poner("TP5", 285, 106, 180)
+    h.cable(h.p("TP6", 1), (220, 96))
+    h.cable(h.p("NT1", 2), (285, 96))
+    h.cable(h.p("TP5", 1), (285, 96))
+    h.alim((285, 96), "GND", 8.89)
+    h.texto("NT1 es el unico puente entre la masa de potencia y la de la logica.", 236, 112, 1.6, False)
+    h.texto("En la placa esta pegado a J1, a proposito.", 236, 116, 1.6, False)
 
-    h.poner("J2", 34, 132, 0, 'y')
-    h.poner("TP3", 84, 122, 180)
-    h.cable(h.p("J2", 3), (96, 134.54))
-    h.cable(h.p("TP3", 1), (84, 134.54))
-    h.etiqueta((96, 134.54), "+5V", 'der', 8.89)
-    h.etiqueta(h.p("J2", 1), "+12V_LOCK", 'der', 26.67)
-    h.etiqueta(h.p("J2", 2), "GND", 'der', 26.67)
-    h.etiqueta(h.p("J2", 4), "GND", 'der', 26.67)
-    h.texto("modulo buck 12 V -> 5 V", 20, 116, 1.6, False)
-    for ref, x in (("C3", 120, ), ("C4", 140, )):
-        h.poner(ref, x, 134)
-        h.etiqueta(h.p(ref, 1), "+5V", 'arr', 8.89)
-        h.etiqueta(h.p(ref, 2), "GND", 'aba', 8.89)
-    h.poner("TP5", 210, 124, 180)
-    h.cable(h.p("TP5", 1), (210, 112), (196, 112))
+    h.poner("J2", 350, 62)
+    h.poner("TP3", 400, 46, 180)
+    h.cable((300, 52), (330, 52), (330, 59.46), h.p("J2", 1))
+    h.hilera("J2", {2: "GND", 4: "GND"})
+    h.cable(h.p("J2", 3), (400, 64.54), (400, 54))
+    h.cable(h.p("TP3", 1), (400, 54))
+    h.alim((400, 54), "+5V", 8.89)
+    h.texto("modulo buck 12 V -> 5 V", 330, 44, 1.6, False)
+    for ref, x in (("C3", 425), ("C4", 450)):
+        h.poner(ref, x, 70)
+        h.cable(h.p(ref, 1), (x, 54))
+        h.alim(h.p(ref, 2), "GND", 8.89)
+    h.cable((400, 54), (450, 54))
 
-    # ===================================== BLOQUE 6 - CERRADURA
-    h.rotulo("6 - CERRADURA / SOLENOIDE 12 V", 17, 159.5)
-    h.poner("J9", 206, 188)
-    h.poner("D4", 176, 189, 270)
-    h.poner("Q2", 110, 205.08)
-    h.poner("R7", 74, 205.08, 90)
-    h.poner("R8", 92, 224)
-    h.poner("TP7", 56, 195, 180)
-    h.poner("TP8", 150, 190, 180)
+    # ---------------------------------------------------- 4 SENSORES
+    h.rotulo("4 - SENSORES", 288, 140)
+    filas = [
+        ("DOOR_REED", 160, "J6", 1, "R1", "C7", "D6", "reed de puerta (NC)"),
+        ("CABINET_SENSOR", 192, "J8", 3, "R2", "C8", "D8", "tamper del gabinete"),
+    ]
+    for red, y, conn, spin, rpu, cf, tvs, nota in filas:
+        sale(red, (240, y))
+        h.poner(rpu, 240, y - 18)
+        h.cable(h.p(rpu, 2), (240, y))
+        h.alim(h.p(rpu, 1), "+3V3", 8.89)
+        h.poner(cf, 275, y + 14)
+        h.cable((240, y), (275, y), h.p(cf, 1))
+        h.alim(h.p(cf, 2), "GND", 8.89)
+        h.poner(tvs, 310, y + 14, 270)
+        h.cable((275, y), (310, y), h.p(tvs, 1))
+        h.alim(h.p(tvs, 2), "GND", 8.89)
+        desfase = 2.54 if conn == "J8" else 0
+        h.poner(conn, 380, y - desfase)
+        h.cable((310, y), h.p(conn, spin))
+        h.texto(nota, 350, y - 14, 1.6, False)
+        h.hilera(conn, {1: "+3V3", 2: "GND"} if conn == "J8" else {2: "GND"})
 
-    # +12V_LOCK entra por arriba al pin 1 de J9, con el catodo de D4 colgado
-    h.cable((124, 178), (200.92, 178), h.p("J9", 1))
-    h.cable(h.p("D4", 1), (176, 178))
-    h.etiqueta((124, 178), "+12V_LOCK", 'izq', 10.16)
+    # PIR: contacto de alarma
+    sale("PIR_IN", (240, 224))
+    h.poner("C10", 250, 238); h.poner("R14", 285, 224, 270)
+    h.poner("R13", 320, 206); h.poner("D7", 350, 238, 270); h.poner("J12", 400, 221.46)
+    h.cable((240, 224), h.p("R14", 2))
+    h.cable((250, 224), h.p("C10", 1))
+    h.poner("TP13", 265, 212, 180)
+    h.cable(h.p("TP13", 1), (265, 224))
+    h.alim(h.p("C10", 2), "GND", 8.89)
+    h.cable(h.p("R14", 1), (320, 224))
+    h.cable(h.p("R13", 2), (320, 224))
+    h.alim(h.p("R13", 1), "+3V3", 8.89)
+    h.cable((320, 224), (350, 224), h.p("D7", 1))
+    h.nombre((332, 224), "PIR_CONTACT")
+    h.alim(h.p("D7", 2), "GND", 8.89)
+    h.cable((350, 224), h.p("J12", 2))
+    h.hilera("J12", {1: "GND"})
+    h.texto("contacto de alarma del PIR", 370, 210, 1.6, False)
 
-    # LOCK_OUT: drain de Q2, anodo de D4 y pin 2 de J9 son el mismo nodo
-    h.cable(h.p("Q2", 3), (200.92, 200), h.p("J9", 2))
-    h.cable(h.p("D4", 2), (176, 200))
-    h.cable(h.p("TP8", 1), (150, 200))
-    h.etiqueta((166, 200), "LOCK_OUT", 'aba', 8.89)
+    # PIR: contacto de tamper
+    sale("PIR_TAMPER", (240, 258))
+    h.poner("C11", 250, 272); h.poner("R16", 285, 258, 270)
+    h.poner("R15", 320, 240); h.poner("J10", 400, 258)
+    h.cable((240, 258), h.p("R16", 2))
+    h.cable((250, 258), h.p("C11", 1))
+    h.poner("TP14", 265, 246, 180)
+    h.cable(h.p("TP14", 1), (265, 258))
+    h.alim(h.p("C11", 2), "GND", 8.89)
+    h.cable(h.p("R16", 1), (320, 258))
+    h.cable(h.p("R15", 2), (320, 258))
+    h.alim(h.p("R15", 1), "+3V3", 8.89)
+    h.cable((320, 258), h.p("J10", 1))
+    h.nombre((332, 258), "PIR_TAMPER_CONTACT")
+    h.hilera("J10", {2: "GND"})
+    h.texto("contacto de tamper del PIR", 370, 244, 1.6, False)
 
-    h.cable(h.p("R7", 2), h.p("Q2", 1))
-    h.cable((92, 205.08), h.p("R8", 1))
-    h.cable(h.p("TP7", 1), (56, 205.08), h.p("R7", 1))
-    h.etiqueta(h.p("R7", 1), "LOCK_GATE", 'izq', 10.16)
-    h.etiqueta(h.p("R8", 2), "GND_POWER", 'aba', 10.16)
-    h.etiqueta(h.p("Q2", 2), "GND_POWER", 'aba', 11.43)
-    h.texto("D4 va pegado a J9: cuando Q2 corta, la corriente de la bobina", 20, 240, 1.6, False)
-    h.texto("sigue circulando y se va por el diodo. Ese lazo tiene que", 20, 245, 1.6, False)
-    h.texto("encerrar la menor superficie posible.", 20, 250, 1.6, False)
-    h.texto("R8 mantiene la compuerta abajo mientras el ESP32 arranca.", 20, 258, 1.6, False)
+    h.poner("J11", 470, 160)
+    h.hilera("J11", {1: "+12V_AUX", 2: "GND"})
+    h.texto("alimentacion del PIR", 440, 146, 1.6, False)
 
-    # ===================================== BLOQUE 5 - SENALIZACION
-    h.rotulo("5 - SEÑALIZACION", 17, 271.5)
-    for ref, led, y, red in (("R3", "D2", 288, "LED_OK"), ("R4", "D3", 308, "LED_ERROR")):
-        h.poner(ref, 74, y, 90)
-        h.poner(led, 106, y, 180)
+
+
+    # ---------------------------------------------------- 3 LECTOR RFID
+    h.rotulo("3 - LECTOR RFID RC522 (solo 3,3 V)", 116, 282)
+    h.poner("J5", 470, 300)
+    serie = (("RFID_SS", "R9", 1, 250), ("RFID_SCK", "R10", 2, 290),
+             ("RFID_MOSI", "R11", 3, 330), ("RFID_RST", "R12", 7, 250))
+    for red, ref, jpin, x in serie:
+        y = h.p("J5", jpin)[1]
+        h.poner(ref, x, y, 90)
+        sale(red, h.p(ref, 1))
+        h.cable(h.p(ref, 2), h.p("J5", jpin))
+    sale("RFID_MISO", h.p("J5", 4))
+    h.hilera("J5", {6: "GND", 8: "+3V3"}, sentido=+1, base=8.89)
+    h.poner("C6", 380, 316); h.poner("C9", 405, 316)
+    for ref in ("C6", "C9"):
+        h.alim(h.p(ref, 1), "+3V3", 8.89)
+        h.alim(h.p(ref, 2), "GND", 8.89)
+    h.texto("33 R en serie: amortiguan el flanco a lo largo de 20-40 cm de cable.", 116, 288, 1.6, False)
+    h.texto("El RC522 se alimenta solo con 3,3 V. Nunca con 5 V.", 116, 292, 1.6, False)
+
+    for tp, ref, x in (("TP12", "R9", 235), ("TP9", "R10", 275), ("TP10", "R11", 315)):
+        y = h.p(ref, 1)[1]
+        h.poner(tp, x, y - 12, 180)
+        h.cable(h.p(tp, 1), (x, y), h.p(ref, 1))
+    y11 = h.p("J5", 4)[1]
+    h.poner("TP11", 430, y11 - 12, 180)
+    h.cable(h.p("TP11", 1), (430, y11))
+
+    # ---------------------------------------------------- 5 SENALIZACION
+    h.rotulo("5 - SEÑALIZACION", 116, 332)
+    for ref, led, y, red in (("R3", "D2", 342, "LED_OK"), ("R4", "D3", 360, "LED_ERROR")):
+        h.poner(ref, 150, y, 90)
+        h.poner(led, 195, y, 180)
+        sale(red, h.p(ref, 1))
         h.cable(h.p(ref, 2), h.p(led, 2))
-        h.etiqueta(h.p(ref, 1), red, 'izq', 10.16)
-        h.etiqueta(h.p(led, 1), "GND", 'der', 12.7)
+        h.alim(h.p(led, 1), "GND", 12.7)
 
-    h.poner("R5", 74, 336, 90)
-    h.poner("Q1", 110, 336)
-    h.poner("R6", 92, 349)
-    h.poner("BZ1", 168, 328.38)
-    h.poner("D9", 200, 327.11, 270)
+    h.poner("R5", 150, 380, 90)
+    h.poner("Q1", 190, 380)
+    h.poner("R6", 170, 394)
+    h.poner("BZ1", 250, 372.46)
+    h.poner("D9", 290, 371.19, 270)
+    sale("BUZZER", h.p("R5", 1))
     h.cable(h.p("R5", 2), h.p("Q1", 1))
-    h.cable((92, 336), h.p("R6", 1))
-    h.etiqueta(h.p("R5", 1), "BUZZER", 'izq', 10.16)
-    h.etiqueta(h.p("R6", 2), "GND", 'aba', 6.35)
-    h.etiqueta(h.p("Q1", 2), "GND", 'aba', 8.89)
-    # D9 queda en paralelo con el buzzer, que tambien es una bobina
+    h.cable((170, 380), h.p("R6", 1))
+    h.alim(h.p("R6", 2), "GND", 6.35)
+    h.alim(h.p("Q1", 2), "GND", 8.89)
     h.cable(h.p("Q1", 3), h.p("BZ1", 2))
     h.cable(h.p("BZ1", 2), h.p("D9", 2))
-    h.cable(h.p("BZ1", 1), (165.46, 318), (200, 318), h.p("D9", 1))
-    h.etiqueta((182, 318), "+5V", 'arr', 8.89)
-    h.texto("D9 absorbe el pico del buzzer al cortar.", 20, 358, 1.6, False)
+    h.cable(h.p("BZ1", 1), (247.46, 362), (290, 362), h.p("D9", 1))
+    h.alim((268, 362), "+5V", 8.89)
 
-    # ===================================== BLOQUE 3 - RFID
-    h.rotulo("3 - LECTOR RFID RC522 (solo 3,3 V)", 345, 31.5)
-    h.poner("J5", 540, 70)
-    for ref, pin, red, jog, y in (("R9", 1, "RFID_SS", 476, 38),
-                                  ("R10", 2, "RFID_SCK", 490, 50),
-                                  ("R11", 3, "RFID_MOSI", 504, 62),
-                                  ("R12", 7, "RFID_RST", 518, 74)):
-        h.poner(ref, 452, y, 90)
-        destino = h.p("J5", pin)
-        h.cable(h.p(ref, 2), (jog, y), (jog, destino[1]), destino)
-        h.etiqueta(h.p(ref, 1), red, 'izq', 10.16)
-    h.etiqueta(h.p("J5", 4), "RFID_MISO", 'izq', 8.89)
-    h.etiqueta(h.p("J5", 6), "GND", 'izq', 8.89)
-    h.etiqueta(h.p("J5", 8), "+3V3", 'izq', 8.89)
-    h.texto("33 R en serie: amortiguan el flanco a lo largo de 20-40 cm de cable.", 348, 100, 1.7, False)
-    h.texto("El RC522 se alimenta solo con 3,3 V. Nunca con 5 V.", 348, 105, 1.7, False)
-
-    h.poner("C6", 360, 124); h.poner("C9", 382, 124)
-    for ref in ("C6", "C9"):
-        h.etiqueta(h.p(ref, 1), "+3V3", 'arr', 8.89)
-        h.etiqueta(h.p(ref, 2), "GND", 'aba', 8.89)
-    for tp, red, x in (("TP9", "RFID_SCK", 432), ("TP10", "RFID_MOSI", 468),
-                       ("TP11", "RFID_MISO", 504), ("TP12", "RFID_SS", 540)):
-        h.poner(tp, x, 142, 180)
-        h.etiqueta(h.p(tp, 1), red, 'arr', 8.89)
-
-    # ===================================== BLOQUE 4 - SENSORES
-    h.rotulo("4 - SENSORES", 345, 167.5)
-    for conn, spin, y, red, rpu, cf, tvs, nota, otros in (
-            ("J6", 1, 192, "DOOR_REED", "R1", "C7", "D6", "reed de puerta (NC)",
-             {2: "GND"}),
-            ("J8", 3, 232, "CABINET_SENSOR", "R2", "C8", "D8", "tamper del gabinete",
-             {1: "+3V3", 2: "GND"})):
-        h.poner(conn, 354, y, 0, 'y')
-        nodo = h.p(conn, spin)
-        h.cable(nodo, (492, nodo[1]))
-        h.poner(rpu, 414, nodo[1] - 18)
-        h.cable(h.p(rpu, 2), (414, nodo[1]))
-        h.etiqueta(h.p(rpu, 1), "+3V3", 'arr', 8.89)
-        h.poner(cf, 444, nodo[1] + 12)
-        h.cable((444, nodo[1]), h.p(cf, 1))
-        h.etiqueta(h.p(cf, 2), "GND", 'aba', 8.89)
-        h.poner(tvs, 470, nodo[1] + 12, 270)
-        h.cable((470, nodo[1]), h.p(tvs, 1))
-        h.etiqueta(h.p(tvs, 2), "GND", 'aba', 8.89)
-        h.etiqueta((492, nodo[1]), red, 'der', 20.32)
-        h.texto(nota, 348, y - 14, 1.6, False)
-        for pin, r in otros.items():
-            h.etiqueta(h.p(conn, pin), r, 'der', 8.89)
-
-    h.poner("J11", 354, 268, 0, 'y')
-    h.etiqueta(h.p("J11", 1), "+12V_AUX", 'der', 22.86)
-    h.etiqueta(h.p("J11", 2), "GND", 'der', 22.86)
-    h.texto("alimentacion del PIR (12 V por F2)", 348, 258, 1.6, False)
-
-    h.poner("J12", 354, 298, 0, 'y')
-    h.etiqueta(h.p("J12", 1), "GND", 'der', 8.89)
-    h.poner("R13", 414, 282); h.poner("R14", 436, 300.54, 90)
-    h.poner("C10", 470, 312); h.poner("D7", 386, 314, 270)
-    nodo = h.p("J12", 2)
-    h.cable(nodo, h.p("R14", 1))
-    h.cable(h.p("R13", 2), (414, nodo[1]))
-    h.etiqueta(h.p("R13", 1), "+3V3", 'arr', 8.89)
-    # El TVS cuelga del contacto crudo, no de la salida del filtro: lo que hay
-    # que sujetar es lo que entra por el cable, antes de la resistencia serie.
-    h.cable((386, nodo[1]), h.p("D7", 1))
-    h.etiqueta(h.p("D7", 2), "GND", 'aba', 8.89)
-    h.etiqueta((400, nodo[1]), "PIR_CONTACT", 'aba', 8.89)
-    h.cable(h.p("R14", 2), (516, 300.54))
-    h.cable((470, 300.54), h.p("C10", 1))
-    h.etiqueta(h.p("C10", 2), "GND", 'aba', 8.89)
-    h.etiqueta((516, 300.54), "PIR_IN", 'der', 8.89)
-    h.texto("contacto de alarma del PIR", 348, 288, 1.6, False)
-
-    h.poner("J10", 354, 340, 0, 'y')
-    h.etiqueta(h.p("J10", 2), "GND", 'der', 8.89)
-    h.poner("R15", 414, 322); h.poner("R16", 436, 340, 90)
-    h.poner("C11", 470, 346)
-    nodo = h.p("J10", 1)
-    h.cable(nodo, h.p("R16", 1))
-    h.etiqueta((396, nodo[1]), "PIR_TAMPER_CONTACT", 'aba', 8.89)
-    h.cable(h.p("R15", 2), (414, nodo[1]))
-    h.etiqueta(h.p("R15", 1), "+3V3", 'arr', 8.89)
-    h.cable(h.p("R16", 2), (516, 340))
-    h.cable((470, 340), h.p("C11", 1))
-    h.etiqueta(h.p("C11", 2), "GND", 'aba', 8.89)
-    h.etiqueta((516, 340), "PIR_TAMPER", 'der', 8.89)
-    h.texto("contacto de tamper del PIR", 348, 330, 1.6, False)
-
-    h.poner("TP13", 534, 210, 180); h.poner("TP14", 560, 210, 180)
-    h.etiqueta(h.p("TP13", 1), "PIR_IN", 'arr', 8.89)
-    h.etiqueta(h.p("TP14", 1), "PIR_TAMPER", 'arr', 8.89)
+    # ---------------------------------------------------- 6 CERRADURA
+    h.rotulo("6 - CERRADURA / SOLENOIDE 12 V", 400, 312)
+    h.poner("R7", 430, 347, 90)
+    h.poner("Q2", 465, 347)
+    h.poner("R8", 450, 362)
+    h.poner("D4", 520, 338.11, 270)
+    h.poner("J9", 560, 339.38)
+    h.poner("TP7", 415, 335, 180)
+    h.poner("TP8", 540, 352, 180)
+    sale("LOCK_GATE", h.p("R7", 1))
+    h.cable(h.p("TP7", 1), (415, 347), h.p("R7", 1))
+    h.cable(h.p("R7", 2), h.p("Q2", 1))
+    h.cable((450, 347), h.p("R8", 1))
+    h.alim(h.p("R8", 2), "GND_POWER", 6.35)
+    h.alim(h.p("Q2", 2), "GND_POWER", 8.89)
+    h.cable(h.p("Q2", 3), (520, 341.92), h.p("J9", 2))
+    h.cable(h.p("D4", 2), (520, 341.92))
+    h.nombre((500, 341.92), "LOCK_OUT")
+    h.cable(h.p("TP8", 1), (540, 341.92))
+    h.cable(h.p("D4", 1), (520, 329), (554.92, 329), h.p("J9", 1))
+    h.alim((537, 329), "+12V_LOCK", 8.89)
+    h.texto("D4 pegado a J9: el lazo de recirculacion tiene que ser chico.", 228, 386, 1.6, False)
+    h.texto("R8 mantiene la compuerta abajo mientras el ESP32 arranca.", 228, 390, 1.6, False)
 
     h.marco(TITULO, EPIGRAFE)
 
@@ -693,7 +830,10 @@ def redes_de(ruta):
     os.unlink(salida)
     out = {}
     for nred in find(get(d, 'nets'), 'net'):
-        nodos = frozenset((get(x, 'ref')[1], get(x, 'pin')[1]) for x in find(nred, 'node'))
+        # los simbolos de alimentacion agregan nodos #PWRxxx que en el esquema
+        # original no existen, porque alla los rieles van por etiqueta global
+        nodos = frozenset((get(x, 'ref')[1], get(x, 'pin')[1]) for x in find(nred, 'node')
+                          if not get(x, 'ref')[1].startswith('#'))
         if len(nodos) > 1:
             out[nodos] = get(nred, 'name')[1].split('/')[-1]
     return out
@@ -732,7 +872,7 @@ def main():
     h = Hoja(defs, comps)
     armar(h)
     h.resolver()
-    usadas = {v[4] for v in h.colocados.values()}
+    usadas = {v[4] for v in h.colocados.values()} | {p[1] for p in h.potencia}
     open(SALIDA, "w").write(h.render(usadas, crudo))
 
     faltan = sorted(set(comps) - set(h.colocados))

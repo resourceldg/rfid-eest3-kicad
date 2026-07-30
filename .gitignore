@@ -35,5 +35,9 @@ DRC.rpt
 *-drc*.rpt
 *-erc.rpt
 
+# Cache de Python de tools/
+__pycache__/
+*.pyc
+
 # Ajustes locales del agente
 .claude/

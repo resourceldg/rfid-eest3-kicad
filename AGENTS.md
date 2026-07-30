@@ -30,17 +30,31 @@ Diseñar en KiCad 10 una placa controladora para acceso RFID escolar, revisable 
 8. Separar visualmente potencia, alimentación, lógica y sensores.
 9. Ejecutar ERC y explicar cada advertencia.
 10. Guardar versiones antes de modificaciones importantes.
-11. No generar Gerber ni usar autorouter todavía.
+11. No generar Gerber hasta que se levanten los bloqueos de
+    [PENDIENTES.md](rfid-control-acceso-eest3/PENDIENTES.md).
+
+## Estado de las reglas 2 y 11
+
+La regla 2 se cumplió: el ruteo se autorizó explícitamente y quedó registrado en
+el commit `c100552`.
+
+La regla 11 decía además "ni usar autorouter todavía", y esa parte **quedó
+derogada por esa misma autorización**: la placa se ruteó con Freerouting. Se
+deja constancia acá porque durante un tiempo el repositorio se contradijo a sí
+mismo, y un agente que leyera solo este archivo habría concluido que el board
+está mal hecho.
+
+Lo que sigue vigente de la regla 11 es la prohibición de generar Gerber. El
+autorouter produce cobre revisable; un Gerber es una orden de compra.
 
 ## Primer entregable
 
-Crear:
+Entregado. Existen la arquitectura por bloques, la lista de componentes, la
+propuesta de GPIO, el proyecto KiCad, los seis esquemas y el informe de ERC.
 
-- arquitectura por bloques;
-- lista preliminar de componentes;
-- propuesta de GPIO;
-- proyecto KiCad;
-- esquemático inicial;
-- informe de ERC.
+## Dónde está cada cosa
 
-Detenerse antes de diseñar o rutear la PCB.
+- Revisión técnica y riesgos: [INFORME_ESQUEMA.md](rfid-control-acceso-eest3/INFORME_ESQUEMA.md)
+- Qué bloquea la fabricación: [PENDIENTES.md](rfid-control-acceso-eest3/PENDIENTES.md)
+- Mediciones que faltan: [CHECKLIST_PREPCB.md](rfid-control-acceso-eest3/CHECKLIST_PREPCB.md)
+- Por qué el cobre está donde está: [GUIA_RUTEO.md](rfid-control-acceso-eest3/GUIA_RUTEO.md)

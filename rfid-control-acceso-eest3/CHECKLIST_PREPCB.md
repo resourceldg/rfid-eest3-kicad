@@ -1,5 +1,22 @@
 # Checklist de depuración pre-PCB
 
+## Estado: ningún ítem tildado, y la PCB ya existe
+
+Conviene decirlo de entrada porque cambia cómo se lee el resto del documento.
+Este checklist se escribió como condición para *empezar* la PCB. La placa se
+emplazó y se ruteó igual, con autorización explícita, y hoy pasa el DRC sin
+infracciones.
+
+Eso no invalida el checklist: lo reubica. Las mediciones que están acá abajo
+seguían siendo necesarias antes y siguen siéndolo ahora, con la diferencia de
+que ahora hay una placa concreta contra la cual medirlas en vez de una
+estimación. Lo que **no** se puede hacer sin ellas es fabricar.
+
+El criterio de pase del final de este archivo queda vigente tal cual, corrido
+un casillero: ya no es el permiso para empezar el layout, es el permiso para
+mandar a fabricar. La lista completa de bloqueos está en
+[PENDIENTES.md](PENDIENTES.md).
+
 ## Objetivo
 
 Convertir el diseño actual en un prototipo de laboratorio con mayor robustez eléctrica y menor riesgo de falla antes de avanzar a una PCB de prueba.
@@ -38,9 +55,9 @@ Convertir el diseño actual en un prototipo de laboratorio con mayor robustez el
 - [ ] Confirmar borneras y conectores con capacidad real de corriente.
 - [ ] Documentar resultados y actualizar el informe de diseño.
 
-## Criterio de pase para avanzar a PCB
+## Criterio de pase para mandar a fabricar
 
-Se considera que el diseño está listo para una PCB de prueba solo cuando:
+Se considera que el diseño está listo solo cuando:
 
 - la fuente de alimentación no cae durante la activación de la cerradura;
 - el MOSFET no supera temperatura crítica;

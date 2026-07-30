@@ -174,22 +174,33 @@ ruteando no rompe nada.
 
 ## Cómo se ruteó esta placa
 
-Está ruteada. **349 pistas, 8 vías, 4 zonas**, sin una sola infracción de
-margen ni de cobre. Las fases de arriba quedan como referencia de por qué el
-cobre está donde está, y para cuando haya que retocar a mano.
+Está ruteada. **348 pistas, 8 vías, 4 zonas** (dos planos y las dos áreas de
+reglas de la antena). El DRC pasa **sin ninguna infracción**: no quedan avisos
+de margen, de cobre, de alivio térmico ni de serigrafía. Los únicos tres
+"no conectados" son deliberados y están explicados abajo.
+
+Las fases de arriba quedan como referencia de por qué el cobre está donde está,
+y para cuando haya que retocar a mano.
 
 Se hizo con **Freerouting 2.2.4** (en `~/.local/opt`, con su propio Java; el
 comando `freerouting` abre la GUI, que no hace falta). El ida y vuelta con
 KiCad va por [tools/autorutear.py](../tools/autorutear.py), que exporta a
 Specctra DSN, rutea y reimporta el `.SES` sin abrir la interfaz.
 
-**El orden de los tres pasos no es negociable:**
+**El orden de los pasos no es negociable:**
 
 ```sh
 python3 tools/preruteo_critico.py <placa>   # 1. lo que el autorouter no puede
 tools/autorutear.py <placa> --en-sitio      # 2. las 122 conexiones
 python3 tools/planos_masa.py <placa>        # 3. los dos planos, al final
+python3 tools/lazo_flyback.py <placa>       # 4. la esquina de potencia a mano
+python3 tools/retoques_finales.py <placa>   # 5. térmicas y serigrafía
 ```
+
+Los pasos 4 y 5 corrigen cosas que el autorouter no tiene forma de saber: que
+el diodo de recirculación va pegado a la carga aunque el ruteo más corto diga
+otra cosa, y que un designador ilegible es un defecto aunque no sea cobre.
+Los dos son idempotentes y se pueden correr solos sobre la placa ya ruteada.
 
 ### 1. Primero a mano, y bloqueado
 
@@ -221,6 +232,34 @@ encima. Intenté penalizar B.Cu con un `.rules`, pero Freerouting 2.2.4 **ignora
 `plano_gnd_power` queda entero (una sola isla): es el retorno de 1,8 A.
 `plano_gnd` queda en 8 islas, cada una conectada por pista.
 
+## El lazo de la cerradura, que se rehízo a mano
+
+Freerouting dejó a D4 en (80,50 / 85,75), o sea **del lado opuesto de Q2
+respecto del conector de carga**. Eléctricamente eso es lo peor que se podía
+hacer con ese diodo, y el autorouter no tenía cómo saberlo: para él era un
+ruteo válido y corto.
+
+Cuando Q2 corta, la bobina de la cerradura no deja de conducir de golpe; fuerza
+a su corriente a seguir circulando y la única salida es D4. Ese lazo tiene que
+ser chico porque todo lo que encierra es inductancia parásita, y esa
+inductancia aparece como un pico de tensión sobre el drain del MOSFET. Por eso
+el diodo va pegado a la carga, no pegado al transistor.
+
+Con el emplazamiento original la corriente salía de J9, bajaba hasta TP8,
+cruzaba al este, subía, pasaba de largo el MOSFET y recién ahí entraba al
+diodo. [tools/lazo_flyback.py](../tools/lazo_flyback.py) mueve D4 a
+(65,58 / 81,95), justo arriba de J9 y con el mismo orden de pines, de modo que
+el cátodo cae sobre el pin 1 y el ánodo sobre el pin 2:
+
+| Rama | Antes | Ahora |
+|---|---:|---:|
+| `+12V_LOCK` (J9 pin 1 → D4 cátodo) | 15,78 mm | **6,97 mm** |
+| `LOCK_OUT` (J9 pin 2 → D4 ánodo) | 14,72 mm | **6,97 mm** |
+
+Quedan dos bajadas rectas y paralelas de 7 mm separadas 4,5 mm. La conexión del
+ánodo al drain de Q2 va aparte, rodeando el encapsulado por el norte y el este,
+justamente para no meter ese recorrido dentro del lazo.
+
 ## Lo que quedó pendiente
 
 - **Los pines 1 y 2 de J13 están sin conectar, a propósito.** Caen dentro de
@@ -228,10 +267,13 @@ encima. Intenté penalizar B.Cu con un `.rules`, pero Freerouting 2.2.4 **ignora
   permite cobre. Son los tres únicos "no conectados" del DRC. Meter cobre bajo
   la antena de un ESP32-S3 es peor que dejar el pin libre: los rieles llegan
   por el pin 3 (`+3V3`) y por 42/43/44 (`GND`).
-- **El lazo de la cerradura mide ~30 mm de perímetro** y eso lo fija el
-  emplazamiento: D4 está a 15 mm de J9. Acercar D4 al conector lo bajaría a
-  menos de 10 mm, pero J9 tiene un courtyard de 9,5 mm y habría que mover Q2
-  también. Es una revisión de floorplan de la esquina de potencia, no de ruteo.
-- **Dos avisos de alivio térmico** (J5 pad 6 y J2 pad 4): pocos radios al
-  plano. Son advertencias; esos pads están conectados por pista igual.
-- **28 `silk_overlap`**: serigrafía pisándose, ya estaban antes de rutear.
+- **`plano_gnd` quedó en 8 islas**, cada una conectada por pista. Funciona y el
+  DRC lo da por bueno, pero un plano entero sería mejor. Reducirlas exige
+  reordenar señales en B.Cu, que es rehacer el ruteo.
+
+Lo demás que figuraba acá como pendiente ya está resuelto: el lazo de la
+cerradura (arriba), los dos avisos de alivio térmico —J5 pad 6 y J2 pad 4
+pasaron a conexión sólida a plano— y los 28 `silk_overlap`.
+
+Lo que **bloquea la fabricación** no es nada de esto y está aparte, en
+[PENDIENTES.md](PENDIENTES.md).

@@ -4,13 +4,25 @@ Diseño electrónico en KiCad 10 para un sistema de acceso escolar basado en ESP
 
 ## Estado actual del proyecto
 
-El proyecto se encuentra en una fase de revisión de pre-layout y depuración eléctrica. El foco actual no es fabricar todavía, sino validar la alimentación, la protección de la cerradura, el comportamiento del RC522 y la compatibilidad mecánica antes de avanzar a una PCB de prueba.
+Hay una placa de prueba de 140 × 100 mm, doble cara, **ruteada y con el DRC
+limpio**: 348 pistas, 8 vías, dos planos de masa separados que se tocan en un
+solo punto, y ninguna infracción de margen, cobre, alivio térmico ni
+serigrafía. Los tres "no conectados" que informa el DRC son deliberados.
 
-## Documento de referencia
+**No está lista para fabricar.** Faltan las mediciones de banco, la
+verificación mecánica de los conectores y, sobre todo, medir el módulo ESP32-S3
+para borrar la hilera de pines que sobra en J13. Los tres bloqueos están
+detallados en [PENDIENTES.md](rfid-control-acceso-eest3/PENDIENTES.md).
 
+## Documentos de referencia
+
+- Qué falta para fabricar: [rfid-control-acceso-eest3/PENDIENTES.md](rfid-control-acceso-eest3/PENDIENTES.md)
 - Revisión técnica y riesgos: [rfid-control-acceso-eest3/INFORME_ESQUEMA.md](rfid-control-acceso-eest3/INFORME_ESQUEMA.md)
-- Checklist de depuración pre-PCB: [rfid-control-acceso-eest3/CHECKLIST_PREPCB.md](rfid-control-acceso-eest3/CHECKLIST_PREPCB.md)
+- Mediciones que faltan: [rfid-control-acceso-eest3/CHECKLIST_PREPCB.md](rfid-control-acceso-eest3/CHECKLIST_PREPCB.md)
+- Por qué el cobre está donde está: [rfid-control-acceso-eest3/GUIA_RUTEO.md](rfid-control-acceso-eest3/GUIA_RUTEO.md)
 
 ## Próximo paso recomendado
 
-Completar la validación de potencia y protección antes de definir footprints definitivos o generar una PCB nueva.
+Medir la separación real entre hileras del ESP32-S3 DevKit y borrar la hilera
+sobrante de J13. Es el único bloqueo que no necesita instrumental: alcanza con
+un calibre y el módulo en la mano.

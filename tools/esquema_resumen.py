@@ -38,6 +38,11 @@ PROY = os.path.join(RAIZ, "rfid-control-acceso-eest3")
 SALIDA = os.path.join(PROY, "RESUMEN_ELECTRICO.kicad_sch")
 HOJA_UUID = "5eb7f9a0-0000-4000-8000-000000000001"
 
+# Encabezado y pie del recuadro. Cambiar aca si la hoja se entrega como
+# practica numerada o con otro titulo.
+TITULO = "CONTROL DE ACCESO RFID - E.E.S.T. N 3"
+EPIGRAFE = "ESQUEMA ELECTRICO UNIFICADO - 67 componentes, 34 redes"
+
 REJILLA = 1.27
 
 
@@ -210,10 +215,32 @@ class Hoja:
     def texto(self, s, x, y, tam=2.0, negrita=True):
         self.textos.append((s, x, y, tam, negrita))
 
-    def caja(self, x1, y1, x2, y2, titulo=None):
+    def rotulo(self, titulo, x, y):
+        """Nombre de bloque, sin caja: el marco es uno solo para toda la hoja."""
+        self.texto(titulo, x, y, 2.5, True)
+
+    def marco(self, titulo, epigrafe, margen=8.0):
+        """Un solo recuadro alrededor de todo, con titulo arriba y nombre abajo.
+
+        Los limites salen de lo que efectivamente se dibujo, no de numeros
+        escritos a mano: asi el marco sigue quedando bien si se mueve un bloque.
+        """
+        puntos = [p for c in self.cables for p in c]
+        puntos += [(e[1], e[2]) for e in self.etiquetas]
+        puntos += [(t[1], t[2]) for t in self.textos]
+        puntos += list(self.pines.values())
+        # el cuerpo de un simbolo sobresale de sus pines: si solo se miran los
+        # pines, el marco termina cortando al conector del borde
+        for x, y, _, _, _ in self.colocados.values():
+            puntos += [(x - 5, y - 5), (x + 5, y + 5)]
+        xs = [p[0] for p in puntos]; ys = [p[1] for p in puntos]
+        x1, y1 = min(xs) - margen, min(ys) - margen
+        x2, y2 = max(xs) + margen, max(ys) + margen
         self.cajas.append((x1, y1, x2, y2))
-        if titulo:
-            self.texto(titulo, x1 + 3, y1 + 5.5, 2.5, True)
+        centro = (x1 + x2) / 2.0
+        self.texto(titulo, centro - len(titulo) * 4.5 * 0.31, y1 - 6.0, 4.5, True)
+        self.texto(epigrafe, centro - len(epigrafe) * 3.0 * 0.31, y2 + 8.0, 3.0, True)
+        return (x1, y1, x2, y2)
 
     # ------------------------------------------------------------ emision
 
@@ -280,7 +307,7 @@ class Hoja:
             A('\t(rectangle')
             A('\t\t(start %s %s)' % (n(x1), n(y1)))
             A('\t\t(end %s %s)' % (n(x2), n(y2)))
-            A('\t\t(stroke (width 0.3) (type dash) (color 132 132 132 1))')
+            A('\t\t(stroke (width 0.4) (type solid) (color 60 60 130 1))')
             A('\t\t(fill (type none))')
             A('\t\t(uuid "%s")' % uid("caja%s%s" % (x1, y1)))
             A('\t)')
@@ -424,7 +451,7 @@ def armar(h):
     de una columna a otra va por etiqueta global, igual que en el diseño real."""
 
     # ===================================== BLOQUE 2 - CONTROLADOR (columna central)
-    h.caja(238, 26, 332, 404, "2 - CONTROLADOR ESP32-S3")
+    h.rotulo("2 - CONTROLADOR ESP32-S3", 241, 31.5)
     h.poner("J13", 285, 200)
     izq = {5: "ESP_EN", 7: "DOOR_REED", 9: "PIR_IN", 11: "CABINET_SENSOR",
            13: "PIR_TAMPER", 15: "LED_OK", 17: "LED_ERROR", 19: "BUZZER",
@@ -450,7 +477,7 @@ def armar(h):
     h.texto("C5 desacopla, R17 mantiene EN arriba.", 243, 340, 1.7, False)
 
     # ===================================== BLOQUE 1 - ALIMENTACION
-    h.caja(14, 26, 230, 152, "1 - ALIMENTACION Y PROTECCION")
+    h.rotulo("1 - ALIMENTACION Y PROTECCION", 17, 31.5)
     h.poner("J1", 32, 52, 0, 'y')
     h.poner("D1", 60, 52, 180)
     h.poner("F1", 86, 52, 90)
@@ -503,63 +530,65 @@ def armar(h):
     h.cable(h.p("TP5", 1), (210, 112), (196, 112))
 
     # ===================================== BLOQUE 6 - CERRADURA
-    h.caja(14, 162, 230, 288, "6 - CERRADURA / SOLENOIDE 12 V")
-    h.poner("J9", 206, 196)
-    h.poner("D4", 176, 197.27, 270)
-    h.poner("Q2", 110, 208)
-    h.poner("R7", 74, 208, 90)
-    h.poner("R8", 92, 232)
-    h.poner("TP7", 56, 196, 180)
-    h.poner("TP8", 150, 196, 180)
+    h.rotulo("6 - CERRADURA / SOLENOIDE 12 V", 17, 159.5)
+    h.poner("J9", 206, 188)
+    h.poner("D4", 176, 189, 270)
+    h.poner("Q2", 110, 205.08)
+    h.poner("R7", 74, 205.08, 90)
+    h.poner("R8", 92, 224)
+    h.poner("TP7", 56, 195, 180)
+    h.poner("TP8", 150, 190, 180)
 
-    h.cable((124, 186), (200.92, 186), h.p("J9", 1))
-    h.cable(h.p("D4", 1), (176, 186))
-    h.etiqueta((124, 186), "+12V_LOCK", 'izq', 10.16)
+    # +12V_LOCK entra por arriba al pin 1 de J9, con el catodo de D4 colgado
+    h.cable((124, 178), (200.92, 178), h.p("J9", 1))
+    h.cable(h.p("D4", 1), (176, 178))
+    h.etiqueta((124, 178), "+12V_LOCK", 'izq', 10.16)
 
-    h.cable(h.p("Q2", 3), (115.08, 208))
-    h.cable((115.08, 208), (200.92, 208), h.p("J9", 2))
-    h.cable(h.p("D4", 2), (176, 208))
-    h.cable(h.p("TP8", 1), (150, 208))
-    h.etiqueta((166, 208), "LOCK_OUT", 'aba', 8.89)
+    # LOCK_OUT: drain de Q2, anodo de D4 y pin 2 de J9 son el mismo nodo
+    h.cable(h.p("Q2", 3), (200.92, 200), h.p("J9", 2))
+    h.cable(h.p("D4", 2), (176, 200))
+    h.cable(h.p("TP8", 1), (150, 200))
+    h.etiqueta((166, 200), "LOCK_OUT", 'aba', 8.89)
 
     h.cable(h.p("R7", 2), h.p("Q2", 1))
-    h.cable((92, 208), h.p("R8", 1))
-    h.cable(h.p("TP7", 1), (56, 208), (70.19, 208))
+    h.cable((92, 205.08), h.p("R8", 1))
+    h.cable(h.p("TP7", 1), (56, 205.08), h.p("R7", 1))
     h.etiqueta(h.p("R7", 1), "LOCK_GATE", 'izq', 10.16)
     h.etiqueta(h.p("R8", 2), "GND_POWER", 'aba', 10.16)
     h.etiqueta(h.p("Q2", 2), "GND_POWER", 'aba', 11.43)
-    h.texto("D4 va pegado a J9: cuando Q2 corta, la corriente de la", 20, 258, 1.6, False)
-    h.texto("bobina sigue circulando y se va por el diodo. Ese lazo", 20, 263, 1.6, False)
-    h.texto("tiene que encerrar la menor superficie posible.", 20, 268, 1.6, False)
-    h.texto("R8 mantiene la compuerta abajo mientras el ESP32 arranca.", 20, 276, 1.6, False)
+    h.texto("D4 va pegado a J9: cuando Q2 corta, la corriente de la bobina", 20, 240, 1.6, False)
+    h.texto("sigue circulando y se va por el diodo. Ese lazo tiene que", 20, 245, 1.6, False)
+    h.texto("encerrar la menor superficie posible.", 20, 250, 1.6, False)
+    h.texto("R8 mantiene la compuerta abajo mientras el ESP32 arranca.", 20, 258, 1.6, False)
 
     # ===================================== BLOQUE 5 - SENALIZACION
-    h.caja(14, 298, 230, 404, "5 - SEÑALIZACION")
-    for ref, led, y, red in (("R3", "D2", 322, "LED_OK"), ("R4", "D3", 342, "LED_ERROR")):
+    h.rotulo("5 - SEÑALIZACION", 17, 271.5)
+    for ref, led, y, red in (("R3", "D2", 288, "LED_OK"), ("R4", "D3", 308, "LED_ERROR")):
         h.poner(ref, 74, y, 90)
         h.poner(led, 106, y, 180)
         h.cable(h.p(ref, 2), h.p(led, 2))
         h.etiqueta(h.p(ref, 1), red, 'izq', 10.16)
         h.etiqueta(h.p(led, 1), "GND", 'der', 12.7)
 
-    h.poner("R5", 74, 374, 90)
-    h.poner("Q1", 110, 374)
-    h.poner("R6", 92, 394)
-    h.poner("BZ1", 168, 366)
-    h.poner("D9", 200, 364.73, 270)
+    h.poner("R5", 74, 336, 90)
+    h.poner("Q1", 110, 336)
+    h.poner("R6", 92, 349)
+    h.poner("BZ1", 168, 328.38)
+    h.poner("D9", 200, 327.11, 270)
     h.cable(h.p("R5", 2), h.p("Q1", 1))
-    h.cable((92, 374), h.p("R6", 1))
+    h.cable((92, 336), h.p("R6", 1))
     h.etiqueta(h.p("R5", 1), "BUZZER", 'izq', 10.16)
-    h.etiqueta(h.p("R6", 2), "GND", 'aba', 8.89)
-    h.etiqueta(h.p("Q1", 2), "GND", 'aba', 11.43)
-    h.cable(h.p("Q1", 3), (115.08, 368.54), h.p("BZ1", 2))
+    h.etiqueta(h.p("R6", 2), "GND", 'aba', 6.35)
+    h.etiqueta(h.p("Q1", 2), "GND", 'aba', 8.89)
+    # D9 queda en paralelo con el buzzer, que tambien es una bobina
+    h.cable(h.p("Q1", 3), h.p("BZ1", 2))
     h.cable(h.p("BZ1", 2), h.p("D9", 2))
-    h.cable(h.p("BZ1", 1), (165.46, 356), (200, 356), h.p("D9", 1))
-    h.etiqueta((182, 356), "+5V", 'arr', 8.89)
-    h.texto("D9 absorbe el pico del buzzer al cortar.", 20, 390, 1.6, False)
+    h.cable(h.p("BZ1", 1), (165.46, 318), (200, 318), h.p("D9", 1))
+    h.etiqueta((182, 318), "+5V", 'arr', 8.89)
+    h.texto("D9 absorbe el pico del buzzer al cortar.", 20, 358, 1.6, False)
 
     # ===================================== BLOQUE 3 - RFID
-    h.caja(342, 26, 580, 152, "3 - LECTOR RFID RC522 (solo 3,3 V)")
+    h.rotulo("3 - LECTOR RFID RC522 (solo 3,3 V)", 345, 31.5)
     h.poner("J5", 540, 70)
     for ref, pin, red, jog, y in (("R9", 1, "RFID_SS", 476, 38),
                                   ("R10", 2, "RFID_SCK", 490, 50),
@@ -585,7 +614,7 @@ def armar(h):
         h.etiqueta(h.p(tp, 1), red, 'arr', 8.89)
 
     # ===================================== BLOQUE 4 - SENSORES
-    h.caja(342, 162, 580, 368, "4 - SENSORES")
+    h.rotulo("4 - SENSORES", 345, 167.5)
     for conn, spin, y, red, rpu, cf, tvs, nota, otros in (
             ("J6", 1, 192, "DOOR_REED", "R1", "C7", "D6", "reed de puerta (NC)",
              {2: "GND"}),
@@ -635,7 +664,7 @@ def armar(h):
     h.poner("J10", 354, 340, 0, 'y')
     h.etiqueta(h.p("J10", 2), "GND", 'der', 8.89)
     h.poner("R15", 414, 322); h.poner("R16", 436, 340, 90)
-    h.poner("C11", 470, 352)
+    h.poner("C11", 470, 346)
     nodo = h.p("J10", 1)
     h.cable(nodo, h.p("R16", 1))
     h.etiqueta((396, nodo[1]), "PIR_TAMPER_CONTACT", 'aba', 8.89)
@@ -650,6 +679,8 @@ def armar(h):
     h.poner("TP13", 534, 210, 180); h.poner("TP14", 560, 210, 180)
     h.etiqueta(h.p("TP13", 1), "PIR_IN", 'arr', 8.89)
     h.etiqueta(h.p("TP14", 1), "PIR_TAMPER", 'arr', 8.89)
+
+    h.marco(TITULO, EPIGRAFE)
 
 
 def redes_de(ruta):

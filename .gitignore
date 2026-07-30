@@ -21,7 +21,16 @@ gerbers/
 *.drl
 *.zip
 
+# Intercambio con Freerouting (se regenera con tools/autorutear.py)
+*.dsn
+*.rules
+*.ses
+*-autorruteada.kicad_pcb
+
 # Informes de DRC/ERC: se regeneran, y versionarlos confunde
 DRC.rpt
 *-drc*.rpt
 *-erc.rpt
+
+# Ajustes locales del agente
+.claude/

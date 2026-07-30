@@ -42,8 +42,14 @@ No tenés que elegir el ancho de ninguna pista. En la barra superior dice
 la clase de red. Dejalo así. Cada red ya tiene el suyo asignado:
 
 - **2,0 mm** las de potencia (llevan 1,8 A)
-- **0,5 mm** las de alimentación lógica
-- **0,25 mm** las de señal
+- **1,0 mm** `+12V_AUX`
+- **0,8 mm** las de alimentación lógica (`+3V3`, `+5V`, `GND`)
+- **0,4 mm** las de señal
+
+La única excepción legítima son los **tramos de transición** en pads de SOT-23:
+la fuente y el drain de Q2 miden 0,6 mm de ancho y ninguna pista de 2 mm sale
+de ahí sin pisar el pad de al lado. Se sale con 0,6–1,0 mm por uno o dos
+milímetros y se ensancha en cuanto el encapsulado lo permite.
 
 Si en algún momento ves que una pista de potencia te sale finita, es que la
 clase de red no se aplicó: pará y avisá antes de seguir.
@@ -79,7 +85,7 @@ genera picos de tensión que pueden resetear el ESP32 o romper el MOSFET.
 conectes a `GND` en ningún lado**: se tocan únicamente en NT1, que está pegado
 a J1 justamente para eso.
 
-### Fase 2 — Alimentación lógica (0,5 mm)
+### Fase 2 — Alimentación lógica (0,8 mm)
 
 | Orden | Red | Pads |
 |---:|---|---:|
@@ -97,8 +103,10 @@ Se hace con un **plano de cobre** (zona rellena):
 
 1. Poné la cara activa en **B.Cu** (`Av Pág`).
 2. Herramienta **"Añadir zona rellena"** (barra derecha) o `Ctrl+Shift+Z`.
-3. Dibujá un rectángulo que cubra **de y=20 a y=80**, todo el ancho. Es decir,
-   los dos tercios superiores de la placa: toda la zona lógica.
+3. Dibujá un contorno en **L**: todo el ancho de y=21 a y=79, y además la
+   franja de x=89 a x=159 hasta y=119. Esa segunda parte es la que cubre al
+   DevKit, que está abajo a la derecha (x 96..150, y 73..98) y quedaría afuera
+   de un simple rectángulo superior.
 4. En el diálogo elegí la red **GND** y aceptá.
 5. Presioná `B` para rellenar.
 
@@ -111,11 +119,15 @@ la cerradura compartiría cobre con la masa del ESP32, que es exactamente lo
 que este diseño evita. El plano se queda arriba, y la unión con la masa de
 potencia se hace en un solo punto:
 
-6. Ruteá **una** pista de 0,5 mm desde el pad 2 de NT1 hasta el plano.
+6. Ruteá **una** pista de 0,8 mm desde el pad 2 de NT1 hasta el plano.
 
 Esa pista es la estrella de masa. Es la única.
 
-### Fase 4 — Señales (0,25 mm)
+La esquina de potencia lleva su propio plano, `GND_POWER`, de x=21 a x=87 y de
+y=80,5 a y=118. Entre los dos planos quedan 1,5 mm de hueco: se tocan sólo a
+través de NT1. Los dos los pone [tools/planos_masa.py](../tools/planos_masa.py).
+
+### Fase 4 — Señales (0,4 mm)
 
 Las 25 redes restantes, casi todas de 2 o 3 pads. Acá ya es relleno: van por
 F.Cu y donde no puedan, una vía y siguen por B.Cu.
@@ -134,6 +146,10 @@ módulo. Los pines **2, 42 y 44** son GND y por eso tienen **dos pads cada
 uno**. Uní cada par con un tramo corto de cobre, si no el DRC te los va a
 marcar como no conectados. Los demás pines duplicados no tienen red y no hay
 que tocarlos.
+
+El **pin 2 es la excepción**: cae dentro del área de reglas de la antena y no
+se puede unir con cobre. Queda sin conectar a propósito; la masa del módulo
+entra por los pines 42, 43 y 44.
 
 ## Cómo saber que vas bien
 
@@ -155,3 +171,67 @@ que tocarlos.
 
 Nada de lo que hagas acá es irreversible mientras no se fabrique. Equivocarse
 ruteando no rompe nada.
+
+## Cómo se ruteó esta placa
+
+Está ruteada. **349 pistas, 8 vías, 4 zonas**, sin una sola infracción de
+margen ni de cobre. Las fases de arriba quedan como referencia de por qué el
+cobre está donde está, y para cuando haya que retocar a mano.
+
+Se hizo con **Freerouting 2.2.4** (en `~/.local/opt`, con su propio Java; el
+comando `freerouting` abre la GUI, que no hace falta). El ida y vuelta con
+KiCad va por [tools/autorutear.py](../tools/autorutear.py), que exporta a
+Specctra DSN, rutea y reimporta el `.SES` sin abrir la interfaz.
+
+**El orden de los tres pasos no es negociable:**
+
+```sh
+python3 tools/preruteo_critico.py <placa>   # 1. lo que el autorouter no puede
+tools/autorutear.py <placa> --en-sitio      # 2. las 122 conexiones
+python3 tools/planos_masa.py <placa>        # 3. los dos planos, al final
+```
+
+### 1. Primero a mano, y bloqueado
+
+Dos conexiones no las puede hacer ningún autorouter, y son las que definen si
+la placa funciona — [tools/preruteo_critico.py](../tools/preruteo_critico.py):
+
+- **Fuente de Q2 → plano `GND_POWER`.** La clase pide 2,0 mm y el pad del
+  SOT-23 mide 0,6 mm: no hay pista de 2 mm que salga de ahí sin pisar el drain.
+  Freerouting abandonaba justo el retorno de 1,8 A del MOSFET. Va con 1,0 mm y
+  una vía de 0,8 mm que baja directo al plano.
+- **`+3V3` del pin 3 de J13.** La fila impar del DevKit son 22 pads a 2,54 mm:
+  entre dos contiguos quedan 0,74 mm y no pasa ni una pista de 0,25 mm con su
+  margen. La única salida es por debajo del módulo, rodeando el extremo oeste
+  (el este es área de antena, x ≥ 147, donde no se permite cobre). El +3V3 lo
+  genera el DevKit, así que sin esto el RC522 no se alimenta.
+
+Van **bloqueadas**: una pista bloqueada se exporta como `(type fix)` y
+Freerouting no la toca. `autorutear.py` se niega a correr si encuentra pistas
+sin bloquear, salvo que le pases `--forzar`.
+
+### 3. Los planos al final, no al principio
+
+Si los planos están puestos antes de autorutear, el autorouter cruza B.Cu con
+señales, parte el plano en islas y deja **11 pads de masa colgados**. Con `GND`
+ruteado como pistas, cada pad tiene su conexión propia y el plano se suma
+encima. Intenté penalizar B.Cu con un `.rules`, pero Freerouting 2.2.4 **ignora
+`-dr` en modo CLI**: con B.Cu desactivado da idéntico resultado.
+
+`plano_gnd_power` queda entero (una sola isla): es el retorno de 1,8 A.
+`plano_gnd` queda en 8 islas, cada una conectada por pista.
+
+## Lo que quedó pendiente
+
+- **Los pines 1 y 2 de J13 están sin conectar, a propósito.** Caen dentro de
+  las dos áreas de reglas de la antena del módulo (x 147..159), donde no se
+  permite cobre. Son los tres únicos "no conectados" del DRC. Meter cobre bajo
+  la antena de un ESP32-S3 es peor que dejar el pin libre: los rieles llegan
+  por el pin 3 (`+3V3`) y por 42/43/44 (`GND`).
+- **El lazo de la cerradura mide ~30 mm de perímetro** y eso lo fija el
+  emplazamiento: D4 está a 15 mm de J9. Acercar D4 al conector lo bajaría a
+  menos de 10 mm, pero J9 tiene un courtyard de 9,5 mm y habría que mover Q2
+  también. Es una revisión de floorplan de la esquina de potencia, no de ruteo.
+- **Dos avisos de alivio térmico** (J5 pad 6 y J2 pad 4): pocos radios al
+  plano. Son advertencias; esos pads están conectados por pista igual.
+- **28 `silk_overlap`**: serigrafía pisándose, ya estaban antes de rutear.

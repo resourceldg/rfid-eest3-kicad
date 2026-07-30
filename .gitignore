@@ -27,6 +27,9 @@ gerbers/
 *.ses
 *-autorruteada.kicad_pcb
 
+# El PDF del resumen se regenera con kicad-cli desde el .kicad_sch versionado
+RESUMEN_ELECTRICO.pdf
+
 # Informes de DRC/ERC: se regeneran, y versionarlos confunde
 DRC.rpt
 *-drc*.rpt

@@ -14,6 +14,25 @@ verificación mecánica de los conectores y, sobre todo, medir el módulo ESP32-
 para borrar la hilera de pines que sobra en J13. Los tres bloqueos están
 detallados en [PENDIENTES.md](rfid-control-acceso-eest3/PENDIENTES.md).
 
+## Ver todo el circuito de un vistazo
+
+Las seis hojas del esquema son el documento valido, pero estan separadas y la
+hoja raiz no dibuja como se relacionan. Para eso esta
+[RESUMEN_ELECTRICO.kicad_sch](rfid-control-acceso-eest3/RESUMEN_ELECTRICO.kicad_sch):
+una sola hoja A2 con los 67 componentes, sus simbolos y valores, el cableado de
+cada bloque y el ESP32 en el centro. Es documentacion y **no forma parte de la
+jerarquia del proyecto**: se abre sola.
+
+```sh
+python3 tools/esquema_resumen.py     # regenera la hoja desde el netlist real
+kicad-cli sch export pdf -o rfid-control-acceso-eest3/RESUMEN_ELECTRICO.pdf \
+    rfid-control-acceso-eest3/RESUMEN_ELECTRICO.kicad_sch
+```
+
+El generador se verifica solo: exporta el netlist de la hoja que acaba de
+escribir y lo compara nodo por nodo contra el de las seis hojas. Si no coincide,
+falla.
+
 ## Documentos de referencia
 
 - Qué falta para fabricar: [rfid-control-acceso-eest3/PENDIENTES.md](rfid-control-acceso-eest3/PENDIENTES.md)

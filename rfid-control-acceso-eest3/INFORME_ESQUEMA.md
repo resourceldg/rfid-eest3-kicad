@@ -843,6 +843,48 @@ reversible.
 - `LOCK_GATE` recorre ~50 mm desde IO18 hasta Q2. Es aceptable para una
   compuerta lenta con 100 Ω en serie y pull-down de 10 kΩ, pero conviene
   alejarla de las señales de sensores al rutear.
-- La separación RFID/cerradura en la placa bajó a 38,9 mm. El RC522 es externo:
-  la restricción real es dónde queda el módulo y su antena en la caja, no dónde
-  está J5.
+- La separación RFID/cerradura en la placa quedó en 59,1 mm. El RC522 es
+  externo: la restricción real es dónde queda el módulo y su antena en la caja,
+  no dónde está J5.
+
+
+## J5: interfaz al lector montado en el marco de la puerta
+
+El RC522 va montado en el marco y se conecta por cable. El diseño ya lo
+contemplaba —J5 nunca fue el lector, sino su conector— pero J5 estaba en el
+medio de la placa, lo que obligaba al cable a cruzar por encima de todo el
+board. Se movió al borde superior, junto a las borneras de sensores: todos los
+cables que van hacia la puerta salen ahora por el mismo lado, y el borde
+inferior queda reservado a potencia y cerradura.
+
+El footprint pasó de `PinHeader_1x08_P2.54mm_Vertical` a
+`Connector_JST:JST_XH_S8B-XH-A_1x08_P2.50mm_Horizontal`: conector con traba y
+entrada lateral. Un header de 2,54 con jumpers dupont falla de forma
+intermitente en algo que golpea cada vez que se abre la puerta. Si no se
+consigue un cable XH de 8 vías, se puede volver al header con una sola línea en
+`03_rfid_rc522.kicad_sch`, pero en ese caso hay que soldar los conductores
+directamente a los pines.
+
+La traza de SPI subió de 8,7 a 43,7 mm. No es un problema: con el reloj a 1 MHz
+y las resistencias serie de 33 Ω, 44 mm de pista es irrelevante frente a los
+20-40 cm de cable. El factor dominante es el cable, no la traza.
+
+### Condiciones de instalación del lector
+
+- **Longitud del cable**: hasta ~25 cm sin precauciones; entre 25 y 50 cm
+  bajando el reloj SPI a 1 MHz o menos; por encima de 50-60 cm aparecen fallas
+  intermitentes. La caja debe ir del lado interno, lo más cerca posible del
+  marco.
+- **Metal**: la antena del RC522 es una bobina y una chapa próxima se comporta
+  como espira en cortocircuito. Montado directo contra un marco metálico el
+  alcance cae de 3-4 cm a prácticamente cero. Hacen falta 1-2 cm de material no
+  metálico detrás de la antena, o una caja plástica sobre el marco en lugar de
+  embutirla en la chapa. Con marco de madera no aplica.
+- **Desacoplo local**: agregar 10 µF + 100 nF en el extremo del lector, además
+  de C6/C9 en la placa. El pico de corriente del RC522 al transmitir provoca
+  caída sobre el cable.
+- **Seguridad**: el lector queda del lado inseguro y sus líneas SPI son
+  accesibles. No es el eslabón débil: el firmware compara UID contra
+  `uids.txt`, y un UID de MIFARE Classic se clona con un teléfono. Si en algún
+  momento se quiere seguridad real, el cambio es autenticación con clave en la
+  tarjeta, no blindar el cable.

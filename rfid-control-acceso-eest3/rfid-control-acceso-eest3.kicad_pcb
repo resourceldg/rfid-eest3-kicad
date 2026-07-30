@@ -164,6 +164,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/a48af4dc-1352-4c09-aedb-ddb28abe8299")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -349,6 +355,12 @@
 		(path "/2498e6fc-a72d-4d13-8684-8a6c4bbf04b3/e9a81683-8d1e-409b-879a-2657e64d6ae5")
 		(sheetname "/3_RFID_RC522/")
 		(sheetfile "03_rfid_rc522.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4" "5" "6" "7" "8")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -903,6 +915,12 @@
 		(path "/d72e2b6f-ec00-4583-ba5f-b8a07f0421a4/0eaec7ee-9ee0-4a24-901c-a6de7eaa3552")
 		(sheetname "/6_CERRADURA_12V/")
 		(sheetfile "06_cerradura_12v.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "3" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1302,6 +1320,12 @@
 		(path "/3dce3fe8-e006-43fd-a77e-3a77ad876bc2/b6f1efa6-18f9-4e30-bcba-9a15ba710ad2")
 		(sheetname "/5_SENALIZACION/")
 		(sheetfile "05_senalizacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "3" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1715,6 +1739,12 @@
 		(path "/39334166-f252-440d-8af0-39cea1ab0295/d605f70a-4529-4609-bb33-9c844c2f5ed1")
 		(sheetname "/1_ALIMENTACION/")
 		(sheetfile "01_alimentacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1909,6 +1939,12 @@
 		(path "/39334166-f252-440d-8af0-39cea1ab0295/6ba190ab-5672-40f5-a298-dad464ca50ee")
 		(sheetname "/1_ALIMENTACION/")
 		(sheetfile "01_alimentacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2569,6 +2605,12 @@
 		(path "/efc35174-4708-4aba-9228-f94425f37787/ef8a1841-237d-4bef-9685-6f160dc495df")
 		(sheetname "/2_CONTROLADOR_ESP32/")
 		(sheetfile "02_controlador_esp32.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2766,6 +2808,12 @@
 		(path "/d72e2b6f-ec00-4583-ba5f-b8a07f0421a4/635c8d10-6b76-4201-9efe-bf32487de4d5")
 		(sheetname "/6_CERRADURA_12V/")
 		(sheetfile "06_cerradura_12v.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -2882,6 +2930,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/a641f55b-261a-4395-ae60-52364e87c197")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -2995,6 +3049,12 @@
 		(path "/d72e2b6f-ec00-4583-ba5f-b8a07f0421a4/8e5432dc-070c-49aa-be94-97e1ae21ca6e")
 		(sheetname "/6_CERRADURA_12V/")
 		(sheetfile "06_cerradura_12v.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3204,6 +3264,12 @@
 		(path "/3dce3fe8-e006-43fd-a77e-3a77ad876bc2/bdd5161c-2671-420a-93cb-2c331e974717")
 		(sheetname "/5_SENALIZACION/")
 		(sheetfile "05_senalizacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3436,6 +3502,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/dc34c3cf-43dc-47ca-8a5a-7a2d3b0a6867")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3909,6 +3981,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/bf3c6e59-bcce-47d6-b39d-7404d41febcd")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4132,6 +4210,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/34fb1b45-e997-4364-8657-6626231c53b6")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4443,6 +4527,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/f8431802-f7f4-4985-8d45-2eefcf9d8dc7")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4751,6 +4841,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/1e947c19-06d4-4432-8807-09d6b5f09d6d")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5250,6 +5346,12 @@
 		(path "/3dce3fe8-e006-43fd-a77e-3a77ad876bc2/2b06158d-f137-4a61-80b6-bcf24dd6ce0f")
 		(sheetname "/5_SENALIZACION/")
 		(sheetfile "05_senalizacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5531,6 +5633,12 @@
 		(path "/2498e6fc-a72d-4d13-8684-8a6c4bbf04b3/49f8b937-9af7-4c7d-82a5-9cbc35ccdf02")
 		(sheetname "/3_RFID_RC522/")
 		(sheetfile "03_rfid_rc522.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5751,6 +5859,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/02713ee5-5ad6-40b1-86e6-36f61e3d0ce2")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6224,6 +6338,12 @@
 		(path "/2498e6fc-a72d-4d13-8684-8a6c4bbf04b3/4bb97cf8-aef4-4dc5-b79a-ba027ce0ff61")
 		(sheetname "/3_RFID_RC522/")
 		(sheetfile "03_rfid_rc522.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6420,6 +6540,12 @@
 		(path "/39334166-f252-440d-8af0-39cea1ab0295/044f865b-62d2-4152-977a-151741d82302")
 		(sheetname "/1_ALIMENTACION/")
 		(sheetfile "01_alimentacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6625,6 +6751,12 @@
 		(path "/2498e6fc-a72d-4d13-8684-8a6c4bbf04b3/c3897a89-8850-4a80-938e-ed617f745a37")
 		(sheetname "/3_RFID_RC522/")
 		(sheetfile "03_rfid_rc522.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6810,6 +6942,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/fe52dd9c-eb3e-408e-9c29-c9859d77f9f4")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7275,6 +7413,12 @@
 		(path "/39334166-f252-440d-8af0-39cea1ab0295/b38a5878-a9b2-4de0-9efe-bdb8b6854aa9")
 		(sheetname "/1_ALIMENTACION/")
 		(sheetfile "01_alimentacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -7399,6 +7543,12 @@
 		(path "/3dce3fe8-e006-43fd-a77e-3a77ad876bc2/e4c4bbbc-efd8-4b4a-97ef-090480c2c7c9")
 		(sheetname "/5_SENALIZACION/")
 		(sheetfile "05_senalizacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7587,6 +7737,12 @@
 		(path "/39334166-f252-440d-8af0-39cea1ab0295/dc124f02-6ea5-4ead-ae26-78de25431ab1")
 		(sheetname "/1_ALIMENTACION/")
 		(sheetfile "01_alimentacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -7703,6 +7859,12 @@
 		(path "/2498e6fc-a72d-4d13-8684-8a6c4bbf04b3/7151819e-9f9c-4439-bf94-c2da142221dc")
 		(sheetname "/3_RFID_RC522/")
 		(sheetfile "03_rfid_rc522.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -7819,6 +7981,12 @@
 		(path "/2498e6fc-a72d-4d13-8684-8a6c4bbf04b3/89e3c019-e1e0-412c-9e22-c5878d27e303")
 		(sheetname "/3_RFID_RC522/")
 		(sheetfile "03_rfid_rc522.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -7932,6 +8100,12 @@
 		(path "/39334166-f252-440d-8af0-39cea1ab0295/e601a3e9-1328-4bdf-b7fa-1f1c5fe45cfb")
 		(sheetname "/1_ALIMENTACION/")
 		(sheetfile "01_alimentacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10879,6 +11053,12 @@
 		(path "/3dce3fe8-e006-43fd-a77e-3a77ad876bc2/8f82a706-e0a1-4339-abb6-b8543c428198")
 		(sheetname "/5_SENALIZACION/")
 		(sheetfile "05_senalizacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -11093,6 +11273,12 @@
 		(path "/39334166-f252-440d-8af0-39cea1ab0295/1ea946a6-b72c-4e5b-97d9-4d364f28e2f2")
 		(sheetname "/1_ALIMENTACION/")
 		(sheetfile "01_alimentacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -11507,6 +11693,12 @@
 		(path "/d72e2b6f-ec00-4583-ba5f-b8a07f0421a4/76fb854b-de8d-40a4-9e85-f472a2175f19")
 		(sheetname "/6_CERRADURA_12V/")
 		(sheetfile "06_cerradura_12v.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -11695,6 +11887,12 @@
 		(path "/39334166-f252-440d-8af0-39cea1ab0295/ff0d86e7-5739-48fc-8332-88e04d3ba566")
 		(sheetname "/1_ALIMENTACION/")
 		(sheetfile "01_alimentacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -11819,6 +12017,12 @@
 		(path "/2498e6fc-a72d-4d13-8684-8a6c4bbf04b3/2e9bc91a-f656-401f-9acb-52e8281663bd")
 		(sheetname "/3_RFID_RC522/")
 		(sheetfile "03_rfid_rc522.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -12004,6 +12208,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/6572629c-67e6-4ed0-9cf8-0fca0cd8131a")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -12570,6 +12780,12 @@
 		(path "/3dce3fe8-e006-43fd-a77e-3a77ad876bc2/7870e451-1d25-40ea-8020-6ae593d385fe")
 		(sheetname "/5_SENALIZACION/")
 		(sheetfile "05_senalizacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -12766,6 +12982,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/fc87f252-9719-4d5a-991f-17d1cb06394e")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -12984,6 +13206,12 @@
 		(path "/3dce3fe8-e006-43fd-a77e-3a77ad876bc2/8ea922d7-1179-4f2c-b6c2-e638205fce55")
 		(sheetname "/5_SENALIZACION/")
 		(sheetfile "05_senalizacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -13201,6 +13429,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/a21800bd-cae5-4fce-8820-5228238520ba")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -13389,6 +13623,12 @@
 		(path "/3dce3fe8-e006-43fd-a77e-3a77ad876bc2/51a7a120-baaf-495b-94bb-904c0ac79e8d")
 		(sheetname "/5_SENALIZACION/")
 		(sheetfile "05_senalizacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
@@ -13598,6 +13838,12 @@
 		(path "/d72e2b6f-ec00-4583-ba5f-b8a07f0421a4/d4a110e0-2b2f-4a75-aaef-d754c174db9d")
 		(sheetname "/6_CERRADURA_12V/")
 		(sheetfile "06_cerradura_12v.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -13891,6 +14137,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/586d3597-0cf3-4d0d-b5d6-e2f60f2b7899")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -14088,6 +14340,12 @@
 		(path "/d72e2b6f-ec00-4583-ba5f-b8a07f0421a4/e7263e22-3444-48ae-8ac7-d48a5e96c9d5")
 		(sheetname "/6_CERRADURA_12V/")
 		(sheetfile "06_cerradura_12v.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -14450,6 +14708,12 @@
 		(path "/39334166-f252-440d-8af0-39cea1ab0295/8cd6a7f4-da34-4a58-a792-7463a9919f2b")
 		(sheetname "/1_ALIMENTACION/")
 		(sheetfile "01_alimentacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -14935,6 +15199,12 @@
 		(path "/39334166-f252-440d-8af0-39cea1ab0295/6b175d26-4714-4d64-a953-e52257ff453b")
 		(sheetname "/1_ALIMENTACION/")
 		(sheetfile "01_alimentacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -15051,6 +15321,12 @@
 		(path "/2498e6fc-a72d-4d13-8684-8a6c4bbf04b3/dab83965-4bd1-4862-8f10-0bbcc02ef5eb")
 		(sheetname "/3_RFID_RC522/")
 		(sheetfile "03_rfid_rc522.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -15167,6 +15443,12 @@
 		(path "/2498e6fc-a72d-4d13-8684-8a6c4bbf04b3/46cb5a11-7bd0-4da1-9a1d-192bccf20ee5")
 		(sheetname "/3_RFID_RC522/")
 		(sheetfile "03_rfid_rc522.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -15291,6 +15573,12 @@
 		(path "/3dce3fe8-e006-43fd-a77e-3a77ad876bc2/c575f0dc-7a64-43d8-a755-269d804c28a9")
 		(sheetname "/5_SENALIZACION/")
 		(sheetfile "05_senalizacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -15505,6 +15793,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/de45f228-7629-4fa1-a42c-1c43fa5d622a")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -15787,6 +16081,12 @@
 		(path "/d72e2b6f-ec00-4583-ba5f-b8a07f0421a4/1808f2c9-7c00-4fef-aaee-cc374cf886f6")
 		(sheetname "/6_CERRADURA_12V/")
 		(sheetfile "06_cerradura_12v.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -16252,6 +16552,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/c65b905b-caae-4643-be14-96f9ab80426b")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -16376,6 +16682,12 @@
 		(path "/efc35174-4708-4aba-9228-f94425f37787/7ab3468b-da48-430c-aef0-40c2450bf25d")
 		(sheetname "/2_CONTROLADOR_ESP32/")
 		(sheetfile "02_controlador_esp32.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -16566,6 +16878,12 @@
 		(path "/39334166-f252-440d-8af0-39cea1ab0295/fc5563ff-a5be-40d4-b8f9-d6a41d2e08a2")
 		(sheetname "/1_ALIMENTACION/")
 		(sheetfile "01_alimentacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr allow_missing_courtyard)
 		(net_tie_pad_groups "1, 2")
 		(duplicate_pad_numbers_are_jumpers no)
@@ -16683,6 +17001,12 @@
 		(path "/39334166-f252-440d-8af0-39cea1ab0295/b437a641-25b4-494c-ad48-bb886752917c")
 		(sheetname "/1_ALIMENTACION/")
 		(sheetfile "01_alimentacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -18841,6 +19165,12 @@
 		(path "/39334166-f252-440d-8af0-39cea1ab0295/ba74b1a1-bc99-4d36-8498-1162ed1407c4")
 		(sheetname "/1_ALIMENTACION/")
 		(sheetfile "01_alimentacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -19038,6 +19368,12 @@
 		(path "/2498e6fc-a72d-4d13-8684-8a6c4bbf04b3/a445d725-18cc-4317-ad6f-cae6f600cc28")
 		(sheetname "/3_RFID_RC522/")
 		(sheetfile "03_rfid_rc522.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -19162,6 +19498,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/84ab7596-255b-40de-a8d5-5805eb88477d")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -19358,6 +19700,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/1684fca2-1a9f-463b-8282-e41126f31209")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -19554,6 +19902,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/e7828dba-ce50-45c6-a022-b703355147e3")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -19739,6 +20093,12 @@
 		(path "/2498e6fc-a72d-4d13-8684-8a6c4bbf04b3/13718571-c870-471b-811f-714ce08b1cfe")
 		(sheetname "/3_RFID_RC522/")
 		(sheetfile "03_rfid_rc522.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -19894,6 +20254,12 @@
 		(path "/39334166-f252-440d-8af0-39cea1ab0295/591cd5bd-d159-416e-8780-b2407b52e8df")
 		(sheetname "/1_ALIMENTACION/")
 		(sheetfile "01_alimentacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -20036,6 +20402,12 @@
 		(path "/39334166-f252-440d-8af0-39cea1ab0295/12b3a87d-49a7-4293-b53b-a9d08fbf413e")
 		(sheetname "/1_ALIMENTACION/")
 		(sheetfile "01_alimentacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -20329,6 +20701,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/0909a83c-1b7d-442c-98b5-2e14be8a0425")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -20523,6 +20901,12 @@
 		(path "/39334166-f252-440d-8af0-39cea1ab0295/e0e4b929-1439-44da-9670-792e43acd16d")
 		(sheetname "/1_ALIMENTACION/")
 		(sheetfile "01_alimentacion.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -20996,6 +21380,12 @@
 		(path "/2e5fc384-86cf-476a-81c3-86d6f49d48d8/24e11811-ebe7-4c62-b8e9-8fe9dcddc91a")
 		(sheetname "/4_SENSORES/")
 		(sheetfile "04_sensores.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -21192,6 +21582,12 @@
 		(path "/2498e6fc-a72d-4d13-8684-8a6c4bbf04b3/d75e93e3-cf44-48b0-8a0a-c5a1a1296dc3")
 		(sheetname "/3_RFID_RC522/")
 		(sheetfile "03_rfid_rc522.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -21366,6 +21762,16 @@
 		(path "/efc35174-4708-4aba-9228-f94425f37787/dcc929c3-81e9-4cf7-b5f3-eec4fafdef60")
 		(sheetname "/2_CONTROLADOR_ESP32/")
 		(sheetfile "02_controlador_esp32.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "3" "5" "7" "9" "11" "13" "15" "17" "19" "21" "23" "25" "27"
+					"29" "31" "33" "35" "37" "39" "41" "43" "2" "4" "6" "8" "10" "12" "14"
+					"16" "18" "20" "22" "24" "26" "28" "30" "32" "34" "36" "38" "40" "42"
+					"44"
+				)
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line

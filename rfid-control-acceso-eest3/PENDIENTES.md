@@ -52,11 +52,25 @@ modelo 3D asignado**. En el render aparecen como pads pelados. El DRC valida
 sus courtyards, así que en el plano no se pisan, pero nadie miró todavía si los
 cuerpos reales entran donde tienen que entrar.
 
-Dos medidas concretas a confirmar contra las piezas que se vayan a comprar:
+Medidas concretas a confirmar contra las piezas que se vayan a comprar:
 
-- **J6 queda a 4,79 mm del centro de H4** y **J8 a 4,96 mm del centro de H1**.
-  Entra un tornillo M3 con arandela (⌀ 6–7 mm). **No entra** un separador
-  hexagonal o de nylon de 8 mm: se lo come el cuerpo de la bornera.
+- **Tres de los cuatro agujeros de montaje tienen un componente cerca**, medido
+  desde el borde del courtyard al centro del agujero:
+
+  | Componente | Agujero | Distancia |
+  |---|---|---:|
+  | J6 (bornera) | H4 | 4,78 mm |
+  | J8 (bornera) | H1 | 4,95 mm |
+  | C1 (electrolítico ⌀ 16 mm) | H2 | 4,96 mm |
+
+  En los tres entra un tornillo M3 con arandela (⌀ 6–7 mm). En ninguno entra un
+  separador hexagonal o de nylon de 8 mm. El de C1 es el más incómodo de los
+  tres: el capacitor es alto, así que no solo estorba el separador sino
+  también el destornillador. H3 es el único agujero despejado.
+
+  Si el montaje va sobre separadores —que es lo habitual en una caja— hay que
+  correr esos tres componentes o los agujeros antes de fabricar.
+
 - Las cinco borneras del borde superior están a 2,00 mm del canto. Hay que
   confirmar que el cable entra de frente sin pelear con la caja.
 

@@ -20,3 +20,8 @@ gerbers/
 *.gbr
 *.drl
 *.zip
+
+# Informes de DRC/ERC: se regeneran, y versionarlos confunde
+DRC.rpt
+*-drc*.rpt
+*-erc.rpt

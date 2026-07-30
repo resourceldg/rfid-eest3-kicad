@@ -612,8 +612,12 @@
         "pattern": "+12V_AUX"
       },
       {
-        "netclass": "POWER_12V_AUX",
+        "netclass": "LOCK_POWER",
         "pattern": "+12V_IN"
+      },
+      {
+        "netclass": "LOCK_POWER",
+        "pattern": "Net-(D1-K)"
       },
       {
         "netclass": "LOCK_POWER",
@@ -669,11 +673,11 @@
       },
       {
         "netclass": "LOGIC",
-        "pattern": "Net-(D2-K)"
+        "pattern": "Net-(D2-A)"
       },
       {
         "netclass": "LOGIC",
-        "pattern": "Net-(D3-K)"
+        "pattern": "Net-(D3-A)"
       },
       {
         "netclass": "LOGIC",

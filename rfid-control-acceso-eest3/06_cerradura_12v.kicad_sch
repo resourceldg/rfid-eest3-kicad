@@ -1382,7 +1382,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "rfid_eest3:KF301_2P_P5.08_PLACEHOLDER_NO_FABRICAR"
+		(property "Footprint" "TerminalBlock_RND:TerminalBlock_RND_205-00232_1x02_P5.08mm_Horizontal"
 			(at 180.34 54.61 0)
 			(hide yes)
 			(show_name no)

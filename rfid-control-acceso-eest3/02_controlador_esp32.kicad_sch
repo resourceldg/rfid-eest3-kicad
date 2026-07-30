@@ -3529,7 +3529,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "rfid_eest3:ESP32-S3-DevKitC-1-44P_PLACEHOLDER_NO_FABRICAR"
+		(property "Footprint" "rfid_eest3:ESP32-S3-44P_SOCKET_DUAL_22.86_25.40"
 			(at 140.97 80.01 0)
 			(hide yes)
 			(show_name no)

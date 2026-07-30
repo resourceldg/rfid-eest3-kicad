@@ -2803,7 +2803,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "rfid_eest3:KF301_4P_P5.08_PLACEHOLDER_NO_FABRICAR"
+		(property "Footprint" "TerminalBlock_RND:TerminalBlock_RND_205-00234_1x04_P5.08mm_Horizontal"
 			(at 144.78 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -2859,7 +2859,7 @@
 	)
 	(symbol
 		(lib_id "Device:D_Schottky")
-		(at 54.61 38.1 90)
+		(at 54.61 38.1 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3076,7 +3076,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "rfid_eest3:CP_Radial_D10_P5.00_PLACEHOLDER_NO_FABRICAR"
+		(property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm_P7.50mm"
 			(at 181.3052 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -3425,7 +3425,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "rfid_eest3:KF301_2P_P5.08_PLACEHOLDER_NO_FABRICAR"
+		(property "Footprint" "TerminalBlock_RND:TerminalBlock_RND_205-00232_1x02_P5.08mm_Horizontal"
 			(at 30.48 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -3507,7 +3507,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "rfid_eest3:CP_Radial_D16_P7.50_PLACEHOLDER_NO_FABRICAR"
+		(property "Footprint" "Capacitor_THT:CP_Radial_D16.0mm_P7.50mm"
 			(at 96.2152 44.45 0)
 			(hide yes)
 			(show_name no)

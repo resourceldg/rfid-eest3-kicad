@@ -91,7 +91,7 @@ y `GND`. El RC522 solo está conectado a `+3V3`.
 - D4: SS3A4 preliminar, Schottky de 3 A / 40 V.
 - NT1: unión explícita en estrella entre `GND_POWER` y `GND`.
 
-No hay footprints asignados.
+Todos los footprints están asignados y resueltos contra bibliotecas reales de KiCad 10; no queda ningún `PLACEHOLDER_NO_FABRICAR`. El único footprint local es `rfid_eest3:ESP32-S3-44P_SOCKET_DUAL_22.86_25.40`.
 
 ## Presupuesto de alimentación de la placa
 
@@ -137,7 +137,7 @@ encapsulado ni la verificación de `RDS(on)` a la tensión de gate real.
 
 ## Protección de sobrecorriente
 
-F1 queda preliminarmente como fusible lento o PTC de aproximadamente 2,5 A.
+F1 quedó como `T3.15A_5x20_LITTELFUSE_215`. ATENCIÓN: 3,15 A no protege una fuente de 2,5 A, que pliega antes; hay que reconciliar el valor del fusible con la fuente elegida.
 No debe utilizarse una protección rápida de 2 A porque podría actuar durante
 el funcionamiento nominal. La elección definitiva depende de medir la
 corriente de arranque y revisar la curva tiempo-corriente.
@@ -432,9 +432,7 @@ configuración durante esta actualización.
 
 ## Preparación de footprints y fabricación
 
-La PCB continúa vacía y no se ejecutó **Update PCB from Schematic**. En el
-esquema solamente se asignó `Package_TO_SOT_SMD:SOT-23` a Q1 y Q2 después de
-verificar el pinout; las borneras permanecen sin footprint. Los nombres se verificaron contra el
+La PCB tiene los 71 footprints colocados sobre un contorno de 140 × 100 mm, sin pistas, vías ni planos. El floorplan se recalculó a partir de la posición real de los pines de J13. Queda pendiente ejecutar **Update PCB from Schematic** en la GUI para transferir los footprints nuevos (KiCad no expone esa operación por CLI). Los nombres se verificaron contra el
 índice de footprints de KiCad 10, sincronizado el 2026-07-29: 155 bibliotecas y
 15 447 footprints.
 
@@ -768,3 +766,83 @@ nueva transferencia controlada.
 - Caja y agujeros H1–H4: separadores, cabeza de tornillo y accesos.
 - Buzzer: tecnología, polaridad, consumo y necesidad de D9.
 - Cerradura: corriente de arranque y temperatura de Q2.
+
+
+## Correcciones aplicadas sobre la rama de auditoría
+
+Fecha: 2026-07-29. Verificado regenerando el netlist con `kicad-cli`, no por
+inspección visual.
+
+### Errores eléctricos corregidos
+
+- **D1 estaba invertido**: cátodo hacia `+12V_IN` y ánodo hacia F1, lo que
+  bloquea la polaridad correcta. Con ese montaje la placa no encendía. Girado
+  180°: ánodo en `+12V_IN`, cátodo hacia F1.
+- **D2 y D3 estaban invertidos**: ánodo a `GND` y cátodo hacia R3/R4. Como un
+  GPIO nunca baja de 0 V, los LEDs no podían encender. Girados 180°.
+- **El tramo de mayor corriente estaba en la clase `Default`** (0,2 mm de pista)
+  llevando ~2,2 A. La red entre D1 y F1 no coincidía con ningún patrón de
+  netclass. Asignada a `LOCK_POWER` (2,0 mm), igual que `+12V_IN`, que estaba
+  en `POWER_12V_AUX` (0,8 mm).
+- Al girar los LEDs, KiCad renombró las redes autogeneradas
+  (`Net-(D2-K)` → `Net-(D2-A)`). Las netclasses apuntaban a los nombres viejos
+  y quedaban huérfanas; se re-apuntaron.
+
+### ERC: alcance real de la verificación
+
+El informe presentaba «0 errores y 0 advertencias» como resultado de
+validación. No lo es: el proyecto no tiene ningún símbolo `power:` y de los 173
+pines, 171 son `passive` y 2 son `input`. No hay pines de tipo power ni output,
+así que la matriz de comprobación eléctrica del ERC no tiene nada que evaluar.
+El resultado limpio está garantizado por construcción. La verificación útil de
+este diseño es el netlist y la revisión de polaridades, no el ERC.
+
+### Footprint del ESP32-S3
+
+El módulo es un DevKitC-1 N16R8, cuyo form factor usa 22,86 mm entre hileras.
+Como no se midió el ejemplar físico, el footprint duplica la hilera par en
+22,86 y 25,40 mm: se suelda el zócalo solo en la que corresponda. Son 22
+agujeros extra en un prototipo.
+
+El paso doble cubre la separación, **no el orden de pines**. Todo el mapa GPIO
+asume el orden del header J1 del DevKitC-1. Antes de soldar hay que verificar
+por continuidad 3V3, EN, 5V y GND contra la serigrafía del módulo: si el orden
+está corrido o espejado se mete 5 V en un GPIO.
+
+Los pines 2, 42 y 44 (GND) tienen dos pads candidatos; hay que unir cada par
+con un tramo corto para que ambos agujeros queden a masa.
+
+### Floorplan recalculado
+
+La posición de los pines de J13 determina el orden de los bloques. Con el
+módulo horizontal, la hilera de señal expone, de derecha a izquierda:
+`3V3, 3V3, EN │ IO4–IO7 (sensores) │ IO15–IO18 (LEDs, buzzer, cerradura) │
+IO9–IO13 (RFID) │ 5V, GND`. Los bloques se alinearon a ese orden.
+
+| Métrica | Antes | Ahora |
+|---|---:|---:|
+| Lazo de potencia J1 ↔ J9 | 86,0 mm | 38,1 mm |
+| Estrella de masa NT1 ↔ J1 | 60,2 mm | 9,3 mm |
+| SPI: J5 ↔ pin MISO | ~70 mm | 8,7 mm |
+| Reed: J6 ↔ pin IO4 | 56,7 mm | 47,0 mm |
+| Antena ↔ tornillo H3 | — | 7,9 mm |
+
+El contorno creció de 120 × 80 a 140 × 100 mm. A 120 × 80 la densidad de
+componentes quedaba en 53 %, que es ruteable pero penoso en dos capas con
+pistas de 2 mm; a 140 × 100 baja a 36 %. La caja todavía es
+`PENDIENTE_MEDICIÓN`, así que el contorno no estaba atado a nada real. Es
+reversible.
+
+### Compromisos asumidos, no resueltos
+
+- H3 queda a 7,9 mm de la zona de antena. Conviene tornillo de nylon o dejarlo
+  sin poblar hasta definir la caja.
+- J8 (sensor de gabinete, marcado como futuro) se movió al borde superior
+  izquierdo: las cinco borneras de sensores no entraban en una sola fila sin
+  invadir el agujero de montaje H4.
+- `LOCK_GATE` recorre ~50 mm desde IO18 hasta Q2. Es aceptable para una
+  compuerta lenta con 100 Ω en serie y pull-down de 10 kΩ, pero conviene
+  alejarla de las señales de sensores al rutear.
+- La separación RFID/cerradura en la placa bajó a 38,9 mm. El RC522 es externo:
+  la restricción real es dónde queda el módulo y su antena en la caja, no dónde
+  está J5.

@@ -1729,7 +1729,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 90.17 74.93 90)
+		(at 90.17 74.93 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2001,7 +2001,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 90.17 44.45 90)
+		(at 90.17 44.45 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
